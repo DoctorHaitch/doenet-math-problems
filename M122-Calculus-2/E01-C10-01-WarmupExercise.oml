@@ -86,7 +86,7 @@
   <p>
     Note, from the definition of integration
     <me>
-      {\int_a}^{b} f(x)-g(x) dx
+      \int_{a}^{b} f(x)-g(x) dx
       = \lim_{n\to\infty} \sum_{i=1}^n f(x_i)-g(x_i) \Delta x,
     </me>
     which is close, but not quite the correct integral!
@@ -95,7 +95,7 @@
 <feedback condition="$combined">
   <p>
     While your answer is correct, it is not quite in the form we would expect based on the questions:
-    <me>{\int_a}^{b} f(x)\;dx - {\int_a}^{b} g(x) dx.</me>
+    <me>\int_{a}^{b} f(x)\;dx - \int_{a}^{b} g(x) dx.</me>
     Make sure you know why your answer is equivalent to this one!
   </p>
 </feedback>
