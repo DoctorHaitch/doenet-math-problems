@@ -1,0 +1,45 @@
+<!--
+  Author: Kris Hollingsworth
+  Class: Math122-Calculus 2
+  Date: 5/22/26
+  File: E01-C10-03-TwoIntegrals.oml
+  Description:
+    Visual of Area Between Curves with both horizontal and vertical
+    representative slices.
+-->
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+     %%%%%%%%%%% Common Variables
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<setup>
+  <number name="a">-3</number>
+  <number name="b">5</number>
+  <number name="MutedGreen">117733</number>
+  <styleDefinition name="MGreenStyle" styleNumber="10" lineWidth="3" lineStyle="solid" lineColor="#$MutedGreen"  fillColor="#$MutedGreen" />
+  <number name="MutedIndigo">332288</number>
+  <function name="f" styleNumber="10" domain="[$a-1,$b+1]">x-1</function>
+  <function name="g" styleNumber="9" domain="[$a,$b+1]">sqrt(2x+6)</function>
+  <function name="h" styleNumber="9" domain="[$a,$b]">-sqrt(2x+6)</function>
+  <function styleNumber="10" name="z" domain="[$a,$b]">0</function>
+</setup>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+     %%%%%%%%%%%%%%%%% Draw a Graph
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<graph fixAxes width="80%" showBorder="false" aspectRatio="1.75" grid="true" xmin="$a-1" xmax="$b+1" displayXAxisTickLabels="false" ymin="-3" ymax="5" showNavigation="false" decorative>
+  <shortDescription>Both functions f(x) and g(x) between x=a and x=b with the area between f(x) and the x-axis shaded in green and the area between g(x) and the x-axis shaded in indigo.</shortDescription>
+  <lineSegment styleNumber="9" fixLocation endpoints="($a,$$g($a)) ($a,0)" />  
+  <lineSegment styleNumber="9" fixLocation endpoints="(7,$$g(7)) (7,0)" labelIsName />
+  $f $g $h
+  <point hide name="botLeft">
+      ($xVal, <math>max($$h($xVal),$$f($xVal))</math>)
+  </point>
+  <point hide name="topRight">
+    ($xVal+0.2, $$g($xVal))
+  </point>
+  <rectangle hide="not($showSlice)" styleNumber="5" filled vertices="$botLeft $topRight" />
+</graph>
+<booleanInput name="showSlice">
+  <label>Show representative slice.</label>
+</booleanInput>
+<slider initialValue="-2.8" name="xVal" from="-3" to="4.8" step="0.2" showTicks="false" showValue="false" hide="not($showSlice)" />

@@ -2,11 +2,11 @@
   Author: Kris Hollingsworth
   Class: Math122-Calculus 2
   Date: 5/22/26
-  File: E01-C10-Sum01.oml
+  File: E01-C10-02-Sum01.oml
   Description:
     Visualize Riemann Sum between two function plots to derive
     formula for Area of Curves directly from the limit definition.
-    Extends E01-C10-Warm-Up.oml
+    Extends E01-C10-01-Warm-Up.oml
 -->
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -43,8 +43,11 @@
       <point name="v1" labelIsName>($v, $$f($v))</point>
       <point name="v2" labelIsName>($rightPoint, $$g($rightPoint-.001))</point>
     </setup>
-  <rectangle styleNumber="5" filled vertices="$v1 $v2" />
+  <rectangle hide="not($showBoxes)" styleNumber="5" filled vertices="$v1 $v2" />
   </repeatForSequence>
 </graph>
-<slider initialValue="3" from="1" to="15" name="rects" showTicks="false"><label>Number of Rectangles</label></slider>
+<booleanInput name="showBoxes">
+  <label>Show Riemann sum approximation.</label>
+</booleanInput>
+<slider hide="not($showBoxes)" initialValue="3" from="1" to="15" name="rects" showTicks="false"><label>Number of Rectangles</label></slider>
 <setup><number name="deltaX">($b-$a)/$rects</number></setup>
