@@ -1,0 +1,37 @@
+<!--
+  Author: Kris Hollingsworth
+  Class: Math122-Calculus 2
+  Date: 5/22/26
+  File: E01-C10-04-AnswerValidator.oml
+  Description:
+    Visual of Area Between Curves with both horizontal and vertical
+    representative slices.
+-->
+
+<p>
+  Check your work:
+  <answer name="ans" type="math" matchPartial>
+    <!-- Debug prefill
+    <mathInput prefillLatex="\int_{_{-3}}^{-1}\sqrt{4x+12}dx\ +\ \int_{-1}^{5}\left(\sqrt{2x+6}\ -x+1\right)\ dx" />
+    -->
+    <shortDescription>
+      Enter answer to check your work.
+    </shortDescription>
+    <award>
+      <m>\int_{-3}^{-1}2\sqrt{2x+6} dx + \int_{-1}^5 [\sqrt{2x+6}-(x-1)] dx</m>
+    </award>
+    <award>
+            <m>\int_{-3}^{-1} \sqrt{4 x + 12}dx + \int_{-1}^{5} \left(\sqrt{2 x + 6} - x + 1\right)dx</m>
+    </award>
+  </answer>
+</p>
+<setup>
+  <boolean name="noAdditionSubmitted">
+  <boolean>not(<matchesPattern pattern="()+()">$ans</matchesPattern>)</boolean> && 
+  $ans.responseHasBeenSubmitted
+  </boolean>
+</setup>
+<feedback 
+  condition="$noAdditionSubmitted">
+    You may want to look at the picture more closely. Your answer should involve addition, analyze the visual aid closely to determine why.
+</feedback>
