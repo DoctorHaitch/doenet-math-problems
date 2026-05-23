@@ -10,7 +10,8 @@
 
 <p>
   Check your work:
-  <answer name="ans" type="math" matchPartial>
+  <answer name="ans" type="math">
+    <!-- <mathInput prefillLatex="\int_a^b f(x) dx"/> -->
     <!-- Debug prefill
     <mathInput prefillLatex="\int_{_{-3}}^{-1}\sqrt{4x+12}dx\ +\ \int_{-1}^{5}\left(\sqrt{2x+6}\ -x+1\right)\ dx" />
     -->
@@ -25,13 +26,25 @@
     </award>
   </answer>
 </p>
+
 <setup>
-  <boolean name="noAdditionSubmitted">
-  <boolean>not(<matchesPattern pattern="()+()">$ans</matchesPattern>)</boolean> && 
-  $ans.responseHasBeenSubmitted
-  </boolean>
+  <matchesPattern name="missingIntegrand" pattern="∫_()^() d＿">$ans</matchesPattern>
+  <matchesPattern name="wrongVar" pattern="∫_()^() ＿ dy">$ans</matchesPattern>
+  <matchesPattern name="oneIntegral" pattern="∫_()^()＿dx">$ans</matchesPattern>
+  <matchesPattern name="bounds" pattern="∫_(-3)^(-1)＿dx+∫_(-1)^(5)＿dx">$ans</matchesPattern>
 </setup>
+
+<feedback condition="$missingIntegrand">
+  You seem to be missing an integrand.
+</feedback>
 <feedback 
-  condition="$noAdditionSubmitted">
-    You may want to look at the picture more closely. Your answer should involve addition, analyze the visual aid closely to determine why.
+  condition="$wrongVar">
+    You appear to be jumping ahead! That's great! But here we're looking for integration with respect to <m>x</m>.
+</feedback>
+<feedback 
+  condition="$oneIntegral">
+    You are integrating with respect to the right variable, but you might want to revisit your sketch or use the visual aid to inspect the representative slice more closely.
+</feedback>
+<feedback condition="$bounds and not($ans.creditAchieved)">
+  You're almost there! Just be a bit more careful with the integrands, the rest of the expression is correct!
 </feedback>
