@@ -59,4 +59,17 @@
   <repeatForSequence from="-3" to="3" valueName="t" step="1">
     <function fixed styleNumber="$t+4" domain="[-3,3]">x^2 + $t</function>
   </repeatForSequence>
+  <point hide="not($showIC)" draggable labelPosition="bottom" name="P0" coords="(-2,-3)">
+    <constrainToGrid dx=".25" dy=".25" />
+    <label>IC</label>
+  </point>
 </graph>
+<p>
+  <booleanInput name="showIC">
+    <label>Show draggable Initial Condition.</label>
+  </booleanInput><br/>
+  <number name="C" hide>$P0.y - ($P0.x)^2</number>
+  <group  hide="not($showIC)">
+  Particular Solution: <m>y= x <conditionalContent condition="$C>0">+</conditionalContent> <math format="text" simplify> $C </math> </m>
+    </group>
+</p>
