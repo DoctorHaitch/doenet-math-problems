@@ -10,7 +10,6 @@
 -->
 
 <setup>
-  <number name="reflection">3</number>
   <styleDefinition styleNumber="1"
     lineColor="#2E86C1"
     lineOpacity=".85"
@@ -93,7 +92,7 @@
 <!-- ACTIVITY -->
 
 <graph name="cubic" xMin="-3" xMax="3" yMin="-1" yMax="2">
-  <shortDescription>Hover fuck off.</shortDescription>
+  <shortDescription>Plot of y=2x^2-x^3 with some manipulatives.</shortDescription>
   <regionBetweenCurves boundaryValues="0 2">$f $z</regionBetweenCurves>
   <label anchor="($cubic.xMax-.2, $cubic.yMax-.1)" positionFromAnchor="lowerLeft"><m>\Large y= 2x^2-x^3</m></label>
   <!------------------------------------

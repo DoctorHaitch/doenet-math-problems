@@ -1,0 +1,21 @@
+<!--
+  Author: Kris Hollingsworth
+  Class: Math122-Calculus 2
+  Date: 5/23/26
+  File: E01-C02-02-AnswerValidation.oml
+  Description:
+    Quick check on notation and definitions for
+    Order of a Differential Equation.
+  Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E01-C02-02-AnswerValidation.oml
+-->
+<p>
+  Check your work:
+  <answer name="ans"><shortDescription>Check your work</shortDescription>x^2+C</answer>
+</p>
+<setup>
+  <boolean name="check">
+    (<matchesPattern pattern="x^2+()">$ans</matchesPattern> and not($ans.creditAchieved))
+  </boolean>
+</setup>
+<feedback condition="$check">Close! But remember to use <m>C</m> for the arbitrary constant!</feedback>
+<feedback condition="$ans=x^2">Close! But I think you forgot something!</feedback>
