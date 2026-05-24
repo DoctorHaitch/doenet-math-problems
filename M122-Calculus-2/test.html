@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <!-- Doenet CSS -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@doenet/standalone@latest/style.css"/>
+
+    <link rel="stylesheet" href="https://mnsu.learn.minnstate.edu/content/2026/7634158-20273001943M/css/Calc2.css">
+  </head>
+
+<body>
+  <header>
+    <div class="header-line">
+      <div><strong>(MATH122 - Calculus II)</strong> Course Notes</div>
+      <div><strong>Author:</strong> Kris Hollingsworth, PhD (Dr. ℋ)</div>
+    </div>
+  </header>
+
+  <h1 id="class-02-7.7-beginning-ordinary-differential-equations">Class
+  02: (7.7) Beginning Ordinary Differential Equations</h1>
+  <div class="callout callout-goals" data-callout="goals">
+  <details open>
+  <summary class="callout-title">Today’s Plan</summary>
+  <div class="callout-content">
+  <ul>
+  <li><label><input type="checkbox" />Roll Call</label></li>
+  <li>Discuss Course Schedule and Grading</li>
+  <li>Discuss Learning Journals.</li>
+  <li>Learn basic concepts and definitions of [Ordinary] Differential
+  Equations (ODEs)</li>
+  <li>Practice Problems for ODEs, time permitting.</li>
+  </ul>
+  </div>
+  </details>
+  </div>
+  <p>Note: Syllabus and other course information is always available on
+  the course website, <a href="https://d2l.mnsu.edu">D2L</a></p>
+  <div class="callout callout-todo" data-callout="todo">
+  <details open>
+  <summary class="callout-title">Today’s Assignments</summary>
+  <div class="callout-content">
+  <ul class="task-list">
+  <li><label><input type="checkbox" />Turn in first Guided Practice
+  (GP01) handed out yesterday.</label>
+  <ul>
+  <li>Usually just leave these on the front desk!</li>
+  </ul></li>
+  <li><label><input type="checkbox" />Receive Review Quiz, will be
+  <strong>repeated in class</strong>
+  <code>next Friday</code>.</label></li>
+  <li><label><input type="checkbox" />Receive first Learning Problems
+  (LP01) Set. Due at <code>start of first Exam in Week 4.</code></label>
+  <ul>
+  <li>Work may be verified and discussed in student support hours at any
+  time.</li>
+  <li>We should complete the content for these today.</li>
+  <li>Only one you will receive on paper, the rest will be found on
+  D2L!</li>
+  <li>Graded at time of Exam 1 (Week 4), but may be marked earlier in
+  support hours.</li>
+  </ul></li>
+  <li><label><input type="checkbox" />Receive GP02: first practice with
+  DEs. <code>due next class</code>.</label>
+  <ul>
+  <li>Ideally, you should start learning problems <em>the day they are
+  covered.</em> This assignment mimics that practice.</li>
+  <li>This will help you solidify understanding from lecture and
+  identify questions to bring to support hours, MavPASS, or other
+  academic support resources.</li>
+  </ul></li>
+  </ul>
+  </div>
+  </details>
+  </div>
+  <h2
+  id="the-full-course-schedule-is-available-on-d2l-in-the-syllabus.">The
+  full course schedule is available on D2L in the syllabus.</h2>
+  <div class="callout callout-preview" data-callout="preview">
+  <details open>
+  <summary class="callout-title">Looking Ahead: Major Milestones Coming Up.</summary>
+  <div class="callout-content">
+  <ul>
+  <li>Foundations Assessment 01: Algebra, Trig, and a bit of Calc 1
+  <ul>
+  <li>Receive today.</li>
+  <li><code>Due first Friday of semester.</code></li>
+  </ul></li>
+  <li>Foundations Assessment 02: Derivatives and Integrals
+  <ul>
+  <li><code>In class second Friday of semester.</code></li>
+  <li>Calculate 10 derivatives similar to the extra practice on D2L
+  under Guided Practice 01.</li>
+  <li>Calculate 10 integrals similar to Guided Practice 03 (Thursday’s
+  assignment).</li>
+  </ul></li>
+  <li>Exam 01: Fourth Friday of Semester
+  <ul>
+  <li>Covers Review material and applications of integration (we’ll
+  start that today).</li>
+  </ul></li>
+  </ul>
+  </div>
+  </details>
+  </div>
+  <div class="callout callout-info" data-callout="info">
+  <details open>
+  <summary class="callout-title">Grading Scheme</summary>
+  <div class="callout-content">
+  <table>
+  <caption>Course Grading Scheme</caption>
+  <colgroup>
+  <col style="width: 19%" />
+  <col style="width: 15%" />
+  <col style="width: 65%" />
+  </colgroup>
+  <thead>
+  <tr>
+  <th style="text-align: center;" scope="col">Activity</th>
+  <th style="text-align: right;" scope="col">Weight</th>
+  <th scope="col">Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td style="text-align: center;">Attendance</td>
+  <td style="text-align: right;">2%</td>
+  <td>Show up to class. On time. Attendance will be taken at the
+  <em>beginning</em> of class.</td>
+  </tr>
+  <tr>
+  <td style="text-align: center;">Foundations Assessment 1</td>
+  <td style="text-align: right;">3%</td>
+  <td>Take-home, open resource review.</td>
+  </tr>
+  <tr>
+  <td style="text-align: center;">Foundations Assessment 2</td>
+  <td style="text-align: right;">3%</td>
+  <td>In-class assessment on Calculus I derivatives and integrals.</td>
+  </tr>
+  <tr>
+  <td style="text-align: center;">Group Assessments</td>
+  <td style="text-align: right;">5%</td>
+  <td>In class exploratory or review assessments completed in small
+  teams. Assessment will be discussed more on Thursday with first group
+  assessment.</td>
+  </tr>
+  <tr>
+  <td style="text-align: center;">Guided Practice</td>
+  <td style="text-align: right;">5%</td>
+  <td>Short 2-4 page, low-stakes take-home assessments to get feedback
+  on your mathematical communication and to identify potential sticking
+  points. Generally graded generously if you make a real effort,
+  <strong>these are your chance to make mistakes and get written
+  feedback. Ignoring that feedback generally results in poor marks on
+  higher-stakes assessments.</strong></td>
+  </tr>
+  <tr>
+  <td style="text-align: center;">Learning Journals</td>
+  <td style="text-align: right;">8%</td>
+  <td>Your primary method for practicing and developing mastery of
+  course content. You will keep a journal of completed learning
+  problems. <strong>You are expected to complete every odd problem and
+  <em>at least</em> half the even problems to receive full
+  credit.</strong></td>
+  </tr>
+  <tr>
+  <td style="text-align: center;">Exams</td>
+  <td style="text-align: right;">60%</td>
+  <td>(5%, 10%, 12%, 15%, 18%)</br> 5 in-class chapter exams dynamically
+  weighted in your favor. Five Problems will be released the day before,
+  3 of which will make up ~40-50% of the in-class grade. The rest will
+  be similar to material from the course notes, guided practice,
+  learning journals, or group assessments. Yes. It’s all important.</td>
+  </tr>
+  <tr>
+  <td style="text-align: center;">Final Project</td>
+  <td style="text-align: right;">14%</td>
+  <td>A final summative, creative work in which you will summarize and
+  organize your learning from the semester. Guidelines, an assessment
+  rubric, and an initial brainstorming Guided Practice will be released
+  a little later in the semester.</td>
+  </tr>
+  </tbody>
+  </table>
+  </div>
+  </details>
+  </div>
+  <h1 id="section-7.7-differential-equations-part-1">Section 7.7)
+  Differential Equations (Part 1)</h1>
+  <div class="callout callout-goals" data-callout="goals">
+  <details open>
+  <summary class="callout-title">Learning Outcomes</summary>
+  <div class="callout-content">
+  <ul>
+  <li>Identify differential equations and their order.</li>
+  <li>Define general and specific solutions of differential
+  equations.</li>
+  <li><strong>Verify</strong> general solutions of DEs are
+  solutions.</li>
+  <li>Find a particular solution of a differential equation given a
+  general solution.</li>
+  </ul>
+  </div>
+  </details>
+  </div>
+  <div class="callout callout-definition" data-callout="definition">
+  <details>
+  <summary class="callout-title">Definition: Differential Equation</summary>
+  <div class="callout-content">
+  <p>A <em>differential equation</em> (DE) is an equation containing an
+  unknown function and some of its derivatives.</p>
+  </div>
+  </details>
+  </div>
+  <div class="callout callout-definition" data-callout="definition">
+  <details>
+  <summary class="callout-title">Definition: Order (of a DE)</summary>
+  <div class="callout-content">
+  <p>The <em>order</em> if a DE is the order of the highest derivative
+  that occurs in the equation.</p>
+  </div>
+  </details>
+  </div>
+  <h2 id="first-examples">First Examples</h2>
+  <div class="callout callout-exercise" data-callout="exercise">
+  <details>
+  <summary class="callout-title">Find the order of each DE.</summary>
+  <div class="callout-content">
+  <div class="doenetml-viewer">
+    <script type="text/doenetml">
+  <p>Find the order of each DE.</p>
+
+  <p>
+    1.
+    <m>y''' + x^8 y'' + y' = 0</m>
+    <answer>
+      <shortDescription>y''' + x^8 y'' + y' = 0</shortDescription>
+      3
+    </answer>
+  </p>
+  <p>
+    2.
+    <m>\displaystyle \frac{d^2y}{dx^2}+7y \left(\frac{dy}{dx}\right)^5 = 8</m>
+    <answer name="de2">
+      <shortDescription>(d^2y)/(dx^2) + 7y (dy/dx)^5=8</shortDescription>
+      2
+    </answer>
+  </p>
+  <feedback condition="$de2=5">
+    Careful,
+    <me>\left(\frac{dy}{dx}\right)^5</me>
+    is not the fifth derivative. It is the first derivative to the 5th power!
+  </feedback>
+  <p>
+    3.
+    <m>\displaystyle\frac{du}{dt} = y^2 +\sin(u)</m>
+    <answer>
+      <shortDescription>du/dt = y^2 + sin(u)</shortDescription>
+      1
+    </answer>
+  </p>
+  <p>
+    4.
+    <m>\displaystyle y^{(5)}(x) = e^{y(x)}+y'(x)</m>
+    <answer>
+      <shortDescription>y^{(5)}(x) = e^{y(x)}+y'(x)</shortDescription>
+      5
+    </answer>
+  </p>
+  <p>
+    5.
+    <m>\displaystyle \frac{d^2y}{dt^2} - \frac{d^2y}{dx^2}+\sin(y)=0</m>
+    <answer>
+      <shortDescription>(d^2y)/(dt^2) - (d^2y)(dx^2)+sin(y)=0</shortDescription>
+      2
+    </answer>
+  </p>
+  <p>
+    6.
+    <m>\ddddot{y} + 2x\dot{y} + y = 0</m>
+    <answer>
+      <shortDescription><m>\ddot{y} + 2x\dot{y} + y = 0</m></shortDescription>
+      4
+    </answer>
+  </p>  </script>
+  </div>
+
+  </div>
+  </details>
+  </div>
+  <div class="callout callout-definition" data-callout="definition">
+  <details>
+  <summary class="callout-title">Definition: Solution (of a DE)</summary>
+  <div class="callout-content">
+  <p>A <em>solution</em> of a DE is a <strong>function</strong> which
+  satisfies it.</p>
+  </div>
+  </details>
+  </div>
+  <div class="callout callout-exercise" data-callout="exercise">
+  <details>
+  <summary class="callout-title">Exercise:</summary>
+  <div class="callout-content">
+  <p>Solve the DE
+  <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>y</mi><mo>′</mo></msup><mo>=</mo><mn>2</mn><mi>x</mi></mrow><annotation encoding="application/x-tex">y&#39;=2x</annotation></semantics></math>.</p>
+  <div class="callout callout-hint" data-callout="hint">
+  <details>
+  <summary class="callout-title">Hint (and a question)</summary>
+  <div class="callout-content">
+  <p>Use the fundamental theorem of calculus or observation to determine
+  the solution. Why are there infinitely many solutions?</p>
+  </div>
+  </details>
+  </div>
+  <div class="doenetml-viewer">
+    <script type="text/doenetml">
+  <p>
+    Check your work:
+    <answer name="ans"><shortDescription>Check your work</shortDescription>y=x^2+C</answer>
+  </p>
+  <setup>
+    <boolean name="check">
+      (<matchesPattern pattern="y=x^2+()">$ans</matchesPattern> and not($ans.creditAchieved))
+    </boolean>
+  </setup>
+  <feedback condition="$check">Close! But remember to use <m>C</m> for the arbitrary constant!</feedback>
+  <feedback condition="$ans=x^2">Close! But I think you forgot something!</feedback>  </script>
+  </div>
+
+  </div>
+  </details>
+  </div>
+  <div class="callout callout-exercise" data-callout="exercise">
+  <details>
+  <summary class="callout-title">Exercise</summary>
+  <div class="callout-content">
+  <p>Given
+  <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>y</mi><mo>′</mo></msup><mo>=</mo><mn>2</mn><mi>x</mi></mrow><annotation encoding="application/x-tex">y&#39;=2x</annotation></semantics></math>,
+  which solution corresponds to the initial conditions [ICs]:</p>
+  <ul>
+  <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">y(0)=1</annotation></semantics></math></li>
+  <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">y(-1)=3</annotation></semantics></math></li>
+  <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">y(2)=1</annotation></semantics></math></li>
+  </ul>
+  <div class="callout callout-visual" data-callout="visual">
+  <details>
+  <summary class="callout-title">Visual Aid</summary>
+  <div class="callout-content">
+  <div class="doenetml-viewer">
+    <script type="text/doenetml">
+  <setup>
+    <styleDefinition styleNumber="1"
+      lineColor="#2E86C1"
+      lineOpacity=".85"
+      fillColor="#2E86C1"
+      lineWidth="2.5"
+      fillColorWord="Blue" />
+    <styleDefinition styleNumber="2"
+      lineColor="#CB4335"
+      lineOpacity=".75"
+      lineWidth="2.5"
+      fillColor="#CB4335"
+      fillColorWord="Vermillion" />
+    <styleDefinition styleNumber="3"
+      lineColor="#3C7FA6"
+      lineOpacity=".8"
+      fillColor="#5499C7"
+      lineWidth="2.5"
+      fillOpacity=".1"
+      fillColorWord="Sky Blue" />
+    <styleDefinition styleNumber="4"
+      lineColor="#8E44AD"
+      fillColor="#8E44AD"
+      lineWidth="2.5"
+      fillOpacity="1"
+      fillColorWord="Reddish Purple" />  
+    <styleDefinition styleNumber="5"
+      lineColor="#8A6F08"
+      lineOpacity=".74"
+      lineWidth="3"
+      lineStyle="dashed"
+      fillColor="#B7950B"
+      fillColorWord="Mustard" />
+    <styleDefinition styleNumber="6"
+      lineColor="#2E8B78"
+      lineOpacity=".81"
+      lineWidth="3"
+      fillColor="#45B39D"
+      fillColorWord="Blueish Green" />
+    <styleDefinition styleNumber="7"
+      lineColor="#9A7D0A"
+      lineWidth="2.5"
+      lineOpacity=".85"
+      fillColor="#D4AC0D"
+      fillColorWord="Yellow" />
+  </setup>
+  <graph name="doenet3_graph1" xMin="-3" xMax="3" yMin="-4" yMax="4"  grid="1 1" fixAxes addControls="false">
+    <shortDescription>Frak off</shortDescription>
+    <repeatForSequence from="-3" to="3" valueName="t" step="1">
+      <function fixed styleNumber="$t+4" domain="[-3,3]">x^2 + $t</function>
+    </repeatForSequence>
+    <point hide="not($showIC)" draggable labelPosition="bottom" name="P0" coords="(-2,-3)">
+      <constrainToGrid dx=".25" dy=".25" />
+      <label>IC</label>
+    </point>
+  </graph>
+  <p>
+    <booleanInput name="showIC">
+      <label>Show draggable Initial Condition.</label>
+    </booleanInput><br/>
+    <number name="C" hide>$P0.y - ($P0.x)^2</number>
+    <group  hide="not($showIC)">
+    Particular Solution: <m>y= x <conditionalContent condition="$C>0">+</conditionalContent> <math format="text" simplify> $C </math> </m>
+      </group>
+  </p>  </script>
+  </div>
+
+  </div>
+  </details>
+  </div>
+  </div>
+  </details>
+  </div>
+  <div class="callout callout-tip" data-callout="tip">
+  <details>
+  <summary class="callout-title">Motivation</summary>
+  <div class="callout-content">
+  <p>Many applications in math require DEs!</p>
+  <p><em>Often</em>: We observe the way a system changes as a function
+  of time/space, then we develop a mathematical model using DEs to
+  describe/predict the system.</p>
+  <div class="callout callout-example" data-callout="example">
+  <details>
+  <summary class="callout-title">Modeling examples</summary>
+  <div class="callout-content">
+  <ul>
+  <li><a href="https://earth.nullschool.net/">World Map with Wind
+  Patterns</a></li>
+  <li><a href="https://svs.gsfc.nasa.gov/14745">NASA’s <em>An Ocean in
+  Motion</em> video of Earth’s Waterways</a></li>
+  </ul>
+  </div>
+  </details>
+  </div>
+  </div>
+  </details>
+  </div>
+  <div class="callout callout-example" data-callout="example">
+  <details>
+  <summary class="callout-title">Math Problem Example</summary>
+  <div class="callout-content">
+  <p><strong>Population Growth</strong> Let
+  <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">P(t)</annotation></semantics></math>
+  represent the current population of a bacteria colony at time
+  <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>.
+  Suppose the population grows at a rate proportional to the current
+  population.</p>
+  <ul>
+  <li>Write a DE describing the system.</li>
+  </ul>
+  <div class="callout callout-done" data-callout="done">
+  <details>
+  <summary class="callout-title">Answer</summary>
+  <div class="callout-content">
+  <p>Let
+  <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+  represent the proportion. If you’re not sure about some terms, use the
+  answer boxes below to try and work through it.</p>
+  <p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>d</mi><mi>P</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>k</mi><mi>P</mi></mrow><annotation encoding="application/x-tex">\frac{dP}{dt} = kP</annotation></semantics></math>,
+  where
+  <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+  is the current population as a function of time and
+  <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">k&gt;0</annotation></semantics></math>
+  is a constant. * Verify the general solution is
+  <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>A</mi><msup><mi>e</mi><mrow><mi>k</mi><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">P(t)=Ae^{kt}</annotation></semantics></math>.</p>
+  </div>
+  </details>
+  </div>
+  <div class="callout callout-steps" data-callout="steps">
+  <details>
+  <summary class="callout-title">Steps</summary>
+  <div class="callout-content">
+  <p>To verify the solution, always start from the <em>given</em>
+  information, and use it to show the mathematical property or equation
+  is true based on that information. In this case, we need to take the
+  derivative:
+  <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>A</mi><mi>k</mi><msup><mi>e</mi><mrow><mi>k</mi><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">P&#39;(t)=Ake^{kt}</annotation></semantics></math>
+  and then algebraically manipulate it to look like the equation we want
+  to <em>verify</em> is true based on the given information.</p>
+  <div class="callout callout-caution" data-callout="caution">
+  <details>
+  <summary class="callout-title">Caution</summary>
+  <div class="callout-content">
+  <p>If you are told to <em>verify</em> something is a solution, that
+  means following these specific steps. <em>Solving</em> the problem
+  analytically will not earn any credit in this situation, as you are
+  simply not anwering the specific question that was asked.</p>
+  </div>
+  </details>
+  </div>
+  </div>
+  </details>
+  </div>
+  </div>
+  </details>
+  </div>
+  <div class="callout callout-exercise" data-callout="exercise">
+  <details>
+  <summary class="callout-title">Start on Individual Practice Problems, time permitting</summary>
+  <div class="callout-content">
+
+  </div>
+  </details>
+  </div>
+  <div class="callout callout-preview" data-callout="preview">
+  <details>
+  <summary class="callout-title">Next Class</summary>
+  <div class="callout-content">
+  <p>Our first group assessment reviewing integration by
+  <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>-substitution
+  and other basic concepts!</p>
+  </div>
+  </details>
+  </div>
+
+  <!-- Doenet runtime -->
+  <script type="module">
+    import { renderDoenetViewerToContainer }
+      from "https://cdn.jsdelivr.net/npm/@doenet/standalone@latest/doenet-standalone.js";
+
+    // Initialize ALL Doenet viewers on the page
+    document.querySelectorAll(".doenetml-viewer")
+      .forEach(container => renderDoenetViewerToContainer(container));
+  </script>
+
+</iframe>
+
+  <footer>
+    <div class="footer-line">
+      <div>Written in <a href="https://obsidian.md/">Obsidian Markdown Editor</a></div>
+      <div>HTML Generated by <a href="https://pandoc.org/">Pandoc</a></div>
+      <div>Last Updated: May 24, 2026</div><br/>
+      <div>Visit my <a href="https://github.com/DoctorHaitch/LaTeX_Accessibility">GitHub</a> for more information on creating accessible mathematics.</div>
+    </div>
+  </footer>
+</body>
+</html>
