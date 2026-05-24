@@ -54,9 +54,9 @@
     fillColor="#D4AC0D"
     fillColorWord="Yellow" />
 </setup>
-<graph xMin="-3" xMax="3" yMin="-4" yMax="4"  grid="1 1">
+<graph xMin="-3" xMax="3" yMin="-4" yMax="4"  grid="1 1" fixAxes addControls="false">
   <shortDescription>Frak off</shortDescription>
   <repeatForSequence from="-3" to="3" valueName="t" step="1">
-    <function styleNumber="$t+4" domain="[-3,3]">x^2 + $t</function>
+    <function fixed styleNumber="$t+4" domain="[-3,3]">x^2 + $t</function>
   </repeatForSequence>
 </graph>
