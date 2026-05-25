@@ -22,7 +22,7 @@
 </p>
 <setup>
   <boolean name="check">
-    (<matchesPattern pattern="y=1/(x^2+())">$ans</matchesPattern> and not($ans.creditAchieved))
+    (<matchesPattern pattern="y=1/(x^2+())">$ans</matchesPattern> and not($ans.creditAchieved)) and not($genSoln)
   </boolean>
   <boolean name="expression">
     not(<matchesPattern pattern="＿=＿">$ans</matchesPattern>)
