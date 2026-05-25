@@ -10,12 +10,28 @@
 -->
 <p>
   Check your work:
-  <answer name="ans"><shortDescription>Check your work</shortDescription>x^2+C</answer>
+  <answer name="ans">
+    <shortDescription>Check your work</shortDescription>
+    y=x^2+C
+  </answer>
 </p>
 <setup>
   <boolean name="check">
     (<matchesPattern pattern="x^2+()">$ans</matchesPattern> and not($ans.creditAchieved))
   </boolean>
+  <boolean name="expression">
+    not(<matchesPattern pattern="＿=＿">$ans</matchesPattern>)
+    and
+    ($ans.numSubmissions>0)
+  </boolean>
 </setup>
-<feedback condition="$check">Close! But remember to use <m>C</m> for the arbitrary constant!</feedback>
-<feedback condition="$ans=x^2">Close! But I think you forgot something!</feedback>
+<feedback condition="$check">
+  Close! But remember to use <m>C</m> for the arbitrary constant!
+</feedback>
+<feedback condition="$ans=x^2">
+  Close! But I think you forgot something!
+</feedback>
+<feedback condition="$expression">
+  It seems you've entered an expression.
+  Looking back at the definition of a differential equation, it should be a <em>function</em>, which by definition is a relationship between indepedent and dependent variables.
+</feedback>
