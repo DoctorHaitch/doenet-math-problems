@@ -32,10 +32,10 @@
   <title></title>
 Define your notation:
 <p>
-  <mathInput prefill="s" name="depVar">
+  <mathInput name="depVar"> <!-- prefill="s" -->
     <label>Dependent Variable:</label>
   </mathInput> <br/>
-  <mathInput prefill="t" name="indVar">
+  <mathInput name="indVar"> <!-- prefill="t" -->
     <label>Independent Variable:</label>
   </mathInput> <br/>
 </p>
@@ -71,7 +71,7 @@ Define your notation:
   <title></title>
 <p>
   <answer name="genSoln">
-    <mathInput functionSymbols="$depVar" prefillLatex="$depVar($indVar) = Ce^{\frac{-2$indVar}{25}}+3">
+    <mathInput functionSymbols="$depVar"> <!-- prefillLatex="$depVar($indVar) = Ce^{\frac{-2$indVar}{25}}+3" -->
       <label>
         General solution:
       </label>
@@ -93,7 +93,7 @@ Define your notation:
   <title></title>
 <p>
   <answer name="partSoln">
-    <mathInput functionSymbols="$depVar" prefillLatex="s(t)=57e^{\frac{-2t}{25}}+3">
+    <mathInput functionSymbols="$depVar"> <!-- prefillLatex="s(t)=57e^{\frac{-2t}{25}}+3" -->
       <label>
         Particular solution:
       </label>
