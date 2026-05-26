@@ -1,119 +1,150 @@
 <!--
   Author: Kris Hollingsworth
   Class: Math122-Calculus 2
-  Date: 5/24/26
+  Original Date: 5/24/26
+  Revised Date: 5/26/26 (Symbolic Function Checking now Works)
   File: E01-C06-01-AnswerValidation.oml
   Description:
     Some progress checks on an ODE word problem.
   Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E01-C06-01-AnswerValidation.oml
 -->
+<setup>
+  <module name="EqnFeedbackGenerator">
+    <moduleAttributes>
+      <math name="ans" />
+    </moduleAttributes>
+    <setup>
+      <boolean name="answerIsExpression">
+        not(<matchesPattern pattern="＿=＿">$ans</matchesPattern>) <!-- Missing equality -->
+        and
+        <matchesPattern pattern="()">$ans</matchesPattern> <!-- Not blank -->
+      </boolean>
+    </setup>
+    <feedback condition="$answerIsExpression">
+      It seems you've entered an expression.
+    Looking back at the definition of a differential equation, it should be a <em>function</em>, which by definition is a relationship between indepedent and dependent variables.
+    </feedback>
+  </module>
+</setup>
 
 <cascade>
 <section>
   <title></title>
 Define your notation:
 <p>
-  Dependent Variable: <mathInput name="depVar"/><br/>
-  Independent Variable: <mathInput name="indVar"/><br/>
+  <mathInput prefill="s" name="depVar">
+    <label>Dependent Variable:</label>
+  </mathInput> <br/>
+  <mathInput prefill="t" name="indVar">
+    <label>Independent Variable:</label>
+  </mathInput> <br/>
 </p>
-
-
+  
 <p>
-  Differential equation that models this problem:
   <answer name="ansDiffEq">
-    <shortDescription>Enter differential equation.</shortDescription>
+    <mathInput prefillLatex="s'=\frac{6-2s}{25}" functionSymbols="$depVar">
+      <label>Differential equation that models this problem:</label>
+    </mathInput>
     <award>
-      <m>\frac{d$depVar}{d$indVar} = \frac{30-$depVar}{125}</m>
+      <m>\frac{d$depVar}{d$indVar} = \frac{2*(3-$depVar)}{25}</m>
     </award>
     <award>
-      <m>$depVar' = \frac{30-$depVar}{125}</m>
+      <m>$depVar' = \frac{2*(3-$depVar)}{25}</m>
+    </award>
+    <award>
+      <math format="latex" referencesAreFunctionSymbols="$depVar">
+         $depVar'($indVar) = \frac{2*(3-$depVar($indVar))}{25}
+      </math>
+    </award>
+    <award>
+      <math format="latex" referencesAreFunctionSymbols="$depVar">
+        \frac{d$depVar}{d$indVar} = \frac{2*(3-$depVar($indVar))}{25}
+      </math>
     </award>
   </answer>
 </p>
-<setup>
-  <boolean name="ansOneIsExpression">
-    not(<matchesPattern pattern="＿=＿">$ansDiffEq</matchesPattern>)
-    and
-    <matchesPattern pattern="()">$ansDiffEq</matchesPattern>
-  </boolean>
-</setup>
-<feedback condition="$ansOneIsExpression">
-  It seems you've entered an expression.
-  Looking back at the definition of a differential equation, it should be a <em>function</em>, which by definition is a relationship between indepedent and dependent variables.
-</feedback>
+<module copy="$EqnFeedbackGenerator" ans="$ansDiffEq" />
+  
 </section>
 
 <section>
   <title></title>
 <p>
-  General solution:
   <answer name="genSoln">
-    <shortDescription>Enter general solution.</shortDescription>
+    <mathInput functionSymbols="$depVar" prefillLatex="$depVar($indVar) = Ce^{\frac{-2$indVar}{25}}+3">
+      <label>
+        General solution:
+      </label>
+    </mathInput>
     <award>
-      <m>$depVar' = Ce^{\frac{-2$indVar}{25}}+3</m>
+      <m>$depVar = Ce^{\frac{-2$indVar}{25}}+3</m>
     </award>
     <award>
-      <m>\frac{d$depVar}{d$indVar} = Ce^{\frac{-2$indVar}{25}}+3</m>
+      <math format="latex" referencesAreFunctionSymbols="$depVar">
+        $depVar($indVar) = Ce^{\frac{-2$indVar}{25}}+3
+      </math>
     </award>
   </answer>
 </p>
-<setup>
-  <boolean name="genSolnIsExpression">
-    not(<matchesPattern pattern="＿=＿">$genSoln</matchesPattern>)
-    and
-    <matchesPattern pattern="()">$genSoln</matchesPattern>
-  </boolean>
-</setup>
-<feedback condition="$genSolnIsExpression">
-  It seems you've entered an expression.
-  Looking back at the definition of a differential equation, it should be a <em>function</em>, which by definition is a relationship between indepedent and dependent variables.
-</feedback>
+<module copy="$EqnFeedbackGenerator" ans="$genSoln" />
 </section>
 
 <section>
   <title></title>
 <p>
-  Particular solution:
   <answer name="partSoln">
+    <mathInput functionSymbols="$depVar" prefillLatex="s(t)=57e^{\frac{-2t}{25}}+3">
+      <label>
+        Particular solution:
+      </label>
+    </mathInput>
     <shortDescription>Enter particular solution.</shortDescription>
     <award>
-      <m>$depVar' = 57e^{\frac{-2$indVar}{25}}+3</m>
+      <m>$depVar = 57e^{\frac{-2$indVar}{25}}+3</m>
     </award>
     <award>
       <m>\frac{d$depVar}{d$indVar} = 57e^{\frac{-2$indVar}{25}}+3</m>
     </award>
+    <award>
+      <math format="latex" referencesAreFunctionSymbols="$depVar">
+        $depVar($indVar) = 57e^{\frac{-2$indVar}{25}}+3
+      </math>
+    </award>
   </answer>
 </p>
-<setup>
-  <boolean name="partSolnIsExpression">
-    not(<matchesPattern pattern="＿=＿">$partSoln</matchesPattern>)
-    and
-    <matchesPattern pattern="()">$partSoln</matchesPattern>
-  </boolean>
-</setup>
-<feedback condition="$partSolnIsExpression">
-  It seems you've entered an expression.
-  Looking back at the definition of a differential equation, it should be a <em>function</em>, which by definition is a relationship between indepedent and dependent variables.
-</feedback>
+<module copy="$EqnFeedbackGenerator" ans="$partSoln" />
 </section>
 
 <section>
   <title></title>
 <p>
-  Answer the original question:
   <answer name="finalAns">
-    <shortDescription>Answer to original question.</shortDescription>
+    <mathInput functionSymbols="$depVar">
+      <label>Answer to original question:</label>
+    </mathInput>
     <award>
       <m>57e^{\frac{-2*90}{25}}+3</m>
+    </award>
+    <award>
+      <math format="latex" referencesAreFunctionSymbols="$depVar">
+        $depVar(90)=57e^{\frac{-2(90)}{25}}+3
+      </math>
     </award>
   </answer>
 </p>
 <feedback condition="$finalAns.creditAchieved">
-  This is good for an automated system, but in your written work, the answer to a word problem should be a <em>sentence</em>! For example:<br/>
-"The amount of salt in the tank after 90 minutes is <m>57 e^{-\frac{36}{5}}+3</m> kilograms."<br/>
-  If you feel it necessary to round, indicate you have done so, but also give the precise answer, for example:<br/>
-  "The amount of salt in the tank after 90 minutes is <m>57 e^{-\frac{36}{5}}+3</m> kilograms, or approximately 3.0426 kilograms."<br />
+<p>
+  This is a good answer for an automated system, but in your written work, the answer to a word problem should be a <em>sentence</em>!
+</p>
+<p>For example:<br/>
+"The amount of salt in the tank after 90 minutes is <m>\left(57 e^{-\frac{36}{5}}+3\right)</m> kilograms."
+</p>
+<p>If you feel it necessary to round, indicate you have done so, but also give the precise answer, for example:<br/>
+  "The amount of salt in the tank after 90 minutes is <m>\left(57 e^{-\frac{36}{5}}+3\right)</m> kilograms, or approximately 3.0426 kilograms."
+</p>
+<p>
   You'll worry more about <em>significant digits</em> and how many digits to include in answers in your applied coursework.
+</p>
 </feedback>
 </section>
 </cascade>
