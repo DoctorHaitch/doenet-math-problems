@@ -12,12 +12,17 @@
   Check your work:
   <answer name="ans">
     <shortDescription>Check your work</shortDescription>
-    y=x^2+C
+    <award>
+      y=x^2+C
+    </award>
+    <award name="missingConstant" credit="0" >
+      y=x^2
+    </award>
   </answer>
 </p>
 <setup>
   <boolean name="check">
-    (<matchesPattern pattern="x^2+()">$ans</matchesPattern> and not($ans.creditAchieved))
+    (<matchesPattern pattern="y = x^2 + ()">$ans</matchesPattern> and not($ans.creditAchieved))
   </boolean>
   <boolean name="expression">
     not(<matchesPattern pattern="＿=＿">$ans</matchesPattern>)
@@ -28,7 +33,7 @@
 <feedback condition="$check">
   Close! But remember to use <m>C</m> for the arbitrary constant!
 </feedback>
-<feedback condition="$ans=x^2">
+<feedback condition="$missingConstant">
   Close! But I think you forgot something!
 </feedback>
 <feedback condition="$expression">
