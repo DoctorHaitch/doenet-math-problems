@@ -33,6 +33,7 @@
   <matchesPattern name="wrongVar" pattern="∫_()^() ＿ dy">$ans</matchesPattern>
   <matchesPattern name="oneIntegral" pattern="∫_()^()＿dx">$ans</matchesPattern>
   <matchesPattern name="bounds" pattern="∫_(-3)^(-1)＿dx+∫_(-1)^(5)＿dx">$ans</matchesPattern>
+  <matchesPattern name="totalBounds" pattern="∫_(-3)^(5)＿dx">$ans</matchesPattern>
 </setup>
 
 <feedback condition="$missingIntegrand">
@@ -43,8 +44,11 @@
     You appear to be jumping ahead! That's great! But here we're looking for integration with respect to <m>x</m>.
 </feedback>
 <feedback 
-  condition="$oneIntegral">
-    You are integrating with respect to the right variable, but you might want to revisit your sketch or use the visual aid to inspect the representative slice more closely.
+  condition="$oneIntegral and not($totalBounds)">
+    You are integrating with respect to the right variable, but you might want to revisit your sketch or use the visual aid to inspect the representative slice more closely. What should the overall bounds be?
+</feedback>
+<feedback condition="$totalBounds">
+  You have the right overall bounds of <m>x=-3</m> to <m>x=5</m>, but is there something happening in the middle that matters to your integrand?
 </feedback>
 <feedback condition="$bounds and not($ans.creditAchieved)">
   You're almost there! Just be a bit more careful with the integrands, the rest of the expression is correct!
