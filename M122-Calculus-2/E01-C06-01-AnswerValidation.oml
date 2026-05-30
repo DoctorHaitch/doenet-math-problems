@@ -41,11 +41,11 @@
   </mathInput> <br/>
 </p>
 
-<alert>Getting Started:</alert>
+<alert>Write down each of the following:</alert>
 <p>
   <answer name="ansDiffEq">
     <mathInput functionSymbols="$depVar"> <!-- prefillLatex="s'=\frac{6-2s}{25}" -->
-      <label>Differential equation that models this problem:</label>
+      <label>The differential equation that models this problem:</label>
     </mathInput>
     <award>
       <m>\frac{d$depVar}{d$indVar} = \frac{2*(3-$depVar)}{25}</m>
@@ -75,7 +75,7 @@
   <answer name="genSoln">
     <mathInput functionSymbols="$depVar"> <!-- prefillLatex="$depVar($indVar) = Ce^{\frac{-2$indVar}{25}}+3" -->
       <label>
-        General solution:
+        The general solution of this differential equation:
       </label>
     </mathInput>
     <award>
@@ -97,7 +97,7 @@
   <answer name="partSoln">
     <mathInput functionSymbols="$depVar"> <!-- prefillLatex="s(t)=57e^{\frac{-2t}{25}}+3" -->
       <label>
-        Particular solution:
+        The particular solution of this differential equation:
       </label>
     </mathInput>
     <shortDescription>Enter particular solution.</shortDescription>
@@ -122,7 +122,7 @@
 <p>
   <answer name="finalAns">
     <mathInput functionSymbols="$depVar">
-      <label>Answer to original question:</label>
+      <label>The answer to the original question:</label>
     </mathInput>
     <award>
       <m>57e^{\frac{-2*90}{25}}+3</m>
