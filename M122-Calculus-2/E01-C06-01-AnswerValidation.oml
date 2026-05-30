@@ -2,12 +2,14 @@
   Author: Kris Hollingsworth
   Class: Math122-Calculus 2
   Original Date: 5/24/26
-  Revised Date: 5/26/26 (Symbolic Function Checking now Works)
+  Revised Date: 5/30/26 (Improved Formatting)
   File: E01-C06-01-AnswerValidation.oml
   Description:
     Some progress checks on an ODE word problem.
   Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E01-C06-01-AnswerValidation.oml
 -->
+<!--
+  Nice to have: Multi-letter, descriptive variables -- broke my answer validation though -->
 <setup>
   <module name="EqnFeedbackGenerator">
     <moduleAttributes>
@@ -29,8 +31,7 @@
 
 <cascade>
 <section>
-  <title></title>
-Define your notation:
+  <title>Define your notation:</title>
 <p>
   <mathInput name="depVar"> <!-- prefill="s" -->
     <label>Dependent Variable:</label>
@@ -39,7 +40,8 @@ Define your notation:
     <label>Independent Variable:</label>
   </mathInput> <br/>
 </p>
-  
+
+<alert>Getting Started:</alert>
 <p>
   <answer name="ansDiffEq">
     <mathInput functionSymbols="$depVar"> <!-- prefillLatex="s'=\frac{6-2s}{25}" -->
