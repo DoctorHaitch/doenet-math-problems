@@ -1,0 +1,57 @@
+<!--
+  Author: Kris Hollingsworth
+  Class: Math122-Calculus 2
+  Date: 5/30/26
+  File: E01-C05-01-AnswerValidation.oml
+  Description:
+    Answer check on first Separable DE.
+  Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E01-C05-01-AnswerValidation.oml
+  NOTE: Requires Dev Version for correct \pm parsing! Do not release until this is in stable!
+-->
+<setup>
+  <module name="EqnFeedbackGenerator">
+    <moduleAttributes>
+      <math name="ans" />
+    </moduleAttributes>
+    <setup>
+      <boolean name="answerIsExpression">
+        not(<matchesPattern pattern="＿=＿">$ans</matchesPattern>) <!-- Missing equality -->
+        and
+        <matchesPattern pattern="()">$ans</matchesPattern> <!-- Not blank -->
+      </boolean>
+      <boolean name="wrongConstantSymbol">
+        <matchesPattern pattern="y = ±sqrt(-2t^2 + ＿)">$ans</matchesPattern>
+        and
+        not($finalAns.creditAchieved)
+      </boolean>
+    </setup>
+    <feedback condition="$answerIsExpression">
+      It seems you've entered an expression.
+    Looking back at the definition of a differential equation, it should be a <em>function</em>, which by definition is a relationship between indepedent and dependent variables.
+    </feedback>
+    <feedback condition="$wrongConstantSymbol">
+      Remember to use <m>C</m> for the final unknown constant!
+    </feedback>
+  </module>
+</setup>
+
+<answer name="finalAns">
+  <mathInput>
+    <label>Check your work:</label>
+  </mathInput>
+  <award>
+    <math format="latex">y=\pm \sqrt{-2t^2+C}</math>
+  </award>
+  <award credit="0" name="missingPM">
+    <math format="latex">y=\sqrt{-2t^2+C}</math>
+  </award>
+</answer>
+
+<module copy="$EqnFeedbackGenerator" ans="$finalAns" />
+<feedback condition="$missingPM">
+  You're almost there! But notice in your intermediate work, you likely had
+  <me>y^2=-2t^2+C.</me>
+  The correct next step would be
+  <me>|y| = \sqrt{-2t^2+C}.</me>
+  As <m>C</m> is not a multiplicative constant, it cannot be used to "absorb" the absolute value like in some of our prior examples. You can look at the MathQuill entry examples on D2L to see how to enter your final answer.
+</feedback>
