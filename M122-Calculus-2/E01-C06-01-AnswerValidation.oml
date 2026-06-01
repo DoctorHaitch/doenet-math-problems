@@ -8,8 +8,6 @@
     Some progress checks on an ODE word problem.
   Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E01-C06-01-AnswerValidation.oml
 -->
-<!--
-  Nice to have: Multi-letter, descriptive variables -- broke my answer validation though -->
 <setup>
   <module name="EqnFeedbackGenerator">
     <moduleAttributes>
@@ -150,3 +148,5 @@
 </feedback>
 </section>
 </cascade>
+<!--
+  Nice to have: Multi-letter, descriptive variables -- broke my answer validation though -->
