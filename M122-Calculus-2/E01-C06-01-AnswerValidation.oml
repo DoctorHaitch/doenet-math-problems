@@ -15,9 +15,9 @@
     </moduleAttributes>
     <setup>
       <boolean name="answerIsExpression">
-        not(<matchesPattern pattern="＿=＿">$ans</matchesPattern>) <!-- Missing equality -->
+        not(<matchesPattern pattern="＿=＿">$ans</matchesPattern>)
         and
-        <matchesPattern pattern="()">$ans</matchesPattern> <!-- Not blank -->
+        <matchesPattern pattern="()">$ans</matchesPattern>
       </boolean>
     </setup>
     <feedback condition="$answerIsExpression">
@@ -31,10 +31,10 @@
 <section>
   <title>Define your notation:</title>
 <p>
-  <mathInput name="depVar"> <!-- prefill="s" -->
+  <mathInput name="depVar">
     <label>Dependent Variable:</label>
   </mathInput> <br/>
-  <mathInput name="indVar"> <!-- prefill="t" -->
+  <mathInput name="indVar">
     <label>Independent Variable:</label>
   </mathInput> <br/>
 </p>
@@ -42,7 +42,7 @@
 <alert>Write down each of the following:</alert>
 <p>
   <answer name="ansDiffEq">
-    <mathInput functionSymbols="$depVar"> <!-- prefillLatex="s'=\frac{6-2s}{25}" -->
+    <mathInput functionSymbols="$depVar">
       <label>The differential equation that models this problem:</label>
     </mathInput>
     <award>
@@ -71,7 +71,7 @@
   <title></title>
 <p>
   <answer name="genSoln">
-    <mathInput functionSymbols="$depVar"> <!-- prefillLatex="$depVar($indVar) = Ce^{\frac{-2$indVar}{25}}+3" -->
+    <mathInput functionSymbols="$depVar">
       <label>
         The general solution of this differential equation:
       </label>
@@ -93,7 +93,7 @@
   <title></title>
 <p>
   <answer name="partSoln">
-    <mathInput functionSymbols="$depVar"> <!-- prefillLatex="s(t)=57e^{\frac{-2t}{25}}+3" -->
+    <mathInput functionSymbols="$depVar">
       <label>
         The particular solution of this differential equation:
       </label>
@@ -148,5 +148,3 @@
 </feedback>
 </section>
 </cascade>
-<!--
-  Nice to have: Multi-letter, descriptive variables -- broke my answer validation though -->
