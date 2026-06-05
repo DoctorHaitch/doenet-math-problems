@@ -1,0 +1,159 @@
+<cascade>
+  <div>
+    <alert>Part (a)</alert><br/>
+    Given two functions <m>f</m> and <m>g</m> of the same variable <m>x</m>, we know<br/><br/>
+    
+    <me hide="not($part1.creditAchieved)">
+      (fg)' = $part1.
+    </me>
+    <answer name="part1" hide="$part1.creditAchieved">
+      <label><me>\bigl(fg\bigr)' = </me></label>
+      <award><m>f'g+g'f</m></award>
+    </answer>
+  </div>
+  <div>
+    <alert>Part (b)</alert><br/>
+    Then, by re-arranging the equation we see<br /><br/>
+
+    <me hide="not($part2.creditAchieved)">
+      fg' = $part2.
+    </me>
+    <answer name="part2" hide="$part2.creditAchieved">
+      <label><me>fg' = </me></label>
+      <award><m>(fg)'-f'g</m></award>
+      <award credit="0" name="wrongSign">
+        <m>(fg)'+f'g</m>
+      </award>
+      <award credit="0" name="otherWrongSign">
+        <m>-(fg)'+f'g</m>
+      </award>
+      <award credit="0" name="wrongSigns">
+        <m>-(fg)'+f'g</m>
+      </award>
+    </answer>
+    <feedback condition="$wrongSign or $wrongSigns or $otherWrongSign">
+      Careful, you seem to have some issues with your signs!
+    </feedback>
+  </div>
+  <div>
+    <alert>Part (c)</alert><br/>
+    Note, this yields a differential equation! By integrating both sides of the equation and using the Fundamental Theorem of Calculus (Part 1), we have<br/><br/>
+    <me hide="not($part3.creditAchieved)">
+      \int fg' \;dx = fg-\int f'g\; dx.
+    </me>
+    <answer name="part3" hide="$part3.creditAchieved">
+      <label><me>\displaystyle\int fg' \;dx = </me></label>
+      <award><math format="latex">f*g-\int_{}^{} f'*g \;dx</math></award>
+    </answer>
+  </div>
+  <div>
+    <alert>Part (d)</alert><br/>
+    Then we introduce the following substitutions
+    <sideBySide widths="25% 3% 12% 20% 3% 12% 25%">
+      <div />
+      <div><m>u </m></div>
+      <div><m>= f</m></div>
+      <div></div>
+      <div><m>dv </m></div>
+      <div><m>= g'dx</m></div>
+      <div />
+    </sideBySide>
+    <sideBySide widths="25% 3% 12% 20% 3% 12% 25%">
+      <div />
+      <div><m>du</m></div>
+      <div>
+        <m>= </m><mathInput hide="$blah.creditAchieved" name="du" forAnswer="$blah"><shortDescription>du equals</shortDescription></mathInput>
+        <m hide="not($blah.creditAchieved)">f' dx</m>
+      </div>
+      <div></div>
+      <div><m>v </m></div>
+      <div>
+        <m>=</m>
+        <mathInput hide="$blah.creditAchieved" name="v" forAnswer="$blah"><shortDescription>v equals</shortDescription></mathInput>
+        <m hide="not($blah.creditAchieved)">g+C</m>
+      </div>
+      <div />
+    </sideBySide>
+    <answer name="blah" hide="$blah.creditAchieved">
+      <award>
+        <when>
+          ($du = <m>f' dx</m>) and ($v=<m>g + C</m>)
+        </when>
+      </award>
+      <award credit="0" name="missingConstant">
+        <when>
+          ($du = <m>f' dx</m>) and ($v = g)
+        </when>
+      </award>
+    </answer>
+    <boolean hide name="differentConstant">
+      ($du = <m>f' dx</m>) and <matchesPattern pattern="g + ()">$blah.submittedResponse[2]</matchesPattern>
+    </boolean>
+    <feedback condition="$missingConstant">
+      That's very close! But you've just computed an indefinite integral, so what's missing?
+    </feedback>
+    <feedback condition="$differentConstant and $blah.creditAchieved=false">
+      That's right! But for consistency, let's use <m>C</m> for the constant of integration.
+    </feedback>
+  </div>
+  <div>
+    <alert>Part (e)</alert><br/>
+    Making <alert>only</alert> the substitutions from <alert>part (d)</alert>
+      into <alert>part (c)</alert>, we obtain the formula in terms of <m>u</m> and <m>v</m><br/><br />
+
+    <answer hide="$almostThere.creditAchieved" name="almostThere" symbolicEquality="true" simplifyOnCompare="none">
+      <mathInput><shortDescription>by substitution from part (d) into part (c) you obtain</shortDescription></mathInput>
+      <award>
+        <math format="latex">
+          \int_{}^{} u\;dv = u*(v-C)-\int_{}^{} (v-C) \;du
+        </math>
+      </award>
+      <award name="didAlgebra1" credit="0">
+        <math format="latex">
+          \int_{}^{} u\;dv = u*v-u*C-\int_{}^{} (v-C) \;du
+        </math>
+      </award>
+      <award name="didAlgebra2" credit="0">
+        <m>
+          \int_{}^{} u\;dv = u*v-u*C-\int_{}^{} v du - \int_{}^{} C \;du
+        </m>
+      </award>
+    </answer>
+    <feedback condition="$didAlgebra1 or $didAlgebra2">
+      While that is a correct answer algebraically, you have not followed directions! So you're very close! 
+    </feedback>
+    <me hide="not($almostThere.creditAchieved)">\int u~dv = u\cdot (v-C)-\int (v-C)~du</me>
+  </div>
+  <div>
+    <alert>Part (f)</alert><br/>
+    Now, fully expanding the right hand side of the equation, we have<br/><br />
+    
+    <answer name="penultimateStep" hide="$penultimateStep.creditAchieved">
+      <mathInput>
+        <label><m>\displaystyle \int u\;dv = </m></label>
+      </mathInput>
+      <award><m>uv - uC - \int v du + \int C du</m></award>
+      <award><m>u*v - u*C - (\int_{}^{} v du - \int_{}^{} C du)</m></award>
+      <award><m>uv - uC - \int v du + Cu</m></award>
+    </answer>
+    <me hide="not($penultimateStep.creditAchieved)">
+      \int u\;dv = uv - uC - \int v du + \int C du
+    </me>
+  </div>
+  <div>
+    <alert>Part (g)</alert><br/>
+    Finally, evaluating the final integral and simplifying, we obtain<br/><br/>
+    
+    <me hide="not($part7.creditAchieved)">
+      (fg)' = <m>u v - \int v~du</m>.
+    </me>
+    <answer symbolicEquality="true" simplifyOnCompare="none" name="part7" hide="$part7.creditAchieved">
+      <mathInput>
+        <label><m>\displaystyle \int u\;dv = </m></label>
+      </mathInput>
+      <label><me>\bigl(fg\bigr)' = </me></label>
+      <award><m>u v - \int v\,du</m></award>
+      <award><m>u v - \int v du</m></award>
+    </answer>
+  </div>
+</cascade>
