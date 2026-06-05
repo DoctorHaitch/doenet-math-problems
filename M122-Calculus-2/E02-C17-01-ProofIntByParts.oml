@@ -129,9 +129,10 @@
     Now, fully expanding the right hand side of the equation, we have<br/><br />
     
     <answer name="penultimateStep" hide="$penultimateStep.creditAchieved">
-      <mathInput>
+      <mathInput prefillLatex="uv - uC - \int v du + \int C du">
         <label><m>\displaystyle \int u\;dv = </m></label>
       </mathInput>
+      <award><m>u v - u C - \int_{}^{} v\,du + \int_{}^{} C\,du</m></award>
       <award><m>uv - uC - \int v du + \int C du</m></award>
       <award><m>u*v - u*C - (\int_{}^{} v du - \int_{}^{} C du)</m></award>
       <award><m>uv - uC - \int v du + Cu</m></award>
@@ -145,15 +146,19 @@
     Finally, evaluating the final integral and simplifying, we obtain<br/><br/>
     
     <me hide="not($part7.creditAchieved)">
-      (fg)' = <m>u v - \int v~du</m>.
+       <m>\int u~dv =  u v - \int v~du</m>.
     </me>
     <answer symbolicEquality="true" simplifyOnCompare="none" name="part7" hide="$part7.creditAchieved">
       <mathInput>
         <label><m>\displaystyle \int u\;dv = </m></label>
       </mathInput>
-      <label><me>\bigl(fg\bigr)' = </me></label>
       <award><m>u v - \int v\,du</m></award>
+      <award><m>u v - \int_{}^{} v\,du</m></award>
       <award><m>u v - \int v du</m></award>
+      <award><m>u v - \int_{}^{} v du</m></award>
     </answer>
+  </div>
+  <div>
+    This leads us to the identity we can use to evaluate many seemingly difficult integrals known as <alert>Integration by Parts</alert>.
   </div>
 </cascade>
