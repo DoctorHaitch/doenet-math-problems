@@ -129,7 +129,7 @@
     Now, fully expanding the right hand side of the equation, we have<br/><br />
     
     <answer name="penultimateStep" hide="$penultimateStep.creditAchieved">
-      <mathInput prefillLatex="uv - uC - \int v du + \int C du">
+      <mathInput> <!-- prefillLatex="uv - uC - \int v du + \int C du" -->
         <label><m>\displaystyle \int u\;dv = </m></label>
       </mathInput>
       <award><m>u v - u C - \int_{}^{} v\,du + \int_{}^{} C\,du</m></award>
