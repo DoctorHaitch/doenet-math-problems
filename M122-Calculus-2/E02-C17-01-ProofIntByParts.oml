@@ -1,25 +1,46 @@
+<!--
+  Author: Kris Hollingsworth
+  Class: Math122-Calculus 2
+  Date: 5/22/26
+  File: E02-C17-01-ProofIntByParts.oml
+  Description:
+    Visual of Area Between Curves with sin(x) and cos(x).
+  Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E02-C17-01-ProofIntByParts.oml
+-->
+
 <cascade>
+    <!--             -->
+    <!--   PART A    -->
+    <!--             -->
   <div>
     <alert>Part (a)</alert><br/>
     Given two functions <m>f</m> and <m>g</m> of the same variable <m>x</m>, we know<br/><br/>
-    
+
     <me hide="not($part1.creditAchieved)">
-      (fg)' = $part1.
+     (fg)' = $part1. \qquad &#9989;
     </me>
     <answer name="part1" hide="$part1.creditAchieved">
-      <label><me>\bigl(fg\bigr)' = </me></label>
+      <mathInput>  <!-- prefillLatex="f'g+g'f" -->
+        <label><me>\bigl(fg\bigr)' = </me></label>
+      </mathInput>
       <award><m>f'g+g'f</m></award>
     </answer>
   </div>
+  
+    <!--             -->
+    <!--   PART B    -->
+    <!--             -->
   <div>
     <alert>Part (b)</alert><br/>
     Then, by re-arranging the equation we see<br /><br/>
 
     <me hide="not($part2.creditAchieved)">
-      fg' = $part2.
+      fg' = $part2.  \qquad &#9989;
     </me>
     <answer name="part2" hide="$part2.creditAchieved">
-      <label><me>fg' = </me></label>
+      <mathInput> <!-- prefillLatex="(fg)'-f'g" -->
+        <label><me>fg' = </me></label>
+      </mathInput>
       <award><m>(fg)'-f'g</m></award>
       <award credit="0" name="wrongSign">
         <m>(fg)'+f'g</m>
@@ -35,21 +56,32 @@
       Careful, you seem to have some issues with your signs!
     </feedback>
   </div>
+  
+    <!--             -->
+    <!--   PART C    -->
+    <!--             -->
   <div>
     <alert>Part (c)</alert><br/>
     Note, this yields a differential equation! By integrating both sides of the equation and using the Fundamental Theorem of Calculus (Part 1), we have<br/><br/>
     <me hide="not($part3.creditAchieved)">
-      \int fg' \;dx = fg-\int f'g\; dx.
+      \int fg' \;dx = fg-\int f'g\; dx.  \qquad &#9989;
     </me>
     <answer name="part3" hide="$part3.creditAchieved">
-      <label><me>\displaystyle\int fg' \;dx = </me></label>
+      <mathInput> <!-- prefillLatex="f*g-\int_{}^{} f'*g dx" -->
+        <label><me>\displaystyle\int fg' \;dx = </me></label>
+      </mathInput>
+      
       <award><math format="latex">f*g-\int_{}^{} f'*g \;dx</math></award>
     </answer>
   </div>
+
+    <!--             -->
+    <!--   PART D    -->
+    <!--             -->
   <div>
     <alert>Part (d)</alert><br/>
     Then we introduce the following substitutions
-    <sideBySide widths="25% 3% 12% 20% 3% 12% 25%">
+    <sideBySide widths="24% 4% 15% 14% 3% 15% 25%">
       <div />
       <div><m>u </m></div>
       <div><m>= f</m></div>
@@ -58,19 +90,24 @@
       <div><m>= g'dx</m></div>
       <div />
     </sideBySide>
-    <sideBySide widths="25% 3% 12% 20% 3% 12% 25%">
+    <sideBySide widths="24% 4% 15% 14% 3% 15% 25%">
       <div />
       <div><m>du</m></div>
       <div>
-        <m>= </m><mathInput hide="$blah.creditAchieved" name="du" forAnswer="$blah"><shortDescription>du equals</shortDescription></mathInput>
-        <m hide="not($blah.creditAchieved)">f' dx</m>
+        <m>= </m>
+        <mathInput hide="$blah.creditAchieved" name="du" forAnswer="$blah"> <!-- prefillLatex="f' dx" -->
+          <shortDescription>du equals</shortDescription>
+        </mathInput>
+        <m hide="not($blah.creditAchieved)">f' dx \quad &#9989;</m>
       </div>
       <div></div>
       <div><m>v </m></div>
       <div>
         <m>=</m>
-        <mathInput hide="$blah.creditAchieved" name="v" forAnswer="$blah"><shortDescription>v equals</shortDescription></mathInput>
-        <m hide="not($blah.creditAchieved)">g+C</m>
+        <mathInput hide="$blah.creditAchieved" name="v" forAnswer="$blah"> <!-- prefillLatex="g+C" -->
+          <shortDescription>v equals</shortDescription>
+        </mathInput>
+        <m hide="not($blah.creditAchieved)">g+C \quad &#9989;</m>
       </div>
       <div />
     </sideBySide>
@@ -96,13 +133,18 @@
       That's right! But for consistency, let's use <m>C</m> for the constant of integration.
     </feedback>
   </div>
+
+    <!--             -->
+    <!--   PART E    -->
+    <!--             -->
   <div>
     <alert>Part (e)</alert><br/>
     Making <alert>only</alert> the substitutions from <alert>part (d)</alert>
       into <alert>part (c)</alert>, we obtain the formula in terms of <m>u</m> and <m>v</m><br/><br />
-
     <answer hide="$almostThere.creditAchieved" name="almostThere" symbolicEquality="true" simplifyOnCompare="none">
-      <mathInput><shortDescription>by substitution from part (d) into part (c) you obtain</shortDescription></mathInput>
+      <mathInput> <!-- prefillLatex="\int_{}^{} u dv = u*(v-C)-\int_{}^{} (v-C) du" -->
+        <shortDescription>by substitution from part (d) into part (c) you obtain</shortDescription>
+      </mathInput>
       <award>
         <math format="latex">
           \int_{}^{} u\;dv = u*(v-C)-\int_{}^{} (v-C) \;du
@@ -122,8 +164,12 @@
     <feedback condition="$didAlgebra1 or $didAlgebra2">
       While that is a correct answer algebraically, you have not followed directions! So you're very close! 
     </feedback>
-    <me hide="not($almostThere.creditAchieved)">\int u~dv = u\cdot (v-C)-\int (v-C)~du</me>
+    <me hide="not($almostThere.creditAchieved)">\int u~dv = u\cdot (v-C)-\int (v-C)~du \qquad &#9989;</me>
   </div>
+
+    <!--             -->
+    <!--   PART F    -->
+    <!--             -->
   <div>
     <alert>Part (f)</alert><br/>
     Now, fully expanding the right hand side of the equation, we have<br/><br />
@@ -138,18 +184,22 @@
       <award><m>uv - uC - \int v du + Cu</m></award>
     </answer>
     <me hide="not($penultimateStep.creditAchieved)">
-      \int u\;dv = uv - uC - \int v du + \int C du
+      \int u\;dv = uv - uC - \int v du + \int C du \qquad &#9989;
     </me>
   </div>
+
+    <!--             -->
+    <!--   PART G    -->
+    <!--             -->
   <div>
     <alert>Part (g)</alert><br/>
     Finally, evaluating the final integral and simplifying, we obtain<br/><br/>
     
     <me hide="not($part7.creditAchieved)">
-       <m>\int u~dv =  u v - \int v~du</m>.
+       <me>\int u~dv =  u v - \int v~du. \qquad &#9989;</me>
     </me>
     <answer symbolicEquality="true" simplifyOnCompare="none" name="part7" hide="$part7.creditAchieved">
-      <mathInput>
+      <mathInput> <!-- prefillLatex="u v - \int_{}^{} v du" -->
         <label><m>\displaystyle \int u\;dv = </m></label>
       </mathInput>
       <award><m>u v - \int v\,du</m></award>
