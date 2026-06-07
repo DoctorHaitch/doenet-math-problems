@@ -4,7 +4,7 @@
   Date: 5/22/26
   File: E02-C17-01-ProofIntByParts.oml
   Description:
-    Visual of Area Between Curves with sin(x) and cos(x).
+    Scaffolded derivation of the Integration by Parts identity.
   Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E02-C17-01-ProofIntByParts.oml
 -->
 
@@ -199,7 +199,7 @@
        <me>\int u~dv =  u v - \int v~du. \qquad &#9989;</me>
     </me>
     <answer symbolicEquality="true" simplifyOnCompare="none" name="part7" hide="$part7.creditAchieved">
-      <mathInput> <!-- prefillLatex="u v - \int_{}^{} v du" -->
+      <mathInput>
         <label><m>\displaystyle \int u\;dv = </m></label>
       </mathInput>
       <award><m>u v - \int v\,du</m></award>
@@ -207,8 +207,10 @@
       <award><m>u v - \int v du</m></award>
       <award><m>u v - \int_{}^{} v du</m></award>
     </answer>
+    $part7
   </div>
   <div>
     This leads us to the identity we can use to evaluate many seemingly difficult integrals known as <alert>Integration by Parts</alert>.
   </div>
 </cascade>
+<!-- prefillLatex="u v - \int_{}^{} v du" -->
