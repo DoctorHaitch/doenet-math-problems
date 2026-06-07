@@ -207,7 +207,6 @@
       <award><m>u v - \int v du</m></award>
       <award><m>u v - \int_{}^{} v du</m></award>
     </answer>
-    $part7
   </div>
   <div>
     This leads us to the identity we can use to evaluate many seemingly difficult integrals known as <alert>Integration by Parts</alert>.
