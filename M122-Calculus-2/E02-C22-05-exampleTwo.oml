@@ -2,26 +2,26 @@
   Author: Kris Hollingsworth
   Class: Math122-Calculus 2
   Date: 6/14/26
-  File: E02-C22-05-exampleOne.oml
+  File: E02-C22-06-exampleTwo.oml
   Description:
-    Fully worked example of Trig Substitution
-  Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E02-C22-05-exampleOne.oml
+    Worked example of Trig Substitution
+  Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E02-C22-06-exampleTwo.oml
 -->
-<cascade>
+<cascade revealAll>
   <div>
-    <mathInput name="var"><label>Using the dummy variable</label></mathInput>, <!--  prefillLatex="t" -->
-    <answer><mathInput><label>we introduce the substitution <m>x=</m></label></mathInput><m>3\sin $var</m></answer>.
+    <mathInput name="var"><label>Using the dummy variable</label></mathInput>,  <!-- prefillLatex="t" -->
+    <answer><mathInput><label>we introduce the substitution <m>x=</m></label></mathInput><m>2 \tan $var</m></answer>.
     <answer simplifyOnCompare="none" symbolicEquality="true">
       <mathInput><label>Then <m>dx=</m></label></mathInput>
-      <award><math format="latex">3 \cos $var d$var</math></award>
-      <award><math format="latex">\cos $var 3 d$var</math></award>
+      <award><math format="latex">2 \sec^2 $var d$var</math></award>
+      <award><math format="latex">\sec^2 $var 2 d$var</math></award>
     </answer>
   </div>
   <div>
     <br />
     <answer>
     <mathInput><label>Then the antiderivative in terms of $var is</label></mathInput>
-    <award><math format="latex">-\cot $var - $var + C</math></award>
+    <award><math format="latex">-\frac{1}{4} \csc $var +C</math></award>
     </answer>.</div>
   <div>
     <graph size="small" displayXAxisTickLabels="false" displayYAxisTickLabels="false" xMin="-0.5" xMax="2.5" yMin="-0.5" yMax="2.5" showNavigation="false">
@@ -37,17 +37,22 @@
       <label hide="$ansA.creditAchieved" anchor="(2.15, 1)"><m>\Large a</m></label>
       <label hide="$ansB.creditAchieved" anchor="(1.2, -0.2)"><m>\Large b</m></label>
       <label hide="$ansC.creditAchieved" anchor="(.95, 1.2)"><m>\Large c</m></label>
-      <label hide="not($ansA.creditAchieved)" anchor="(2.15, 1)"><m>\Large x</m></label>
-      <label hide="not($ansB.creditAchieved)" anchor="(1.2, -0.2)"><m>\Large \sqrt{3^2-x^2}</m></label>
-      <label hide="not($ansC.creditAchieved)" anchor="(.95, 1.2)"><m>\Large 3</m></label>
+      <label hide="not($ansA.creditAchieved)" anchor="(2.15, 1)"><m>\Large $answerA</m></label>
+      <label hide="not($ansB.creditAchieved)" anchor="(1.2, -0.2)"><m>\Large $answerB</m></label>
+      <label hide="not($ansC.creditAchieved)" anchor="(.95, 1.2)" positionFromAnchor="left"><m>\Large $answerC</m></label>
     </graph>
+  <setup>
+    <m name="answerA">2</m>
+    <m name="answerB">x</m>
+    <m name="answerC">\sqrt{x^2+4}</m>
+  </setup>
   <answer name="ansA">
     <mathInput>
       <label>
         <m>a = </m>
       </label>
     </mathInput>
-    <award><m>x</m></award>
+    <award>$answerA</award>
   </answer><br/>
   <answer name="ansB">
     <mathInput>
@@ -55,7 +60,7 @@
         <m>b = </m>
       </label>
     </mathInput>
-    <award><m>\sqrt{9-x^2}</m></award>
+    <award>$answerB</award>
   </answer><br/>
   <answer name="ansC">
     <mathInput>
@@ -63,7 +68,7 @@
         <m>c = </m>
       </label>
     </mathInput>
-    <award><m>3</m></award>
+    <award><m>$answerC</m></award>
   </answer><br/>
     </div>
   <div>
@@ -74,7 +79,7 @@
         </label>
       </mathInput>
       <award>
-        <m>-\frac{\sqrt{9-x^2}}{x}-\arcsin \frac{x}{3} +C</m>
+        <m>-1/4 \frac{\sqrt{x^2+4}}{x} +C</m>
       </award>
     </answer>.
   </div>
