@@ -9,7 +9,7 @@
 -->
 <cascade>
   <div>
-    <mathInput name="var" prefillLatex="t"><label>Using the dummy variable</label></mathInput>, 
+    <mathInput name="var"><label>Using the dummy variable</label></mathInput>, <!--  prefillLatex="t" -->
     <answer><mathInput><label>we introduce the substitution <m>x=</m></label></mathInput><m>3\sin $var</m></answer>.
     <answer simplifyOnCompare="none" symbolicEquality="true">
       <mathInput><label>Then <m>dx=</m></label></mathInput>
