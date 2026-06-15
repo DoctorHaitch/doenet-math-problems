@@ -7,7 +7,7 @@
     Fully worked example of Trig Substitution
   Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E02-C23-02-exampleFour.oml
 -->
-<cascade revealAll>
+<cascade>
   <div>
     <answer>
       <mathInput> <!-- prefillLatex="\int_{}^{} \frac{x}{\sqrt{4-(x+1)^2}} dx" -->
