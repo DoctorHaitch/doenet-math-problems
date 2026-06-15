@@ -42,8 +42,8 @@
       <label hide="not($ansC.creditAchieved)" anchor="(.95, 1.2)" positionFromAnchor="left"><m>\Large $answerC</m></label>
     </graph>
   <setup>
-    <m name="answerA">2</m>
-    <m name="answerB">x</m>
+    <m name="answerA">x</m>
+    <m name="answerB">2</m>
     <m name="answerC">\sqrt{x^2+4}</m>
   </setup>
   <answer name="ansA">

@@ -1,0 +1,120 @@
+<!--
+  Author: Kris Hollingsworth
+  Class: Math122-Calculus 2
+  Date: 6/14/26
+  File: E02-C23-01-exampleThree.oml
+  Description:
+    Fully worked example of Trig Substitution with branching
+    of a u-substitution. The u-substitution is the easier way to evaluate the integral, 
+    but students often get fixated on the trig substitution and miss the easier path. 
+    This example is designed to reward students for spotting the easier path and not getting fixated on the current technique.
+  Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E02-C23-01-exampleThree.oml
+-->
+<cascade>
+  <div>
+    <mathInput forAnswer="$subSetup" name="var"><label>Using the dummy variable</label></mathInput>, <!--  prefillLatex="t" -->
+    <mathInput forAnswer="$subSetup" name="sub"><label>we introduce the substitution <m>x=</m></label></mathInput>.   <!-- prefillLatex="\sqrt{$var-4}" --> 
+      <mathInput forAnswer="$subSetup" name="subDiff"><label>Then <m>dx=</m></label></mathInput> <!-- prefillLatex="\frac{d$var}{2\sqrt{$var-4}}"  -->
+  <br />
+  <answer name="subSetup">
+    <award name="trigSub"><when>
+      <boolean name="test">
+        ($sub = <m>2 \tan($var)</m>) and
+        ($subDiff = <math format="latex">2 \sec^2 $var d$var</math> or
+        $subDiff = <math format="latex">\sec^2 $var 2 d$var</math>)
+      </boolean>
+    </when></award>
+    <award name="uSub"><when>
+      <boolean name="test">
+        ($sub = <m>\sqrt{$var-4}</m>) and
+        ($subDiff = <m>\frac{d$var}{2*x}</m> or
+        $subDiff = <math format="latex">\frac{d$var}{2\sqrt{$var-4}}</math>)
+      </boolean>
+    </when></award>
+  </answer>
+  <feedback condition="$uSub">
+    Good work! You've avoided the classic mistake and spotted the easier way to evaluate the integral instead of getting fixated on the current technique! Congratulations!
+  </feedback>
+  </div>
+  <div hide="$uSub">
+    <br />
+    <answer>
+    <mathInput><label>Then the antiderivative in terms of $var is</label></mathInput>
+    <award><math format="latex">2\sec $var +C</math></award>
+    </answer>.</div>
+  <div hide="$uSub">
+    <graph size="small" displayXAxisTickLabels="false" displayYAxisTickLabels="false" xMin="-0.5" xMax="2.5" yMin="-0.5" yMax="2.5" showNavigation="false">
+      <shortDescription>asdf</shortDescription>
+      <rectangle vertices="(2,0) (14.5/8, 1.5/8)" />
+      <triangle vertices="(0,0) (2, 0) (2,2)"></triangle>
+      <curve 
+        name="angleArc" 
+        variable="t" parMin="0" parMax="pi/4" labelPosition="right">
+          (3/8 cos(t), 3/8 sin(t))
+      </curve>
+      <label anchor="(7/16, 3/16)"><m>\large$var</m></label>
+      <label hide="$ansA.creditAchieved" anchor="(2.15, 1)"><m>\Large a</m></label>
+      <label hide="$ansB.creditAchieved" anchor="(1.2, -0.2)"><m>\Large b</m></label>
+      <label hide="$ansC.creditAchieved" anchor="(.95, 1.2)"><m>\Large c</m></label>
+      <label hide="not($ansA.creditAchieved)" anchor="(2.15, 1)"><m>\Large $answerA</m></label>
+      <label hide="not($ansB.creditAchieved)" anchor="(1.2, -0.2)"><m>\Large $answerB</m></label>
+      <label hide="not($ansC.creditAchieved)" anchor="(.95, 1.2)" positionFromAnchor="left"><m>\Large $answerC</m></label>
+    </graph>
+  <setup>
+    <m name="answerA">x</m>
+    <m name="answerB">2</m>
+    <m name="answerC">\sqrt{x^2+4}</m>
+  </setup>
+  <answer name="ansA">
+    <mathInput>
+      <label>
+        <m>a = </m>
+      </label>
+    </mathInput>
+    <award>$answerA</award>
+  </answer><br/>
+  <answer name="ansB">
+    <mathInput>
+      <label>
+        <m>b = </m>
+      </label>
+    </mathInput>
+    <award>$answerB</award>
+  </answer><br/>
+  <answer name="ansC">
+    <mathInput>
+      <label>
+        <m>c = </m>
+      </label>
+    </mathInput>
+    <award><m>$answerC</m></award>
+  </answer><br/>
+    </div>
+  <div hide="$uSub">
+    <answer>
+      <mathInput>
+        <label>
+          Thus, the final answer in terms of <m>x</m> is
+        </label>
+      </mathInput>
+      <award>
+        <m>\sqrt{x^2+4}+C</m>
+      </award>
+    </answer>.
+  </div>
+</cascade>
+<cascade hide="not($uSub)">
+  <answer>
+    <mathInput>
+      <label>Then the integral becomes</label>
+    </mathInput>
+    <award><m>1/2 \int \frac{1}{\sqrt{$var}} d$var</m></award>
+    <award><m>\int_{ }^{ }\frac{1}{2\sqrt{$var}}d$var</m></award>
+  </answer>
+  <answer>
+    <mathInput>
+      <label>and so the final answer is given by</label>
+    </mathInput>
+    <award><m>\sqrt{x^2+4}+C</m></award>
+  </answer>.
+</cascade>
