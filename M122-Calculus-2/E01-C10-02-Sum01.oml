@@ -10,6 +10,9 @@
   Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E01-C10-01-Sum01.oml
 -->
 
+
+
+
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%
      %%%%%%%%%%% Common Variables
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
@@ -17,7 +20,14 @@
   <number name="a">2</number>
   <number name="b">7</number>
   <number name="MutedGreen">117733</number>
-  <styleDefinition name="MGreenStyle" styleNumber="10" lineWidth="3" lineStyle="solid" lineColor="#$MutedGreen"  fillColor="#$MutedGreen" />
+  <styleDefinition
+    name="MGreenStyle"
+    styleNumber="10"
+    lineWidth="3"
+    lineStyle="solid"
+    lineColor="#$MutedGreen"
+    fillColor="#$MutedGreen"
+  />
   <number name="MutedIndigo">332288</number>
   <function name="f" styleNumber="10" domain="[2,7]">1.5*sin(x)+4</function>
   <function name="g" styleNumber="9" domain="[2,7]">1/3*cos(x)+7</function>
@@ -27,28 +37,78 @@
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%
      %%%%%%%%%%%%%%%%% Third Plot
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-<graph fixAxes width="80%" showBorder="false" aspectRatio="1.75" grid="true" xmin="1" xmax="8" displayXAxisTickLabels="false" ymin="-1" ymax="9" showNavigation="false" decorative>
-  <shortDescription>Both functions f(x) and g(x) between x=a and x=b with the area between f(x) and the x-axis shaded in green and the area between g(x) and the x-axis shaded in indigo.</shortDescription>
-  <lineSegment styleNumber="9" fixLocation endpoints="($a,$$g($a)) ($a,0)" />  
-  <lineSegment styleNumber="9" fixLocation endpoints="(7,$$g(7)) (7,0)" labelIsName />
-  <label positionFromAnchor="right" anchor="($a,-0.5)" fixLocation><m>\huge a</m></label>
+<graph
+  fixAxes
+  width="80%"
+  showBorder="false"
+  aspectRatio="1.75"
+  grid="true"
+  xmin="1"
+  xmax="8"
+  displayXAxisTickLabels="false"
+  ymin="-1"
+  ymax="9"
+  showNavigation="false"
+  decorative
+>
+  <shortDescription>
+    Both functions f(x) and g(x) between x=a and x=b with the area between f(x)
+    and the x-axis shaded in green and the area between g(x) and the x-axis
+    shaded in indigo.
+  </shortDescription>
+  <lineSegment styleNumber="9" fixLocation endpoints="($a,$$g($a)) ($a,0)" />
+  <lineSegment
+    styleNumber="9"
+    fixLocation
+    endpoints="(7,$$g(7)) (7,0)"
+    labelIsName
+  />
+  <label positionFromAnchor="right" anchor="($a,-0.5)" fixLocation>
+    <m>\huge a</m>
+  </label>
   <label anchor="($b,-0.5)" fixLocation><m>\huge b</m></label>
   <label fixLocation anchor="(($a+$b)/1.9,3.25)"><m>\huge f(x)</m></label>
- <label fixLocation anchor="($a+0.5,$$g($a)+0.5)"><m>\huge g(x)</m></label>
-  <regionBetweenCurves hide="false" styleNumber="9" boundaryValues="2 7">$g $z</regionBetweenCurves>
-  <regionBetweenCurves hide="false" styleNumber="10" boundaryValues="2 7">$f $z</regionBetweenCurves>
-  <repeatForSequence name="test" from="$a" to="$b-$deltaX" step="$deltaX" valueName="v">
+  <label fixLocation anchor="($a+0.5,$$g($a)+0.5)"><m>\huge g(x)</m></label>
+  <regionBetweenCurves hide="false" styleNumber="9" boundaryValues="2 7">
+    $g $z
+  </regionBetweenCurves>
+  <regionBetweenCurves hide="false" styleNumber="10" boundaryValues="2 7">
+    $f $z
+  </regionBetweenCurves>
+  <repeatForSequence
+    name="test"
+    from="$a"
+    to="$b-$deltaX"
+    step="$deltaX"
+    valueName="v"
+  >
     <setup>
       <!-- Prevent weird domain round-off issues right endpoint -->
       <math name="rightPoint" simplify>min($v+$deltaX,$b)</math>
       <point name="v1" labelIsName>($v, $$f($v))</point>
       <point name="v2" labelIsName>($rightPoint, $$g($rightPoint-.001))</point>
     </setup>
-  <rectangle hide="not($showBoxes)" styleNumber="5" filled vertices="$v1 $v2" />
+    <rectangle
+      hide="not($showBoxes)"
+      styleNumber="5"
+      filled
+      vertices="$v1 $v2"
+    />
   </repeatForSequence>
 </graph>
 <booleanInput name="showBoxes">
   <label>Show Riemann sum approximation.</label>
 </booleanInput>
-<slider hide="not($showBoxes)" initialValue="3" from="1" to="15" name="rects" showTicks="false"><label>Number of Rectangles</label></slider>
-<setup><number name="deltaX">($b-$a)/$rects</number></setup>
+<slider
+  hide="not($showBoxes)"
+  initialValue="3"
+  from="1"
+  to="15"
+  name="rects"
+  showTicks="false"
+>
+  <label>Number of Rectangles</label>
+</slider>
+<setup>
+  <number name="deltaX">($b-$a)/$rects</number>
+</setup>

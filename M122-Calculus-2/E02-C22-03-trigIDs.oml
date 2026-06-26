@@ -7,20 +7,35 @@
     Scaffolded derivation of the Integration by Parts identity.
   Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E02-C22-03-trigIDs.oml
 -->
-<answer name="credit"><mathInput name="test"><label>Check your work:</label></mathInput>
-<award><when>
-<boolean><or><!-- Form 1: (sin(x))^2 -->
-  <matchesPattern pattern="(sin(()))^2 + (cos(()))^2 = 1">$test</matchesPattern>
-  <!-- Form 2: sin^2(x) interpreted as (sin^2)(x) -->
-  <matchesPattern pattern="sin^2(()) + cos^2(()) = 1">$test</matchesPattern>
-  <!-- Form 3: explicit sin(x)^2 notation -->
-  <matchesPattern pattern="(sin(()))^2 + (cos(()))^2 = 1">$test</matchesPattern>
-  <!-- Form 4: no parentheses around functions -->
-  <matchesPattern pattern="sin(())^2 + cos(())^2 = 1">$test</matchesPattern></or>
-</boolean>  
-</when></award>
-</answer><br/>
+<answer name="credit">
+  <mathInput name="test"><label>Check your work:</label></mathInput>
+  <award>
+    <when>
+      <boolean>
+        <or>
+          <!-- Form 1: (sin(x))^2 -->
+          <matchesPattern pattern="(sin(()))^2 + (cos(()))^2 = 1">
+            $test
+          </matchesPattern>
+          <!-- Form 2: sin^2(x) interpreted as (sin^2)(x) -->
+          <matchesPattern pattern="sin^2(()) + cos^2(()) = 1">
+            $test
+          </matchesPattern>
+          <!-- Form 3: explicit sin(x)^2 notation -->
+          <matchesPattern pattern="(sin(()))^2 + (cos(()))^2 = 1">
+            $test
+          </matchesPattern>
+          <!-- Form 4: no parentheses around functions -->
+          <matchesPattern pattern="sin(())^2 + cos(())^2 = 1">
+            $test
+          </matchesPattern>
+        </or>
+      </boolean>
+    </when>
+  </award>
+</answer><br />
 <feedback condition="$credit.creditAchieved">
-  Note, my answer checking code has a known limitation. Be sure your variables match, such as <me>\sin^2(x)+\cos^2(x)=1,</me>
-  not <me>\sin^2(x)+\cos^2(y)=1.</me>
+  Note, my answer checking code has a known limitation. Be sure your variables
+  match, such as <me>\sin^2(x)+\cos^2(x)=1,</me> not
+  <me>\sin^2(x)+\cos^2(y)=1.</me>
 </feedback>

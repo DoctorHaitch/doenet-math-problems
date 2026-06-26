@@ -10,59 +10,78 @@
 -->
 
 <setup>
-  <styleDefinition styleNumber="1"
+  <styleDefinition
+    styleNumber="1"
     lineColor="#2E86C1"
     lineOpacity=".85"
     fillColor="#2E86C1"
-    fillColorWord="Blue" />
-  <styleDefinition styleNumber="2"
+    fillColorWord="Blue"
+  />
+  <styleDefinition
+    styleNumber="2"
     lineColor="#CB4335"
     lineOpacity=".75"
     fillColor="#CB4335"
-    fillColorWord="Vermillion" />
-  <styleDefinition styleNumber="3"
+    fillColorWord="Vermillion"
+  />
+  <styleDefinition
+    styleNumber="3"
     lineColor="#3C7FA6"
     lineOpacity=".8"
     fillColor="#5499C7"
     fillOpacity=".1"
-    fillColorWord="Sky Blue" />
-  <styleDefinition styleNumber="4"
+    fillColorWord="Sky Blue"
+  />
+  <styleDefinition
+    styleNumber="4"
     lineColor="#8E44AD"
     fillColor="#8E44AD"
     fillOpacity="1"
-    fillColorWord="Reddish Purple" />
-  
-  <styleDefinition styleNumber="11"
+    fillColorWord="Reddish Purple"
+  />
+
+  <styleDefinition
+    styleNumber="11"
     lineColor="#243746"
     fillColor="#243746"
     fillOpacity="1"
     lineStyle="dashed"
     fillColorWord="Dark Gray"
-    lineWidth="5" />
+    lineWidth="5"
+  />
 </setup>
-<graph fixAxes xMin="-0.1" xMax="3.5" yMin="-0.2" yMax="3.5" showNavigation="false" grid=".75 .75">
+<graph
+  fixAxes
+  xMin="-0.1"
+  xMax="3.5"
+  yMin="-0.2"
+  yMax="3.5"
+  showNavigation="false"
+  grid=".75 .75"
+>
   <shortDescription>
     Slope field and solution plot for dP/dt=P(2-P) for t=0 to t=3.5.
   </shortDescription>
 
+
+
   <!-- EQUILIBRIA -->
   <line name="test" slope="0" through="(0,0)" styleNumber="11" />
   <label anchor="(1.6,.15)"><m>P=0</m></label>
-  <line slope="0" through="(0,2)" styleNumber="11"/>
+  <line slope="0" through="(0,2)" styleNumber="11" />
   <label anchor="(1.6,2.15)"><m>P=2</m></label>
   <!-- DRAGGABLE POINT -->
   <point name="P0" draggable="true" labelPosition="bottom">
-    <label anchor="P0">IC</label>
-    (1,1)
+    <label anchor="P0">IC</label> (1,1)
   </point>
-<group name="Solution" hide="not($showSoln)">
-  <!-- SOLUTION CURVE -->
-  <function>
-    2 / (1 + ((2-$P0.y)/$P0.y * exp(2*$P0.x)) * exp(-2*x))
-  </function>
-</group>
+  <group name="Solution" hide="not($showSoln)">
+    <!-- SOLUTION CURVE -->
+    <function>2 / (1 + ((2-$P0.y)/$P0.y * exp(2*$P0.x)) * exp(-2*x))</function>
+  </group>
 </graph>
 
 <booleanInput prefill="false" name="showSoln">
-  <label>Show Particular Solution passing through Initial Condition (IC).</label>
+  <label>
+    Show Particular Solution passing through Initial Condition (IC).
+  </label>
 </booleanInput>

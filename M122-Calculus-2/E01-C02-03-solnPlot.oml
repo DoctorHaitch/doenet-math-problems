@@ -9,67 +9,98 @@
   Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E01-C02-03-solnPlot.oml
 -->
 <setup>
-  <styleDefinition styleNumber="1"
+  <styleDefinition
+    styleNumber="1"
     lineColor="#2E86C1"
     lineOpacity=".85"
     fillColor="#2E86C1"
     lineWidth="2.5"
-    fillColorWord="Blue" />
-  <styleDefinition styleNumber="2"
+    fillColorWord="Blue"
+  />
+  <styleDefinition
+    styleNumber="2"
     lineColor="#CB4335"
     lineOpacity=".75"
     lineWidth="2.5"
     fillColor="#CB4335"
-    fillColorWord="Vermillion" />
-  <styleDefinition styleNumber="3"
+    fillColorWord="Vermillion"
+  />
+  <styleDefinition
+    styleNumber="3"
     lineColor="#3C7FA6"
     lineOpacity=".8"
     fillColor="#5499C7"
     lineWidth="2.5"
     fillOpacity=".1"
-    fillColorWord="Sky Blue" />
-  <styleDefinition styleNumber="4"
+    fillColorWord="Sky Blue"
+  />
+  <styleDefinition
+    styleNumber="4"
     lineColor="#8E44AD"
     fillColor="#8E44AD"
     lineWidth="2.5"
     fillOpacity="1"
-    fillColorWord="Reddish Purple" />  
-  <styleDefinition styleNumber="5"
+    fillColorWord="Reddish Purple"
+  />
+  <styleDefinition
+    styleNumber="5"
     lineColor="#8A6F08"
     lineOpacity=".74"
     lineWidth="3"
     lineStyle="dashed"
     fillColor="#B7950B"
-    fillColorWord="Mustard" />
-  <styleDefinition styleNumber="6"
+    fillColorWord="Mustard"
+  />
+  <styleDefinition
+    styleNumber="6"
     lineColor="#2E8B78"
     lineOpacity=".81"
     lineWidth="3"
     fillColor="#45B39D"
-    fillColorWord="Blueish Green" />
-  <styleDefinition styleNumber="7"
+    fillColorWord="Blueish Green"
+  />
+  <styleDefinition
+    styleNumber="7"
     lineColor="#9A7D0A"
     lineWidth="2.5"
     lineOpacity=".85"
     fillColor="#D4AC0D"
-    fillColorWord="Yellow" />
+    fillColorWord="Yellow"
+  />
 </setup>
-<graph xMin="-3" xMax="3" yMin="-4" yMax="4"  grid="1 1" fixAxes addControls="false">
+<graph
+  xMin="-3"
+  xMax="3"
+  yMin="-4"
+  yMax="4"
+  grid="1 1"
+  fixAxes
+  addControls="false"
+>
   <shortDescription>Frak off</shortDescription>
   <repeatForSequence from="-3" to="3" valueName="t" step="1">
     <function fixed styleNumber="$t+4" domain="[-3,3]">x^2 + $t</function>
   </repeatForSequence>
-  <point hide="not($showIC)" draggable labelPosition="bottom" name="P0" coords="(-2,-3)">
-    <constrainToGrid dx=".25" dy=".25" />
-    <label>IC</label>
+  <point
+    hide="not($showIC)"
+    draggable
+    labelPosition="bottom"
+    name="P0"
+    coords="(-2,-3)"
+  >
+    <constrainToGrid dx=".25" dy=".25" /> <label>IC</label>
   </point>
 </graph>
 <p>
   <booleanInput name="showIC">
     <label>Show draggable Initial Condition.</label>
-  </booleanInput><br/>
-  <number name="C" hide>$P0.y - ($P0.x)^2</number>
-  <group  hide="not($showIC)">
-  Particular Solution: <m>y= x <conditionalContent condition="$C>0">+</conditionalContent> <math format="text" simplify> $C </math> </m>
-    </group>
+  </booleanInput><br /> <number name="C" hide>$P0.y - ($P0.x)^2</number> <group
+    hide="not($showIC)"
+  >
+    Particular Solution: <m>
+      y= x
+      <conditionalContent condition="$C>0">+</conditionalContent>
+      <math format="text" simplify>$C</math>
+    </m>
+  </group>
 </p>

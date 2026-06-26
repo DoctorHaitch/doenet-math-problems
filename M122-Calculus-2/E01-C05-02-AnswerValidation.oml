@@ -10,34 +10,24 @@
 -->
 <p>
   <answer name="ans">
-    <mathInput functionSymbols="y">
-      <label>Check your work:</label>
-    </mathInput>
-    <award>
-      <m>y = \frac{1}{x^2+\frac{1}{7}}</m>
-    </award>
-    <award credit="0" name="genSoln">
-      <m>y = \frac{1}{x^2+C}</m>
-    </award>
+    <mathInput functionSymbols="y"><label>Check your work:</label></mathInput>
+    <award><m>y = \frac{1}{x^2+\frac{1}{7}}</m></award>
+    <award credit="0" name="genSoln"><m>y = \frac{1}{x^2+C}</m></award>
     <award credit="0" name="genSoln2">
-      <math format="latex" functionSymbols="y">
-        y(x) = \frac{1}{x^2+C}
-      </math>
+      <math format="latex" functionSymbols="y">y(x) = \frac{1}{x^2+C}</math>
     </award>
     <award>
-      <math format="latex" functionSymbols="y">
-        y(x) = \frac{1}{x^2+1/7}
-      </math>
+      <math format="latex" functionSymbols="y">y(x) = \frac{1}{x^2+1/7}</math>
     </award>
   </answer>
 </p>
 <setup>
   <boolean name="check">
-    (<matchesPattern pattern="y=1/(x^2+())">$ans</matchesPattern> and not($ans.creditAchieved)) and not($genSoln)
+    (<matchesPattern pattern="y=1/(x^2+())">$ans</matchesPattern> and not($ans.creditAchieved))
+    and not($genSoln)
   </boolean>
   <boolean name="expression">
-    not(<matchesPattern pattern="＿=＿">$ans</matchesPattern>)
-    and
+    not(<matchesPattern pattern="＿=＿">$ans</matchesPattern>) and
     <matchesPattern pattern="()">$ans</matchesPattern>
   </boolean>
 </setup>
@@ -45,9 +35,11 @@
   Close! Not quite the right constant!
 </feedback>
 <feedback condition="$expression">
-  It seems you've entered an expression.
-  Looking back at the definition of a differential equation, it should be a <em>function</em>, which by definition is a relationship between indepedent and dependent variables.
+  It seems you've entered an expression. Looking back at the definition of a
+  differential equation, it should be a <em>function</em>, which by definition is
+  a relationship between indepedent and dependent variables.
 </feedback>
 <feedback condition="$genSoln or $genSoln2">
-  You're most of the way there! But that's the <em>general solution</em>, not the <em>particular solution</em> we're looking for.
+  You're most of the way there! But that's the <em>general solution</em>, not the
+  <em>particular solution</em> we're looking for.
 </feedback>

@@ -9,15 +9,10 @@
   Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E01-C02-02-AnswerValidation.oml
 -->
 <p>
-  Check your work:
-  <answer name="ans">
+  Check your work: <answer name="ans">
     <shortDescription>Check your work</shortDescription>
-    <award>
-      y=x^2+C
-    </award>
-    <award name="missingConstant" credit="0" >
-      y=x^2
-    </award>
+    <award>y=x^2+C</award>
+    <award name="missingConstant" credit="0">y=x^2</award>
   </answer>
 </p>
 <setup>
@@ -25,9 +20,7 @@
     (<matchesPattern pattern="y = x^2 + ()">$ans</matchesPattern> and not($ans.creditAchieved))
   </boolean>
   <boolean name="expression">
-    not(<matchesPattern pattern="＿=＿">$ans</matchesPattern>)
-    and
-    ($ans.numSubmissions>0)
+    not(<matchesPattern pattern="＿=＿">$ans</matchesPattern>) and ($ans.numSubmissions>0)
   </boolean>
 </setup>
 <feedback condition="$check">
@@ -37,6 +30,7 @@
   Close! But I think you forgot something!
 </feedback>
 <feedback condition="$expression">
-  It seems you've entered an expression.
-  Looking back at the definition of a differential equation, it should be a <em>function</em>, which by definition is a relationship between indepedent and dependent variables.
+  It seems you've entered an expression. Looking back at the definition of a
+  differential equation, it should be a <em>function</em>, which by definition is
+  a relationship between indepedent and dependent variables.
 </feedback>

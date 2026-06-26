@@ -13,63 +13,50 @@
 <p>Find the order of each DE.</p>
 
 <p>
-  1.
-  <m>y''' + x^8 y'' + y' = 0</m>
+  1. <m>y''' + x^8 y'' + y' = 0</m>
   <answer name="part1">
-    <shortDescription>y''' + x^8 y'' + y' = 0</shortDescription>
-    3
+    <shortDescription>y''' + x^8 y'' + y' = 0</shortDescription> 3
   </answer>
 </p>
 <feedback condition="$part1=8">
   Recall that
-  <me>x^8 = x\cdot x \cdot x\cdot x\cdot x\cdot x\cdot x\cdot x, </me>
-  represents multiplication of <m>x</m>, not its derivative.
+  <me>x^8 = x\cdot x \cdot x\cdot x\cdot x\cdot x\cdot x\cdot x,</me> represents
+  multiplication of <m>x</m>, not its derivative.
 </feedback>
 <p>
-  2.
-  <m>\displaystyle \frac{d^2y}{dx^2}+7y \left(\frac{dy}{dx}\right)^5 = 8</m>
+  2. <m>\displaystyle \frac{d^2y}{dx^2}+7y \left(\frac{dy}{dx}\right)^5 = 8</m>
   <answer name="de2">
-    <shortDescription>(d^2y)/(dx^2) + 7y (dy/dx)^5=8</shortDescription>
-    2
+    <shortDescription>(d^2y)/(dx^2) + 7y (dy/dx)^5=8</shortDescription> 2
   </answer>
 </p>
 <feedback condition="$de2=5">
-  Careful,
-  <me>\left(\frac{dy}{dx}\right)^5</me>
-  is not the fifth derivative. It is the first derivative to the 5th power!
+  Careful, <me>\left(\frac{dy}{dx}\right)^5</me> is not the fifth derivative. It
+  is the first derivative to the 5th power!
 </feedback>
 <p>
-  3.
-  <m>\displaystyle\frac{du}{dt} = y^2 +\sin(u)</m>
+  3. <m>\displaystyle\frac{du}{dt} = y^2 +\sin(u)</m>
+  <answer><shortDescription>du/dt = y^2 + sin(u)</shortDescription> 1</answer>
+</p>
+<p>
+  4. <m>\displaystyle y^{(5)}(x) = e^{y(x)}+y'(x)</m>
   <answer>
-    <shortDescription>du/dt = y^2 + sin(u)</shortDescription>
-    1
+    <shortDescription>y^{(5)}(x) = e^{y(x)}+y'(x)</shortDescription> 5
   </answer>
 </p>
 <p>
-  4.
-  <m>\displaystyle y^{(5)}(x) = e^{y(x)}+y'(x)</m>
+  5. <m>\displaystyle \frac{d^2y}{dt^2} - \frac{d^2y}{dx^2}+\sin(y)=0</m>
   <answer>
-    <shortDescription>y^{(5)}(x) = e^{y(x)}+y'(x)</shortDescription>
-    5
+    <shortDescription>(d^2y)/(dt^2) - (d^2y)(dx^2)+sin(y)=0</shortDescription> 2
   </answer>
 </p>
 <p>
-  5.
-  <m>\displaystyle \frac{d^2y}{dt^2} - \frac{d^2y}{dx^2}+\sin(y)=0</m>
-  <answer>
-    <shortDescription>(d^2y)/(dt^2) - (d^2y)(dx^2)+sin(y)=0</shortDescription>
-    2
-  </answer>
-</p>
-<p>
-  6.
-  <m>\ddddot{y} + 2x\dot{y} + y = 0</m>
+  6. <m>\ddddot{y} + 2x\dot{y} + y = 0</m>
   <answer name="part6">
-    <shortDescription><m>\ddot{y} + 2x\dot{y} + y = 0</m></shortDescription>
-    4
+    <shortDescription><m>\ddot{y} + 2x\dot{y} + y = 0</m></shortDescription> 4
   </answer>
 </p>
 <feedback condition="$part6.creditAchieved">
-  The "dot" notation dates back to Newton's original work on derivatives. It is still used widely in physics to denote a derivative with respect to time, and then mixed with the prime notation for derivatives with respect to space.
+  The "dot" notation dates back to Newton's original work on derivatives. It is
+  still used widely in physics to denote a derivative with respect to time, and
+  then mixed with the prime notation for derivatives with respect to space.
 </feedback>

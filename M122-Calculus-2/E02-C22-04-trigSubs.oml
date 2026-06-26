@@ -8,7 +8,7 @@
   Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E02-C22-04-trigSubs.oml
 -->
 <table name="table1">
-  <title></title>
+  <title>Trigonometric Substitution Identities</title>
   <tabular left="minor" right="minor" top="minor" bottom="minor">
     <row header>
       <cell>Expression</cell>
@@ -19,7 +19,8 @@
       <cell><m>a^2-x^2</m></cell>
       <cell colSpan="3" halign="right">
         <answer>
-          <mathInput><label>x=</label></mathInput><award><m>a\sin t</m></award>
+          <mathInput><label>x=</label></mathInput>
+          <award><m>a\sin t</m></award>
         </answer>, with <m>\frac{-\pi}{2}\leq t \leq \frac{\pi}{2}</m>
       </cell>
       <cell colSpan="2"><m>1-\sin^2t = \cos^2t</m></cell>
@@ -28,7 +29,8 @@
       <cell><m>a^2+x^2</m></cell>
       <cell colSpan="3" halign="right">
         <answer>
-          <mathInput><label>x=</label></mathInput><award><m>a\tan t</m></award>
+          <mathInput><label>x=</label></mathInput>
+          <award><m>a\tan t</m></award>
         </answer>, with <m>\frac{-\pi}{2} < t < \frac{\pi}{2}</m>
       </cell>
       <cell colSpan="2"><m>1+\tan^2t = \sec^2t</m></cell>
@@ -37,8 +39,10 @@
       <cell><m>x^2-a^2</m></cell>
       <cell colSpan="3" halign="right">
         <answer>
-          <mathInput><label>x=</label></mathInput><award><m>a\sec t</m></award>
-        </answer>, with <m>0 \leq t < \frac{\pi}{2}</m> <br />or <m>\pi \leq t < \frac{3\pi}{2}</m>
+          <mathInput><label>x=</label></mathInput>
+          <award><m>a\sec t</m></award>
+        </answer>, with <m>0 \leq t < \frac{\pi}{2}</m> <br />or
+        <m>\pi \leq t < \frac{3\pi}{2}</m>
       </cell>
       <cell colSpan="2"><m>1+\tan^2t = \sec^2t</m></cell>
     </row>

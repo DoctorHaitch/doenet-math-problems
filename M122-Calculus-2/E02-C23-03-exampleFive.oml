@@ -9,75 +9,99 @@
 -->
 <cascade>
   <div>
-    <mathInput name="var"><label>Using the dummy variable</label></mathInput>,  <!-- prefillLatex="t" -->
-    <answer><mathInput><label>we introduce the substitution <m>x=</m></label></mathInput><m>a \sec $var</m></answer>.
-    <answer simplifyOnCompare="none" symbolicEquality="true">
+    <mathInput name="var"><label>Using the dummy variable</label></mathInput>,
+    <!-- prefillLatex="t" -->
+    <answer>
+      <mathInput>
+        <label>we introduce the substitution <m>x=</m></label>
+      </mathInput><m>a \sec $var</m>
+    </answer>. <answer simplifyOnCompare="none" symbolicEquality="true">
       <mathInput><label>Then <m>dx=</m></label></mathInput>
       <award><math format="latex">a \tan $var d$var</math></award>
       <award><math format="latex">\tan $var a d$var</math></award>
     </answer>
   </div>
   <div>
-    <br />
-    <answer>
-    <mathInput><label>Then the antiderivative in terms of $var is</label></mathInput> <!-- prefillLatex="\ln\left|\sec\ t+\tan\ t\right|+C" -->
-    <award name="positive"><math format="latex">\ln|\sec $var + \tan $var|+C</math></award>
-    <award name="negative"><math format="latex">-\ln|\sec $var - \tan $var|+C</math></award>
-    </answer>.</div>
+    <br /> <answer>
+      <mathInput>
+        <label>Then the antiderivative in terms of $var is</label>
+      </mathInput>
+      <!-- prefillLatex="\ln\left|\sec\ t+\tan\ t\right|+C" -->
+      <award name="positive">
+        <math format="latex">\ln|\sec $var + \tan $var|+C</math>
+      </award>
+      <award name="negative">
+        <math format="latex">-\ln|\sec $var - \tan $var|+C</math>
+      </award>
+    </answer>.
+  </div>
   <div>
-    <graph size="small" displayXAxisTickLabels="false" displayYAxisTickLabels="false" xMin="-0.5" xMax="2.5" yMin="-0.5" yMax="2.5" showNavigation="false">
+    <graph
+      size="small"
+      displayXAxisTickLabels="false"
+      displayYAxisTickLabels="false"
+      xMin="-0.5"
+      xMax="2.5"
+      yMin="-0.5"
+      yMax="2.5"
+      showNavigation="false"
+    >
       <shortDescription>asdf</shortDescription>
       <rectangle vertices="(2,0) (14.5/8, 1.5/8)" />
-      <triangle vertices="(0,0) (2, 0) (2,2)"></triangle>
-      <curve 
-        name="angleArc" 
-        variable="t" parMin="0" parMax="pi/4" labelPosition="right">
-          (3/8 cos(t), 3/8 sin(t))
+      <triangle vertices="(0,0) (2, 0) (2,2)" />
+      <curve
+        name="angleArc"
+        variable="t"
+        parMin="0"
+        parMax="pi/4"
+        labelPosition="right"
+      >
+        (3/8 cos(t), 3/8 sin(t))
       </curve>
       <label anchor="(7/16, 3/16)"><m>\large$var</m></label>
-      <label hide="$ansA.creditAchieved" anchor="(2.15, 1)"><m>\Large \overline a</m></label>
-      <label hide="$ansB.creditAchieved" anchor="(1.2, -0.2)"><m>\Large \overline b</m></label>
-      <label hide="$ansC.creditAchieved" anchor="(.95, 1.2)"><m>\Large \overline c</m></label>
-      <label hide="not($ansA.creditAchieved)" anchor="(2.15, 1)"><m>\Large $answerA</m></label>
-      <label hide="not($ansB.creditAchieved)" anchor="(1.2, -0.2)"><m>\Large $answerB</m></label>
-      <label hide="not($ansC.creditAchieved)" anchor="(.95, 1.2)" positionFromAnchor="left"><m>\Large $answerC</m></label>
+      <label hide="$ansA.creditAchieved" anchor="(2.15, 1)">
+        <m>\Large \overline a</m>
+      </label>
+      <label hide="$ansB.creditAchieved" anchor="(1.2, -0.2)">
+        <m>\Large \overline b</m>
+      </label>
+      <label hide="$ansC.creditAchieved" anchor="(.95, 1.2)">
+        <m>\Large \overline c</m>
+      </label>
+      <label hide="not($ansA.creditAchieved)" anchor="(2.15, 1)">
+        <m>\Large $answerA</m>
+      </label>
+      <label hide="not($ansB.creditAchieved)" anchor="(1.2, -0.2)">
+        <m>\Large $answerB</m>
+      </label>
+      <label
+        hide="not($ansC.creditAchieved)"
+        anchor="(.95, 1.2)"
+        positionFromAnchor="left"
+      >
+        <m>\Large $answerC</m>
+      </label>
     </graph>
-  <setup>
-    <m name="answerA">\sqrt{x^2-a^2}</m>
-    <m name="answerB">a</m>
-    <m name="answerC">x</m>
-  </setup>
-  <answer name="ansA">
-    <mathInput>
-      <label>
-        <m>\overline a = </m>
-      </label>
-    </mathInput>
-    <award>$answerA</award>
-  </answer><br/>
-  <answer name="ansB">
-    <mathInput>
-      <label>
-        <m>\overline b = </m>
-      </label>
-    </mathInput>
-    <award>$answerB</award>
-  </answer><br/>
-  <answer name="ansC">
-    <mathInput>
-      <label>
-        <m>\overline c = </m>
-      </label>
-    </mathInput>
-    <award><m>$answerC</m></award>
-  </answer><br/>
-    </div>
+    <setup>
+      <m name="answerA">\sqrt{x^2-a^2}</m>
+      <m name="answerB">a</m>
+      <m name="answerC">x</m>
+    </setup>
+    <answer name="ansA">
+      <mathInput><label><m>\overline a =</m></label></mathInput>
+      <award>$answerA</award>
+    </answer><br /> <answer name="ansB">
+      <mathInput><label><m>\overline b =</m></label></mathInput>
+      <award>$answerB</award>
+    </answer><br /> <answer name="ansC">
+      <mathInput><label><m>\overline c =</m></label></mathInput>
+      <award><m>$answerC</m></award>
+    </answer><br />
+  </div>
   <div>
     <answer>
       <mathInput name="finalAns">
-        <label>
-          Thus, the final answer in terms of <m>x</m> is
-        </label>
+        <label>Thus, the final answer in terms of <m>x</m> is</label>
       </mathInput>
       <award>
         <m>\ln\left|\frac{x}{a}+\frac{\sqrt{x^{2}-a^{2}}}{a}\right|+C</m>

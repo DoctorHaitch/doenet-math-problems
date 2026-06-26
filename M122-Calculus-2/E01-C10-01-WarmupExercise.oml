@@ -8,14 +8,35 @@
   Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E01-C10-01-WarmupExercise.oml
 -->
 
+
+
+
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%
      %%%%%%%%%%% Common Variables
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 <setup>
   <number name="a">2</number>
   <number name="b">7</number>
-  <styleDefinition name="MGreenStyle" styleNumber="10" lineWidth="3" lineStyle="solid" lineColor="#007C5A" lineColorWord="Green" fillOpacity=".28" fillColor="#009E73" />
-  <styleDefinition name="MBlueStyle" styleNumber="9" lineWidth="3" lineStyle="solid" lineColor="#2A7F9E" lineOpacity=".77" lineColorWord="light blue" fillColor="#77BBDD" />
+  <styleDefinition
+    name="MGreenStyle"
+    styleNumber="10"
+    lineWidth="3"
+    lineStyle="solid"
+    lineColor="#007C5A"
+    lineColorWord="Green"
+    fillOpacity=".28"
+    fillColor="#009E73"
+  />
+  <styleDefinition
+    name="MBlueStyle"
+    styleNumber="9"
+    lineWidth="3"
+    lineStyle="solid"
+    lineColor="#2A7F9E"
+    lineOpacity=".77"
+    lineColorWord="light blue"
+    fillColor="#77BBDD"
+  />
   <function name="f" styleNumber="10" domain="[2,7]">1.5*sin(x)+4</function>
   <function name="g" styleNumber="9" domain="[2,7]">1/3*cos(x)+7</function>
   <function styleNumber="10" name="z" domain="[2,7]">0</function>
@@ -24,103 +45,186 @@
      %%%%%%%%%%%%%%%%% First Plot
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 <exercise noAutoTitle>
-<graph fixAxes width="80%" showBorder="false" aspectRatio="1.75" grid="true" xmin="1" xmax="8" displayXAxisTickLabels="false" ymin="-1" ymax="8" showNavigation="false" decorative>
-  <shortDescription>A function f(x) between x=a and x=b with the area between f(x) and the x-axis shaded in $f.styleDescription.</shortDescription>
-  <lineSegment styleNumber="10" fixLocation endpoints="($a,$$f($a)) ($a,0)" />  
-  <lineSegment styleNumber="10" fixLocation endpoints="(7,$$f(7)) (7,0)" labelIsName />
-  <label positionFromAnchor="right" anchor="($a,-0.5)" fixLocation><m>\huge a</m></label>
-  <label anchor="($b,-0.5)" fixLocation><m>\huge b</m></label>
- <label fixLocation anchor="(($a+$b)/1.9,3.25)"><m>\huge f(x)</m></label>
-  <regionBetweenCurves hide="false" styleNumber="10" boundaryValues="2 7">$f $z</regionBetweenCurves>
-</graph>
-<p>
-  
-  <answer>
-    <label>Write an expression that represents the $f.styleDescription shaded area:</label>
-    <m>\int_a^b f(x) dx</m>
-  </answer>
-</p>
+  <graph
+    fixAxes
+    width="80%"
+    showBorder="false"
+    aspectRatio="1.75"
+    grid="true"
+    xmin="1"
+    xmax="8"
+    displayXAxisTickLabels="false"
+    ymin="-1"
+    ymax="8"
+    showNavigation="false"
+    decorative
+  >
+    <shortDescription>
+      A function f(x) between x=a and x=b with the area between f(x) and the
+      x-axis shaded in $f.styleDescription.
+    </shortDescription>
+    <lineSegment styleNumber="10" fixLocation endpoints="($a,$$f($a)) ($a,0)" />
+    <lineSegment
+      styleNumber="10"
+      fixLocation
+      endpoints="(7,$$f(7)) (7,0)"
+      labelIsName
+    />
+    <label positionFromAnchor="right" anchor="($a,-0.5)" fixLocation>
+      <m>\huge a</m>
+    </label>
+    <label anchor="($b,-0.5)" fixLocation><m>\huge b</m></label>
+    <label fixLocation anchor="(($a+$b)/1.9,3.25)"><m>\huge f(x)</m></label>
+    <regionBetweenCurves hide="false" styleNumber="10" boundaryValues="2 7">
+      $f $z
+    </regionBetweenCurves>
+  </graph>
+  <p>
+    <answer>
+      <label>
+        Write an expression that represents the $f.styleDescription shaded area:
+      </label>
+      <m>\int_a^b f(x) dx</m>
+    </answer>
+  </p>
 </exercise>
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%
      %%%%%%%%%%%%%%%% Second Plot
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 <exercise noAutoTitle>
-<graph fixAxes width="80%" showBorder="false" aspectRatio="1.75" grid="true" xmin="1" xmax="8" displayXAxisTickLabels="false" ymin="-1" ymax="8" showNavigation="false" decorative>
-  <shortDescription>A function g(x) between x=a and x=b with the area between g(x) and the x-axis shaded in $g.styleDescription.</shortDescription>
-  <lineSegment styleNumber="9" fixLocation endpoints="($a,$$g($a)) ($a,0)" />  
-  <lineSegment styleNumber="9" fixLocation endpoints="(7,$$g(7)) (7,0)" labelIsName />
-  <label positionFromAnchor="right" anchor="($a,-0.5)" fixLocation><m>\huge a</m></label>
-  <label anchor="($b,-0.5)" fixLocation><m>\huge b</m></label>
- <label fixLocation anchor="($a+0.5,$$g($a)+0.5)"><m>\huge g(x)</m></label>
-  <regionBetweenCurves hide="false" styleNumber="9" boundaryValues="2 7">$g $z</regionBetweenCurves>
-</graph>
-<p>
-  <answer>
-    <label>
-      Write an expression that represents the $g.styleDescription shaded area: 
+  <graph
+    fixAxes
+    width="80%"
+    showBorder="false"
+    aspectRatio="1.75"
+    grid="true"
+    xmin="1"
+    xmax="8"
+    displayXAxisTickLabels="false"
+    ymin="-1"
+    ymax="8"
+    showNavigation="false"
+    decorative
+  >
+    <shortDescription>
+      A function g(x) between x=a and x=b with the area between g(x) and the
+      x-axis shaded in $g.styleDescription.
+    </shortDescription>
+    <lineSegment styleNumber="9" fixLocation endpoints="($a,$$g($a)) ($a,0)" />
+    <lineSegment
+      styleNumber="9"
+      fixLocation
+      endpoints="(7,$$g(7)) (7,0)"
+      labelIsName
+    />
+    <label positionFromAnchor="right" anchor="($a,-0.5)" fixLocation>
+      <m>\huge a</m>
     </label>
-    <m>\int_a^b g(x) dx</m>
-  </answer>
-</p>
+    <label anchor="($b,-0.5)" fixLocation><m>\huge b</m></label>
+    <label fixLocation anchor="($a+0.5,$$g($a)+0.5)"><m>\huge g(x)</m></label>
+    <regionBetweenCurves hide="false" styleNumber="9" boundaryValues="2 7">
+      $g $z
+    </regionBetweenCurves>
+  </graph>
+  <p>
+    <answer>
+      <label>
+        Write an expression that represents the $g.styleDescription shaded area:
+      </label>
+      <m>\int_a^b g(x) dx</m>
+    </answer>
+  </p>
 </exercise>
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%
      %%%%%%%%%%%%%%%%% Third Plot
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 <exercise noAutoTitle>
-<graph fixAxes width="80%" showBorder="false" aspectRatio="1.75" grid="true" xmin="1" xmax="8" displayXAxisTickLabels="false" ymin="-1" ymax="8" showNavigation="false" decorative>
-  <shortDescription>Both functions f(x) and g(x) between x=a and x=b with the area between f(x) and the x-axis shaded in $f.styleDescription and the area between g(x) and the x-axis shaded in $g.styleDescription.</shortDescription>
-  <lineSegment styleNumber="9" fixLocation endpoints="($a,$$g($a)) ($a,0)" />  
-  <lineSegment styleNumber="9" fixLocation endpoints="(7,$$g(7)) (7,0)" labelIsName />
-  <label positionFromAnchor="right" anchor="($a,-0.5)" fixLocation><m>\huge a</m></label>
-  <label anchor="($b,-0.5)" fixLocation><m>\huge b</m></label>
-  <label fixLocation anchor="(($a+$b)/1.9,3.25)"><m>\huge f(x)</m></label>
- <label fixLocation anchor="($a+0.5,$$g($a)+0.5)"><m>\huge g(x)</m></label>
-  <regionBetweenCurves hide="false" styleNumber="9" boundaryValues="2 7">$g $z</regionBetweenCurves>
-  <regionBetweenCurves hide="false" styleNumber="10" boundaryValues="2 7">$f $z</regionBetweenCurves>
-</graph>
-<p>
-  <answer name="test">
-    <label>Write a mathematical expression which calculates the area which is $g.styleDescription, but not $f.styleDescription.</label>
-    <award>
-      <m>\int_{a}^{b}g\left(x\right)dx-\int_{a}^{b}f\left(x\right)dx</m>
-    </award>
-    <award credit="0" name="combinedNoParens">
-      <m>\int_a^b g(x)-f(x) dx</m>
-    </award>
-    <award name="combined">
-      <m>\int_a^b (g(x)-f(x)) dx</m>
-    </award>
-  </answer>
-</p>
+  <graph
+    fixAxes
+    width="80%"
+    showBorder="false"
+    aspectRatio="1.75"
+    grid="true"
+    xmin="1"
+    xmax="8"
+    displayXAxisTickLabels="false"
+    ymin="-1"
+    ymax="8"
+    showNavigation="false"
+    decorative
+  >
+    <shortDescription>
+      Both functions f(x) and g(x) between x=a and x=b with the area between
+      f(x) and the x-axis shaded in $f.styleDescription and the area between
+      g(x) and the x-axis shaded in $g.styleDescription.
+    </shortDescription>
+    <lineSegment styleNumber="9" fixLocation endpoints="($a,$$g($a)) ($a,0)" />
+    <lineSegment
+      styleNumber="9"
+      fixLocation
+      endpoints="(7,$$g(7)) (7,0)"
+      labelIsName
+    />
+    <label positionFromAnchor="right" anchor="($a,-0.5)" fixLocation>
+      <m>\huge a</m>
+    </label>
+    <label anchor="($b,-0.5)" fixLocation><m>\huge b</m></label>
+    <label fixLocation anchor="(($a+$b)/1.9,3.25)"><m>\huge f(x)</m></label>
+    <label fixLocation anchor="($a+0.5,$$g($a)+0.5)"><m>\huge g(x)</m></label>
+    <regionBetweenCurves hide="false" styleNumber="9" boundaryValues="2 7">
+      $g $z
+    </regionBetweenCurves>
+    <regionBetweenCurves hide="false" styleNumber="10" boundaryValues="2 7">
+      $f $z
+    </regionBetweenCurves>
+  </graph>
+  <p>
+    <answer name="test">
+      <label>
+        Write a mathematical expression which calculates the area which is
+        $g.styleDescription, but not $f.styleDescription.
+      </label>
+      <award>
+        <m>\int_{a}^{b}g\left(x\right)dx-\int_{a}^{b}f\left(x\right)dx</m>
+      </award>
+      <award credit="0" name="combinedNoParens">
+        <m>\int_a^b g(x)-f(x) dx</m>
+      </award>
+      <award name="combined"><m>\int_a^b (g(x)-f(x)) dx</m></award>
+    </answer>
+  </p>
   <setup>
     <boolean name="Backwards">
       <when>
-        $test=<m>\int_a^b (f(x)-g(x)) dx</m>
-        or
-        $test=<m>\int_a^b f(x) dx - \int_a^b g(x) dx</m>
+        $test=<m>\int_a^b (f(x)-g(x)) dx</m> or $test=<m>
+          \int_a^b f(x) dx - \int_a^b g(x) dx
+        </m>
       </when>
     </boolean>
   </setup>
-<feedback condition="$Backwards">
-  Careful! This is almost the correct answer, but look back at the relationship between the two areas closely. Which one is the $g.styleDescription area?
-</feedback>
-<feedback condition="$combinedNoParens">
-  <p>
-    Note, from the definition of integration
-    <me>
-      \int_{a}^{b} f(x)-g(x) dx
-      = \lim_{n\to\infty} \sum_{i=1}^n f(x_i)-g(x_i) \Delta x,
-    </me>
-    which is close, but not quite the correct integral!
-  </p>
-</feedback>
-<feedback condition="$combined">
-  <p>
-    While your answer is correct, it is not quite in the form we would expect based on the questions:
-    <me>\int_{a}^{b} f(x)\;dx - \int_{a}^{b} g(x) dx.</me>
-    Make sure you know why your answer is equivalent to this one!
-  </p>
-</feedback>
+  <feedback condition="$Backwards">
+    Careful! This is almost the correct answer, but look back at the
+    relationship between the two areas closely. Which one is the
+    $g.styleDescription area?
+  </feedback>
+  <feedback condition="$combinedNoParens">
+    <p>
+      Note, from the definition of integration
+      <me>
+        \int_{a}^{b} f(x)-g(x) dx = \lim_{n\to\infty} \sum_{i=1}^n f(x_i)-g(x_i)
+        \Delta x,
+      </me>
+      which is close, but not quite the correct integral!
+    </p>
+  </feedback>
+  <feedback condition="$combined">
+    <p>
+      While your answer is correct, it is not quite in the form we would expect
+      based on the questions:
+      <me>\int_{a}^{b} f(x)\;dx - \int_{a}^{b} g(x) dx.</me> Make sure you know
+      why your answer is equivalent to this one!
+    </p>
+  </feedback>
 </exercise>

@@ -9,26 +9,55 @@
 -->
 
 <setup>
-  <styleDefinition name="MGreenStyle" styleNumber="10" lineWidth="4.0" lineStyle="solid" lineColor="#007C5A" lineColorWord="Green" fillOpacity=".28" fillColor="#009E73" />
-  <styleDefinition styleNumber="9"
+  <styleDefinition
+    name="MGreenStyle"
+    styleNumber="10"
+    lineWidth="4.0"
+    lineStyle="solid"
+    lineColor="#007C5A"
+    lineColorWord="Green"
+    fillOpacity=".28"
+    fillColor="#009E73"
+  />
+  <styleDefinition
+    styleNumber="9"
     lineColor="#8A6F08"
     lineOpacity=".74"
     fillOpacity=".25"
     lineWidth="3"
     fillColor="#B7950B"
-    fillColorWord="Mustard" />
-  <styleDefinition styleNumber="3"
+    fillColorWord="Mustard"
+  />
+  <styleDefinition
+    styleNumber="3"
     lineColor="#3C7FA6"
     lineOpacity=".8"
     fillColor="#5499C7"
     fillOpacity=".15"
-    fillColorWord="Sky Blue" />
+    fillColorWord="Sky Blue"
+  />
 </setup>
-<graph xMin="-0.5" xMax="2" yMin="-0.5" yMax="1.5" fixAxes showNavigation="false" grid="pi/4 .5" displayXAxisTickLabels="false" displayYAxisTickLabels="false" xTickScaleFactor="pi/4" displayXAxisTicks="false" displayYAxisTicks="false">
+<graph
+  xMin="-0.5"
+  xMax="2"
+  yMin="-0.5"
+  yMax="1.5"
+  fixAxes
+  showNavigation="false"
+  grid="pi/4 .5"
+  displayXAxisTickLabels="false"
+  displayYAxisTickLabels="false"
+  xTickScaleFactor="pi/4"
+  displayXAxisTicks="false"
+  displayYAxisTicks="false"
+>
   <shortDescription>
-    Plot of sin(x) and cos(x) plotted between x=-1/2 and x=2 and y=-1/2 and y=3/2. The region between the curves from x=0 to x=pi/2 is shaded.
+    Plot of sin(x) and cos(x) plotted between x=-1/2 and x=2 and y=-1/2 and
+    y=3/2. The region between the curves from x=0 to x=pi/2 is shaded.
   </shortDescription>
-  <regionBetweenCurves styleNumber="3" boundaryValues="0 pi/2">$g $f</regionBetweenCurves>
+  <regionBetweenCurves styleNumber="3" boundaryValues="0 pi/2">
+    $g $f
+  </regionBetweenCurves>
   <function name="f" styleNumber="9" domain="[-1,4]">sin(x)</function>
   <label fixed anchor="(pi/2,1.1)"><m>\large\sin(x)</m></label>
   <function name="g" styleNumber="10" domain="[-1,4]">cos(x)</function>

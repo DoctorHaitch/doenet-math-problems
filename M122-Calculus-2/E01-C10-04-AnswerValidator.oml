@@ -10,46 +10,55 @@
 -->
 
 <p>
-  Check your work:
-  <answer name="ans" type="math">
+  Check your work: <answer name="ans" type="math">
     <!-- <mathInput prefillLatex="\int_a^b f(x) dx"/> -->
     <!-- Debug prefill
     <mathInput prefillLatex="\int_{_{-3}}^{-1}\sqrt{4x+12}dx\ +\ \int_{-1}^{5}\left(\sqrt{2x+6}\ -x+1\right)\ dx" />
     -->
-    <shortDescription>
-      Enter answer to check your work.
-    </shortDescription>
+    <shortDescription>Enter answer to check your work.</shortDescription>
     <award>
       <m>\int_{-3}^{-1}2\sqrt{2x+6} dx + \int_{-1}^5 [\sqrt{2x+6}-(x-1)] dx</m>
     </award>
     <award>
-            <m>\int_{-3}^{-1} \sqrt{4 x + 12}dx + \int_{-1}^{5} \left(\sqrt{2 x + 6} - x + 1\right)dx</m>
+      <m>
+        \int_{-3}^{-1} \sqrt{4 x + 12}dx + \int_{-1}^{5} \left(\sqrt{2 x + 6} -
+        x + 1\right)dx
+      </m>
     </award>
   </answer>
 </p>
 
 <setup>
-  <matchesPattern name="missingIntegrand" pattern="∫_()^() d＿">$ans</matchesPattern>
+  <matchesPattern name="missingIntegrand" pattern="∫_()^() d＿">
+    $ans
+  </matchesPattern>
   <matchesPattern name="wrongVar" pattern="∫_()^() ＿ dy">$ans</matchesPattern>
   <matchesPattern name="oneIntegral" pattern="∫_()^()＿dx">$ans</matchesPattern>
-  <matchesPattern name="bounds" pattern="∫_(-3)^(-1)＿dx+∫_(-1)^(5)＿dx">$ans</matchesPattern>
-  <matchesPattern name="totalBounds" pattern="∫_(-3)^(5)＿dx">$ans</matchesPattern>
+  <matchesPattern name="bounds" pattern="∫_(-3)^(-1)＿dx+∫_(-1)^(5)＿dx">
+    $ans
+  </matchesPattern>
+  <matchesPattern name="totalBounds" pattern="∫_(-3)^(5)＿dx">
+    $ans
+  </matchesPattern>
 </setup>
 
 <feedback condition="$missingIntegrand">
   You seem to be missing an integrand.
 </feedback>
-<feedback 
-  condition="$wrongVar">
-    You appear to be jumping ahead! That's great! But here we're looking for integration with respect to <m>x</m>.
+<feedback condition="$wrongVar">
+  You appear to be jumping ahead! That's great! But here we're looking for
+  integration with respect to <m>x</m>.
 </feedback>
-<feedback 
-  condition="$oneIntegral and not($totalBounds)">
-    You are integrating with respect to the right variable, but you might want to revisit your sketch or use the visual aid to inspect the representative slice more closely. What should the overall bounds be?
+<feedback condition="$oneIntegral and not($totalBounds)">
+  You are integrating with respect to the right variable, but you might want to
+  revisit your sketch or use the visual aid to inspect the representative slice
+  more closely. What should the overall bounds be?
 </feedback>
 <feedback condition="$totalBounds">
-  You have the right overall bounds of <m>x=-3</m> to <m>x=5</m>, but is there something happening in the middle that matters to your integrand?
+  You have the right overall bounds of <m>x=-3</m> to <m>x=5</m>, but is there something
+  happening in the middle that matters to your integrand?
 </feedback>
 <feedback condition="$bounds and not($ans.creditAchieved)">
-  You're almost there! Just be a bit more careful with the integrands, the rest of the expression is correct!
+  You're almost there! Just be a bit more careful with the integrands, the rest
+  of the expression is correct!
 </feedback>
