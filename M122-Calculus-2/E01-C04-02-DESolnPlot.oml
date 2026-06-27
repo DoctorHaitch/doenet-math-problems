@@ -63,8 +63,6 @@
     Slope field and solution plot for dP/dt=P(2-P) for t=0 to t=3.5.
   </shortDescription>
 
-
-
   <!-- EQUILIBRIA -->
   <line name="test" slope="0" through="(0,0)" styleNumber="11" />
   <label anchor="(1.6,.15)"><m>P=0</m></label>

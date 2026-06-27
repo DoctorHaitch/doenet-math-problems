@@ -1,0 +1,77 @@
+<!--
+  Author: Kris Hollingsworth
+  Class: Math122-Calculus 2
+  Date: 6/27/26
+  File: E02-C19-01-PFDPracticSetup.oml
+  Description:
+    Practice setting up basic forms of partial fraction decomposition.
+  Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E02-C19-01-PFDPracticSetup.oml
+-->
+
+<problems>
+  <title />
+  <problem>
+    <answer>
+      <mathInput name="ans1">
+        <label><m>\displaystyle\frac{1}{(1+x)(2+x)} =</m></label>
+      </mathInput>
+      <award>
+        <when>
+          <matchesPattern pattern="()/(1+x)+()/(2+x)">$ans1</matchesPattern> and
+          ($ans1=<m>\frac{A}{1+x}+\frac{B}{2+x}</m> or
+          $ans1=<m>\frac{B}{1+x}+\frac{A}{2+x}</m>)
+        </when>
+      </award>
+    </answer>
+  </problem>
+  <problem>
+    <answer>
+      <mathInput name="ans2">
+        <label><m>\displaystyle\frac{1}{(1+x)^2(2+x)} =</m></label>
+      </mathInput>
+      <award>
+        <when>
+          <matchesPattern pattern="()/(1+x)+()/(1+x)^2+()/(2+x)">$ans2</matchesPattern> and
+          ($ans2=<m>\frac{A}{1+x}+\frac{B}{(1+x)^2}+\frac{C}{2+x}</m> or
+          $ans2=<m>\frac{B}{1+x}+\frac{A}{(1+x)^2}+\frac{C}{2+x}</m> or
+          $ans2=<m>\frac{B}{1+x}+\frac{C}{(1+x)^2}+\frac{A}{2+x}</m> or
+          $ans2=<m>\frac{C}{1+x}+\frac{B}{(1+x)^2}+\frac{A}{2+x}</m>)
+        </when>
+      </award>
+    </answer>
+  </problem>
+  <problem>
+    <answer>
+      <mathInput name="ans3">
+        <label><m>\displaystyle\frac{1}{1+x^2} =</m></label>
+      </mathInput>
+      <award>
+        <when>
+          <matchesPattern pattern="(()*x+())/(1+x^2)">$ans3</matchesPattern> and
+          ($ans3=<m>\frac{A*x+B}{x^2+1}</m> or
+          $ans3=<m>\frac{B*x+A}{x^2+1}</m>)
+        </when>
+      </award>
+    </answer>
+  </problem>
+  <problem>
+    <answer>
+      <mathInput name="ans4">
+        <label><m>\displaystyle\frac{1}{(x^2+1)^2(x-1)} =</m></label>
+      </mathInput>
+      <award>
+        <when>
+          <matchesPattern pattern="(()*x+())/(1+x^2)+(()*x+())/(1+x^2)^2+()/(x-1)">$ans4</matchesPattern> and
+          ($ans4=<m>\frac{A*x+B}{1+x^2}+\frac{C*x+D}{(1+x^2)^2}+\frac{E}{2+x}</m> or
+          $ans4=<m>\frac{C*x+D}{1+x^2}+\frac{A*x+B}{(1+x^2)^2}+\frac{E}{2+x}</m> or
+          $ans4=<m>\frac{B*x+C}{1+x^2}+\frac{D*x+E}{(1+x^2)^2}+\frac{A}{2+x}</m> or
+          $ans4=<m>\frac{D*x+E}{1+x^2}+\frac{B*x+C}{(1+x^2)^2}+\frac{A}{2+x}</m> or
+          $ans4=<m>\frac{B*x+A}{1+x^2}+\frac{D*x+C}{(1+x^2)^2}+\frac{E}{2+x}</m> or
+          $ans4=<m>\frac{D*x+C}{1+x^2}+\frac{B*x+A}{(1+x^2)^2}+\frac{E}{2+x}</m> or
+          $ans4=<m>\frac{C*x+B}{1+x^2}+\frac{E*x+D}{(1+x^2)^2}+\frac{A}{2+x}</m> or
+          $ans4=<m>\frac{E*x+D}{1+x^2}+\frac{C*x+B}{(1+x^2)^2}+\frac{A}{2+x}</m>)
+        </when>
+      </award>
+    </answer>
+  </problem>
+</problems>

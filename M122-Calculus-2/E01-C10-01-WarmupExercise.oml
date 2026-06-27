@@ -197,11 +197,9 @@
   </p>
   <setup>
     <boolean name="Backwards">
-      <when>
-        $test=<m>\int_a^b (f(x)-g(x)) dx</m> or $test=<m>
-          \int_a^b f(x) dx - \int_a^b g(x) dx
-        </m>
-      </when>
+      $test=<m>\int_a^b (f(x)-g(x)) dx</m> or $test=<m>
+        \int_a^b f(x) dx - \int_a^b g(x) dx
+      </m>
     </boolean>
   </setup>
   <feedback condition="$Backwards">

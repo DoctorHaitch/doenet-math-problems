@@ -96,12 +96,18 @@
   <math name="C">16-27y+3*sqrt(3)*$B</math>
   <math name="A">$C^(1/3)</math>
 
+
+
+
   <group name="rightPointGroup">
     <math name="rpExpr">(1/3)*(2+(4*$k)/$A+$A/$k)</math>
     <function name="rightPoint" variable="y" displayDecimals="2">
       re($rpExpr)
     </function>
   </group>
+
+
+
 
   <group name="leftPointGroup">
     <math name="lpExpr">
@@ -126,3 +132,116 @@
   >
     <m>\Large y= 2x^2-x^3</m>
   </label>
+  <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%% AXIS OF ROTATION
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+  <group name="rotation" hide="not($showAxis)">
+    <setup>
+      <!-- Precompute values for efficiency -->
+      <!-- Width for vector head seems to depend on view-window.
+           Mostly trying to make smallest values with arrow head appearing. -->
+      <number name="width">0.3</number>
+      <number name="shift">0.5</number>
+      <number name="a1">3*pi/4 + $width</number>
+      <number name="a2">3*pi/4 - $width</number>
+      <number name="c1">cos($a1)</number>
+      <number name="s1">sin($a1)</number>
+      <number name="c2">cos($a2)</number>
+      <number name="s2">sin($a2)</number>
+      <point name="v1">($c1/3, $s1/12 - $shift)</point>
+      <point name="v2">($c2/3, $s2/12 - $shift)</point>
+    </setup>
+    <vector styleNumber="10" tail="$v1" head="$v2" />
+    <curve
+      styleNumber="10"
+      name="parameterizedEllipse"
+      variable="t"
+      parMin="3/4 pi"
+      parMax="9/4 pi"
+    >
+      (1/3*cos(t), 1/12*sin(t)-$shift)
+    </curve>
+    <lineSegment styleNumber="11" endpoints="(0,-1) (0,2)" />
+  </group>
+
+  <group name="reflection" hide="not($showReflection)">
+    <setup>
+      <function name="g" styleNumber="3">$$f(-x)</function>
+    </setup>
+    <regionBetweenCurves styleNumber="3" boundaryValues="-2 0">
+      $g $z
+    </regionBetweenCurves>
+  </group>
+
+  <group name="slice2d" hide="not($show2D)">
+    <setup>
+      <!-- Precompute values for efficiency -->
+      <number name="rightVal">$$rightPoint($slide)</number>
+      <number name="leftVal">$$leftPoint($slide)</number>
+    </setup>
+    <rectangle
+      styleNumber="4"
+      vertices="($rightVal,$slide) ($leftVal,$slide+0.05)"
+      filled
+    />
+  </group>
+
+  <group name="slice3dGroup" hide="not($show3D)">
+    <!-- cheap perspective factor -->
+    <number hide name="l">1 - 0.3*$slide</number>
+    <!-- vertical flatten -->
+
+
+
+
+    <!-- sparse spokes -->
+    <repeatForSequence from="0" to="2pi" step="pi/3" valueName="v">
+      <setup>
+        <number name="cv">cos($v)</number>
+        <number name="sv">sin($v)</number>
+      </setup>
+      <lineSegment
+        styleNumber="12"
+        endpoints="
+          ($rightVal*$cv, (1/6)*$l*$sv + $slide + 0.025)
+          ($leftVal*$cv, (1/15)*$l*$sv + $slide + 0.025)
+        "
+      />
+    </repeatForSequence>
+
+
+
+    <!-- outer ellipse -->
+    <curve styleNumber="12" variable="t" parMin="0" parMax="2pi">
+      ($rightVal*cos(t), (1/6)*$l*sin(t) + $slide + 0.025)
+    </curve>
+
+    <!-- inner ellipse -->
+    <curve styleNumber="12" variable="t" parMin="0" parMax="2pi">
+      ($leftVal*cos(t), (1/15)*$l*sin(t) + $slide + 0.025)
+    </curve>
+  </group>
+</graph>
+
+<booleanInput name="showAxis" prefill="true">
+  <label>Show axis of rotation.</label>
+</booleanInput><br /> <booleanInput name="show2D">
+  <label>Show 2D slice</label>
+</booleanInput><br />
+<booleanInput name="showReflection">
+  <label>Show Reflection across Axis</label>
+</booleanInput><br /> <booleanInput name="show3D">
+  <label>Show 3D slice</label>
+</booleanInput><br /> <boolean hide name="test">$show2D or $show3D</boolean>
+<slider
+  hide="not($test)"
+  name="slide"
+  initialValue=".3"
+  from="0"
+  to="32/27"
+  step=".05"
+  showTicks="false"
+  showValue="false"
+>
+  <label>[<m>y</m>-Value of representative slice]</label>
+</slider>
