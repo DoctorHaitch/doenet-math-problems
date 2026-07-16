@@ -1,0 +1,46 @@
+<!--
+  Author: Kris Hollingsworth
+  Class: Math417/517-Real Analysis
+  Date: 6/16/26
+  Updated:
+  File: 01-supremum-examples.oml
+  Description:
+    Quick check on notation and definitions for
+    Order of a Differential Equation.
+  Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M417_517-real-analysis/01-supremum-examples.oml
+-->
+<problems>
+  <title/>
+  <problem>
+    <answer>
+      <mathInput>
+        <label>For <m>E = (2,3)</m>, then <m>\sup E =</m></label>
+      </mathInput>
+      <award>3</award>
+    </answer>
+  </problem>
+  <problem>
+    <answer>
+      <mathInput>
+        <label>For <m>E = [2,3]</m>, then <m>\sup E =</m></label>
+      </mathInput>
+      <award>3</award>
+    </answer>
+  </problem>
+  <problem>
+    <answer>
+      <mathInput>
+        <label>For <m>E = [2,3) \cup \{\sqrt{11}\}</m>, then <m>\sup E =</m></label>
+      </mathInput>
+      <award><m>\sqrt{11}</m></award>
+    </answer>
+  </problem>
+  <problem>
+    <answer>
+      <mathInput>
+        <label>For <m>\displaystyle E = \left\{-\frac{1}{n}~\bigg|~ n\in \mathbb N \right\}</m>, then <m>\sup E =</m></label>
+      </mathInput>
+      <award>0</award>
+    </answer>
+  </problem>
+</problems>
