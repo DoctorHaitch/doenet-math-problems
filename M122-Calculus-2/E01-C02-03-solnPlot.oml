@@ -45,7 +45,7 @@
   <styleDefinition
     styleNumber="5"
     lineColor="#8A6F08"
-    lineOpacity=".75"
+    lineOpacity=".74"
     lineWidth="3"
     lineStyle="dashed"
     fillColor="#B7950B"
@@ -101,7 +101,9 @@
     Particular Solution: <m>
       y= x
       <conditionalContent condition="$C>0">+</conditionalContent>
-      <math format="text" simplify>$C</math>
+      <conditionalContent condition="$C!=0">
+        <math format="text" simplify>$C</math>
+      </conditionalContent>
     </m>
   </group>
 </p>
