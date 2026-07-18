@@ -69,7 +69,7 @@
   />
 </setup>
 <graph
-  name="Graph of Several Solutions to y' = 2x." 
+  name="ODE_Solutions_Graph" 
   xMin="-3"
   xMax="3"
   yMin="-4"
