@@ -69,6 +69,7 @@
   />
 </setup>
 <graph
+  name="Graph of Several Solutions to y' = 2x." 
   xMin="-3"
   xMax="3"
   yMin="-4"
@@ -77,7 +78,7 @@
   fixAxes
   addControls="false"
 >
-  <shortDescription>Frak off</shortDescription>
+  <shortDescription>The graph of several solutions of the differential equation y'=2x. This is provided as a Visual aid for identifying particular solutions of the differential equation.</shortDescription>
   <repeatForSequence from="-3" to="3" valueName="t" step="1">
     <function fixed styleNumber="$t+4" domain="[-3,3]">x^2 + $t</function>
   </repeatForSequence>
