@@ -1,0 +1,60 @@
+<!--
+  Author: Kris Hollingsworth
+  Class: Math417/517-Real Analysis
+  Date: 6/16/26
+  Updated:
+  File: 02-cantors_first_diagonal.oml
+  Description:
+    Quick check on notation and definitions for
+    Order of a Differential Equation.
+  Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M417_517-real-analysis/02-cantors_first_diagonal.oml
+-->
+<graph
+  xMin="0"
+  xMax="7"
+  yMin="0"
+  yMax="6"
+  showNavigation="false"
+  displayXAxis="false"
+  displayYAxis="false"
+  name="cantorGraph"
+  fixAxes
+>
+  <point fixLocation><label><m>(1,1)</m></label>(1,5)</point>
+  <point fixLocation><label><m>(2,1)</m></label>(2,5)</point>
+  <point fixLocation><label><m>(3,1)</m></label>(3,5)</point>
+  <point fixLocation><label><m>(4,1)</m></label>(4,5)</point>
+  <point fixLocation><label><m>(5,1)</m></label>(5,5)</point>
+  <point fixLocation><label><m>(1,2)</m></label>(1,4)</point>
+  <point fixLocation><label><m>(2,2)</m></label>(2,4)</point>
+  <point fixLocation><label><m>(3,2)</m></label>(3,4)</point>
+  <point fixLocation><label><m>(4,2)</m></label>(4,4)</point>
+  <point fixLocation><label><m>(5,2)</m></label>(5,4)</point>
+  <point fixLocation><label><m>(1,3)</m></label>(1,3)</point>
+  <point fixLocation><label><m>(2,3)</m></label>(2,3)</point>
+  <point fixLocation><label><m>(3,3)</m></label>(3,3)</point>
+  <point fixLocation><label><m>(4,3)</m></label>(4,3)</point>
+  <point fixLocation><label><m>(5,3)</m></label>(5,3)</point>
+  <point fixLocation><label><m>(1,4)</m></label>(1,2)</point>
+  <point fixLocation><label><m>(2,4)</m></label>(2,2)</point>
+  <point fixLocation><label><m>(3,4)</m></label>(3,2)</point>
+  <point fixLocation><label><m>(4,4)</m></label>(4,2)</point>
+  <point fixLocation><label><m>(5,4)</m></label>(5,2)</point>
+  <label fixLocation anchor="(1,1)"><m>\huge\vdots</m></label>
+  <label fixLocation anchor="(2,1)"><m>\huge\vdots</m></label>
+  <label fixLocation anchor="(3,1)"><m>\huge\vdots</m></label>
+  <label fixLocation anchor="(4,1)"><m>\huge\vdots</m></label>
+  <label fixLocation anchor="(5,1)"><m>\huge\vdots</m></label>
+  <label fixLocation anchor="(6,5)"><m>\huge\cdots</m></label>
+  <label fixLocation anchor="(6,4)"><m>\huge\cdots</m></label>
+  <label fixLocation anchor="(6,3)"><m>\huge\cdots</m></label>
+  <label fixLocation anchor="(6,2)"><m>\huge\cdots</m></label>
+  <label fixLocation anchor="(6,1)"><m>\huge\ddots</m></label>
+</graph>
+
+<p> Using this <triggerSet>
+  <label>Add Lines</label> <callAction actionName="addChildren" target="$cantorGraph">
+    <vector styleNumber="3" tail="(1,5)">(4.5,0)</vector>
+    <vector styleNumber="3" tail="(1,5)">(0,-4.5)</vector>
+  </callAction>
+</triggerSet> button creates arrows along each edge. What is the initial problem with counting along either of these lines? How might we resolve that problem? You can drag the arrows and move their endpoints to determine a method for counting the set.</p>
