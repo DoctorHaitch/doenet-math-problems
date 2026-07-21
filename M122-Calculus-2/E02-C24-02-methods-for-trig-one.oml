@@ -1,0 +1,212 @@
+<!--
+  Author: Kris Hollingsworth
+  Class: Math122-Calculus 2
+  Date: 7/21/26
+  File: E02-C24-02-methods-for-trig-one.oml
+  Description:
+    Fully worked example of Trig Substitution
+  Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E02-C24-02-methods-for-trig-one.oml
+-->
+<section>
+  <title>When the power of cosine is odd.</title>
+  <p>
+    <choiceInput name="multiple-choice-one" inline="true" shuffleOrder forAnswer="$(check-multiple-choice)" >
+      <label>If the power of cosine is odd (<m>n=2k+1</m>), save one factor and use <m>\cos^2(x) = </m></label>
+      <choice><m>1-\sin^2(x)</m></choice>
+      <choice><m>\cos^2(x)</m></choice>
+      <choice><m>\cos^2(x)+C</m></choice>
+      <choice><m>1-\sec^2(x)</m></choice>
+    </choiceInput>
+    <choiceInput name="multiple-choice-two" inline="true" shuffleOrder forAnswer="$(check-multiple-choice)">
+      <label>to express the remaining factors in terms of</label>
+      <choice><m>\sin(x)</m></choice>
+      <choice><m>\cos(x)</m></choice>
+      <choice><m>\sec(x)</m></choice>
+      <choice><m>\csc(x)</m></choice>
+      <choice><m>\tan(x)</m></choice>
+      <choice><m>\cot(x)</m></choice>
+    </choiceInput>
+    <choiceInput name="multiple-choice-three" inline="true" shuffleOrder forAnswer="$(check-multiple-choice)">
+      <label>then choose the substitution <m>u = </m></label>
+      <choice><m>\sin(x)</m></choice>
+      <choice><m>\cos(x)</m></choice>
+      <choice><m>\sec(x)</m></choice>
+      <choice><m>\csc(x)</m></choice>
+      <choice><m>\tan(x)</m></choice>
+      <choice><m>\cot(x)</m></choice>
+    </choiceInput>.
+  </p>
+  <p>
+    <answer name="check-multiple-choice">
+    <award>
+      <when>
+        $(multiple-choice-one)=1-sin^2(x) and 
+        $(multiple-choice-two)=sin(x) and
+        $(multiple-choice-three)=sin(x)
+      </when>
+    </award>
+  </answer>
+  </p>
+  
+  <tabular>
+    <row>
+    <cell halign="right"><m>\displaystyle\int\sin^m(x)\cos^{2k+1}~dx</m> </cell>
+    <cell halign="left"> <m> =\int \sin^m(x)(</m><mathInput name="inside-one" /><m>)^k</m><mathInput name="outside-one" /><m>\displaystyle~dx</m></cell>
+    </row>
+    <row>
+      <cell />
+      <cell><m>=\int \sin^m(x)(</m><mathInput name="inside-two" /><m>)^k</m><mathInput name="outside-two" /><m>~dx</m></cell>
+    </row>
+    <row>
+      <cell />
+      <cell><m>=\int (</m><mathInput name="inside-three" />)<m>~du</m></cell>
+    </row>
+  </tabular>
+  <answer name="check-blanks" matchPartial>
+    <award>
+      <when>
+        $(inside-one) = <m>\cos^{2}\left(x\right)</m> and
+        $(outside-one) = <m>\cos\left(x\right)</m> and
+        $(inside-two) = <m>1-\sin^{2}\left(x\right)</m> and
+        $(outside-two) = <m>\cos\left(x\right)</m> and
+        $(inside-three) = <m>u^{m}\left(1-u^{2}\right)^{k}</m>
+      </when>
+    </award>
+  </answer>
+</section>
+
+<section>
+  <title>When the power of sine is odd.</title>
+  <!-- <p>
+    <choiceInput name="multiple-choice-one" inline="true" shuffleOrder forAnswer="$(check-multiple-choice)" >
+      <label>If the power of cosine is odd (<m>n=2k+1</m>), save one factor and use <m>\cos^2(x) = </m></label>
+      <choice><m>1-\sin^2(x)</m></choice>
+      <choice><m>\cos^2(x)</m></choice>
+      <choice><m>\cos^2(x)+C</m></choice>
+      <choice><m>1-\sec^2(x)</m></choice>
+    </choiceInput>
+    <choiceInput name="multiple-choice-two" inline="true" shuffleOrder forAnswer="$(check-multiple-choice)">
+      <label>to express the remaining factors in terms of</label>
+      <choice><m>\sin(x)</m></choice>
+      <choice><m>\cos(x)</m></choice>
+      <choice><m>\sec(x)</m></choice>
+      <choice><m>\csc(x)</m></choice>
+      <choice><m>\tan(x)</m></choice>
+      <choice><m>\cot(x)</m></choice>
+    </choiceInput>
+    <choiceInput name="multiple-choice-three" inline="true" shuffleOrder forAnswer="$(check-multiple-choice)">
+      <label>then choose the substitution <m>u = </m></label>
+      <choice><m>\sin(x)</m></choice>
+      <choice><m>\cos(x)</m></choice>
+      <choice><m>\sec(x)</m></choice>
+      <choice><m>\csc(x)</m></choice>
+      <choice><m>\tan(x)</m></choice>
+      <choice><m>\cot(x)</m></choice>
+    </choiceInput>.
+  </p>
+  <p>
+    <answer name="check-multiple-choice">
+    <award>
+      <when>
+        $(multiple-choice-one)=1-sin^2(x) and 
+        $(multiple-choice-two)=sin(x) and
+        $(multiple-choice-three)=sin(x)
+      </when>
+    </award>
+  </answer>
+  </p>
+  
+  <tabular>
+    <row>
+    <cell halign="right"><m>\displaystyle\int\sin^m(x)\cos^{2k+1}~dx</m> </cell>
+    <cell halign="left"> <m> =\int \sin^m(x)(</m><mathInput name="inside-one" /><m>)^k</m><mathInput name="outside-one" /><m>\displaystyle~dx</m></cell>
+    </row>
+    <row>
+      <cell />
+      <cell><m>=\int \sin^m(x)(</m><mathInput name="inside-two" /><m>)^k</m><mathInput name="outside-two" /><m>~dx</m></cell>
+    </row>
+    <row>
+      <cell />
+      <cell><m>=\int (</m><mathInput name="inside-three" />)<m>~du</m></cell>
+    </row>
+  </tabular>
+  <answer name="check-blanks" matchPartial>
+    <award>
+      <when>
+        $(inside-one) = <m>\cos^{2}\left(x\right)</m> and
+        $(outside-one) = <m>\cos\left(x\right)</m> and
+        $(inside-two) = <m>1-\sin^{2}\left(x\right)</m> and
+        $(outside-two) = <m>\cos\left(x\right)</m> and
+        $(inside-three) = <m>u^{m}\left(1-u^{2}\right)^{k}</m>
+      </when>
+    </award>
+  </answer> -->
+</section>
+
+<section>
+  <title>When the powers of both sine and cosine are even.</title>
+  <!-- <p>
+    <choiceInput name="multiple-choice-one" inline="true" shuffleOrder forAnswer="$(check-multiple-choice)" >
+      <label>If the power of cosine is odd (<m>n=2k+1</m>), save one factor and use <m>\cos^2(x) = </m></label>
+      <choice><m>1-\sin^2(x)</m></choice>
+      <choice><m>\cos^2(x)</m></choice>
+      <choice><m>\cos^2(x)+C</m></choice>
+      <choice><m>1-\sec^2(x)</m></choice>
+    </choiceInput>
+    <choiceInput name="multiple-choice-two" inline="true" shuffleOrder forAnswer="$(check-multiple-choice)">
+      <label>to express the remaining factors in terms of</label>
+      <choice><m>\sin(x)</m></choice>
+      <choice><m>\cos(x)</m></choice>
+      <choice><m>\sec(x)</m></choice>
+      <choice><m>\csc(x)</m></choice>
+      <choice><m>\tan(x)</m></choice>
+      <choice><m>\cot(x)</m></choice>
+    </choiceInput>
+    <choiceInput name="multiple-choice-three" inline="true" shuffleOrder forAnswer="$(check-multiple-choice)">
+      <label>then choose the substitution <m>u = </m></label>
+      <choice><m>\sin(x)</m></choice>
+      <choice><m>\cos(x)</m></choice>
+      <choice><m>\sec(x)</m></choice>
+      <choice><m>\csc(x)</m></choice>
+      <choice><m>\tan(x)</m></choice>
+      <choice><m>\cot(x)</m></choice>
+    </choiceInput>.
+  </p>
+  <p>
+    <answer name="check-multiple-choice">
+    <award>
+      <when>
+        $(multiple-choice-one)=1-sin^2(x) and 
+        $(multiple-choice-two)=sin(x) and
+        $(multiple-choice-three)=sin(x)
+      </when>
+    </award>
+  </answer>
+  </p>
+  
+  <tabular>
+    <row>
+    <cell halign="right"><m>\displaystyle\int\sin^m(x)\cos^{2k+1}~dx</m> </cell>
+    <cell halign="left"> <m> =\int \sin^m(x)(</m><mathInput name="inside-one" /><m>)^k</m><mathInput name="outside-one" /><m>\displaystyle~dx</m></cell>
+    </row>
+    <row>
+      <cell />
+      <cell><m>=\int \sin^m(x)(</m><mathInput name="inside-two" /><m>)^k</m><mathInput name="outside-two" /><m>~dx</m></cell>
+    </row>
+    <row>
+      <cell />
+      <cell><m>=\int (</m><mathInput name="inside-three" />)<m>~du</m></cell>
+    </row>
+  </tabular>
+  <answer name="check-blanks" matchPartial>
+    <award>
+      <when>
+        $(inside-one) = <m>\cos^{2}\left(x\right)</m> and
+        $(outside-one) = <m>\cos\left(x\right)</m> and
+        $(inside-two) = <m>1-\sin^{2}\left(x\right)</m> and
+        $(outside-two) = <m>\cos\left(x\right)</m> and
+        $(inside-three) = <m>u^{m}\left(1-u^{2}\right)^{k}</m>
+      </when>
+    </award>
+  </answer> -->
+</section>
