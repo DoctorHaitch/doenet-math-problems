@@ -1,0 +1,49 @@
+<!--
+  Author: Kris Hollingsworth
+  Class: Math122-Calculus 2
+  Date: 7/21/26
+  File: E02-C24-01-answer-validation.oml
+  Description:
+    Fully worked example of Trig Substitution
+  Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E02-C24-01-answer-validation.oml
+-->
+<p>
+  <answer>
+    <mathInput>
+      <label>Check your work for (1):</label>
+    </mathInput>
+    <award>sin(x)^3/3+C</award>
+    <award name="missingC1" credit="0">sin(x)^3/3</award>
+  </answer>
+</p>
+<p>
+  <answer>
+    <mathInput>
+      <label>Check your work for (2):</label>
+    </mathInput>
+    <award>cos(x)^3/3+C</award>
+    <award name="missingC2" credit="0">cos(x)^3/3</award>
+  </answer>
+</p>
+<p>
+  <answer>
+    <mathInput>
+      <label>Check your work for (3):</label>
+    </mathInput>
+    <award>sec(x)^3/3+C</award>
+    <award name="missingC3" credit="0">sec(x)^3/3</award>
+  </answer>
+</p>
+<p>
+  <answer>
+    <mathInput>
+      <label>Check your work for (4):</label>
+    </mathInput>
+    <award>tan(x)^5/5+C</award>
+    <award name="missingC4" credit="0">tan(x)^5/5</award>
+  </answer>
+</p>
+
+<feedback condition="$missingC1 or $missingC2 or $missingC3">
+  What's missing for indefinite integration?
+</feedback>
