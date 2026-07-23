@@ -1,0 +1,169 @@
+<!--
+  Author: Kris Hollingsworth
+  Class: Math122-Calculus 2
+  Date: 7/23/26
+  File: E02-C24-03-methods-for-trig-two.oml
+  Description:
+    Fully worked example of Trig Substitution
+  Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E02-C24-03-methods-for-trig-two.oml
+-->
+<setup>
+  <mathList unordered name="cos_double_angle_forms">
+    <m>\cos^{2}\left(x\right)-\sin^{2}\left(x\right)</m>
+    <m>1-2\sin^{2}\left(x\right)</m> <m>2\cos^{2}\left(x\right)-1</m>
+  </mathList>
+</setup>
+<cascade>
+  <div>
+    <p>
+      The basic trigonometric double angle identities are
+      <mathInput name="sin_double_angle" forAnswer="$identities_one">
+        <label><m>\sin(2\cdot x) =</m></label>
+      </mathInput><text hide="not($identities_one.creditAchieved=1)">✅</text> and
+      <mathInput name="cos_double_angle" forAnswer="$identities_one">
+        <label><m>\cos(2\cdot x) =</m></label>
+      </mathInput><text hide="not($identities_one.creditAchieved=1)">✅</text>.
+    </p>
+    <p>
+      <answer
+        name="identities_one"
+        numAwardsCredited="2"
+        hide="$identities_one.creditAchieved=1"
+      >
+        <award credit=".5">
+          <when>
+            $sin_double_angle=<m>2\sin\left(x\right)\cos\left(x\right)</m>
+          </when>
+        </award>
+        <award credit=".5">
+          <when>
+            $cos_double_angle=<m>
+              \cos^{2}\left(x\right)-\sin^{2}\left(x\right)
+            </m>
+            or $cos_double_angle=<m>1-2\sin^{2}\left(x\right)</m> or
+            $cos_double_angle=<m>2\cos^{2}\left(x\right)-1</m>
+          </when>
+        </award>
+      </answer>
+    </p>
+  </div>
+  <div>
+    <p>
+      <choiceInput inline name="trig_choice_one" shuffleOrder>
+        <label>The identity </label>
+        <choice><m>\sin(2\cdot x)</m></choice>
+        <choice name="correct_one"><m>\cos(2\cdot x)</m></choice>
+      </choiceInput>
+      <text hide="not($identities_two.creditAchieved=1)">✅</text>
+      <choiceInput shuffleOrder inline name="trig_choice_two">
+        <label>can be
+      rewritten quickly into several other highly useful forms using the</label>
+        <choice name="correct_two">
+          Pythagorean identity <m>\sin^2(x)+\cos^2(x)=1</m>
+        </choice>
+        <choice>
+          sum of angles identity
+          <m>\sin(x+y) = \sin(x)\cos(y)+\sin(y)\cos(x)</m>
+        </choice>
+        <choice>
+          sum of angles identity
+          <m>\cos(x+y) = \cos(x)\cos(y)-\sin(x)\sin(y)</m>
+        </choice>
+        <choice>shift identity <m>\sin(x+\frac{\pi}{2}) = \cos(x)</m></choice>
+      </choiceInput><text hide="not($identities_two.creditAchieved=1)">
+        ✅
+      </text>.
+    </p>
+    <p>
+      <answer
+        name="identities_two"
+        numAwardsCredited="2"
+        hide="$identities_two.creditAchieved=1"
+      >
+        <award credit=".5"><when>$correct_one.selected</when></award>
+        <award credit=".5"><when>$correct_two.selected</when></award>
+      </answer>
+    </p>
+  </div>
+  <div>
+    <p>
+      Then three equivalent forms of <m>\cos(2\cdot x)</m> are
+      <ol>
+        <li>
+          <mathInput name="form_one" prefill="$cos_double_angle">
+            <!-- prefillLatex="\cos^{2}\left(x\right)-\sin^{2}\left(x\right)" -->
+            <shortDescription>
+              Enter one form of cosine of 2x.
+            </shortDescription>
+          </mathInput><text hide="not($answer_forms.creditAchieved=1)">✅</text>
+        </li>
+        <li>
+          <mathInput name="form_two"><!-- prefillLatex="1-2\sin^{2}\left(x\right)" -->
+            <shortDescription>
+              Enter another form of cosine of 2x.
+            </shortDescription>
+          </mathInput><text hide="not($answer_forms.creditAchieved=1)">✅</text>
+        </li>
+        <li>
+          <mathInput name="form_three">
+            <!-- prefillLatex="2\cos^{2}\left(x\right)-1" -->
+            <shortDescription>
+              Enter a third form of cosine of 2x.
+            </shortDescription>
+          </mathInput><text hide="not($answer_forms.creditAchieved=1)">✅</text>
+        </li>
+      </ol>
+    </p>
+    <p>
+      <answer
+        matchPartial
+        name="answer_forms"
+        hide="$answer_forms.creditAchieved=1"
+      >
+        <award>
+          <when>
+            <mathList>$form_one $form_two $form_three</mathList> =
+            $cos_double_angle_forms
+          </when>
+        </award>
+      </answer>
+    </p>
+  </div>
+  <div>
+    Using these, we can isolate either <m>\sin^2(x)</m> or <m>\cos^2(x)</m> in
+    identities that eliminate powers of trigonometric functions on the other
+    side. That leaves us with the two useful identities
+    <ul>
+      <li>
+        <mathInput name="sine_squared">
+          <!-- prefillLatex="\frac{1-\cos(2\cdot x)}{2}" -->
+          <label><m>\sin^2(x) =</m></label>
+        </mathInput><text hide="not($final_ids.creditAchieved=1)">✅</text>
+      </li>
+      <li>
+        <mathInput
+          name="cosine_squared"
+        > <!-- prefillLatex="\frac{1+\cos(2\cdot x)}{2}" -->
+          <label><m>\cos^2(x) =</m></label>
+        </mathInput><text hide="not($final_ids.creditAchieved=1)">✅</text>
+      </li>
+    </ul>
+    <answer
+      numAwardsCredited="2"
+      name="final_ids"
+      hide="$final_ids.creditAchieved=1"
+    >
+      <award credit=".5">
+        <when>$sine_squared=<m>\frac{1-\cos(2\cdot x)}{2}</m></when>
+      </award>
+      <award credit=".5">
+        <when>$cosine_squared=<m>\frac{1+\cos(2\cdot x)}{2}</m></when>
+      </award>
+    </answer>
+  </div>
+  <div>
+    Thus we may use the final identities for <m>\sin^2(x)</m> and
+    <m>\cos^2(x)</m> to simplify the computation of integrals involving only
+    even powers of sine and cosine functions.
+  </div>
+</cascade>
