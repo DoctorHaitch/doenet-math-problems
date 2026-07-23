@@ -167,7 +167,7 @@
       <cell><m>\displaystyle=\int \biggl(</m><mathInput name="sin-line-three-one" forAnswer="$(check-blanks)" /><m>\biggr)~du</m></cell>
     </row>
   </tabular>
-  <answer name="check-blanks" colorCorrectness colorInputsSeparately numAwardsCredited="7">
+  <answer name="check-blanks" colorCorrectness numAwardsCredited="7">
     <award credit="1/7">
       <when>$(sin-line-one-one) = <m>\sin^{2}\left(x\right)</m></when>
     </award>
