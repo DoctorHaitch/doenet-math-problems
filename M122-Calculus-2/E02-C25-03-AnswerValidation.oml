@@ -1,0 +1,35 @@
+<!--
+  Author: Kris Hollingsworth
+  Class: Math122-Calculus 2
+  Date: 7/23/26
+  File: E02-C25-03-AnswerValidation.oml
+  Description:
+    Answer validation for a calculus problem.
+  Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E02-C25-03-AnswerValidation.oml
+-->
+<answer>
+  <mathInput>
+    <label>
+      Check your work:
+    </label>
+  </mathInput>
+  <award>
+  <m>
+    \frac{1}{2}\tan^2(x)+\ln |\cos(x)| + C
+  </m>
+  </award>
+  <award>
+  <m>
+    \frac{1}{2}\tan^2(x)-\ln |\sec(x)| + C
+  </m>
+  </award>
+    <award credit="0" name="missingC1">
+  <m>\frac{1}{2}\tan^2(x)+\ln |\cos(x)|</m>
+  </award>
+  <award credit="0" name="missingC2">
+  <m>\frac{1}{2}\tan^2(x)-\ln |\sec(x)|</m>
+  </award>
+</answer>
+<feedback condition="$missingC1 or $missingC2">
+  What is always necessary with the final answer of an indefinite integral?
+</feedback>

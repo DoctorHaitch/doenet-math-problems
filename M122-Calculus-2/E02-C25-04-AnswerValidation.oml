@@ -1,0 +1,29 @@
+<!--
+  Author: Kris Hollingsworth
+  Class: Math122-Calculus 2
+  Date: 7/23/26
+  File: E02-C25-04-AnswerValidation.oml
+  Description:
+    
+  Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E02-C25-04-AnswerValidation.oml
+-->
+<answer>
+  <mathInput>
+    <label>
+      Check your work:
+    </label>
+  </mathInput>
+  <award>
+  <m>
+    \frac{1}{2}\sec(x)\tan(x)+\frac{1}{2} \ln |\sec(x)+\tan(x)| + C
+  </m>
+  </award>
+    <award credit="0" name="missingC">
+  <m>
+    \frac{1}{2}\sec(x)\tan(x)+\frac{1}{2} \ln |\sec(x)+\tan(x)|
+  </m>
+  </award>
+</answer>
+<feedback condition="$missingC">
+  What is always necessary with the final answer of an indefinite integral?
+</feedback>
