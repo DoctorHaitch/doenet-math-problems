@@ -7,17 +7,32 @@
     Fully worked example of Trig Substitution
   Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E02-C24-02-methods-for-trig-one.oml
 -->
+<variantControl numVariants="10" />
+<section>
+  <title>General strategy.</title>
+  For integrals of the form
+  <me>\int \sin^m (x)\cos^n (x)~dx.</me>
+</section>
+<hr/>
 <section>
   <title>When the power of cosine is odd.</title>
-  <p>
-    <choiceInput name="multiple-choice-one" inline="true" shuffleOrder forAnswer="$(check-multiple-choice)" >
-      <label>If the power of cosine is odd (<m>n=2k+1</m>), save one factor and use <m>\cos^2(x) = </m></label>
+    <p>
+    <choiceInput name="cosine-multiple-choice-zero" inline="true" shuffleOrder forAnswer="$(check-cosine-multiple-choice)" >
+      <label>If the power of cosine is odd <m>\bigl(</m></label>
+      <choice><label><m>m</m></label></choice>
+      <choice><label><m>n</m></label></choice>
+      <choice><label><m>x</m></label></choice>
+      <choice><label><m>C</m></label></choice>
+    </choiceInput>
+    <choiceInput name="cosine-multiple-choice-one" inline="true" shuffleOrder forAnswer="$(check-cosine-multiple-choice)" >
+      <label><m>=2k+1\bigr)</m>, save one factor and use <m>\cos^2(x) = </m></label>
       <choice><m>1-\sin^2(x)</m></choice>
       <choice><m>\cos^2(x)</m></choice>
       <choice><m>\cos^2(x)+C</m></choice>
       <choice><m>1-\sec^2(x)</m></choice>
+      <choice><m>1-\cos^2(x)</m></choice>
     </choiceInput>
-    <choiceInput name="multiple-choice-two" inline="true" shuffleOrder forAnswer="$(check-multiple-choice)">
+    <choiceInput name="cosine-multiple-choice-two" inline="true" shuffleOrder forAnswer="$(check-cosine-multiple-choice)">
       <label>to express the remaining factors in terms of</label>
       <choice><m>\sin(x)</m></choice>
       <choice><m>\cos(x)</m></choice>
@@ -26,7 +41,7 @@
       <choice><m>\tan(x)</m></choice>
       <choice><m>\cot(x)</m></choice>
     </choiceInput>
-    <choiceInput name="multiple-choice-three" inline="true" shuffleOrder forAnswer="$(check-multiple-choice)">
+    <choiceInput name="cosine-multiple-choice-three" inline="true" shuffleOrder forAnswer="$(check-cosine-multiple-choice)">
       <label>then choose the substitution <m>u = </m></label>
       <choice><m>\sin(x)</m></choice>
       <choice><m>\cos(x)</m></choice>
@@ -37,12 +52,13 @@
     </choiceInput>.
   </p>
   <p>
-    <answer name="check-multiple-choice">
+    <answer name="check-cosine-multiple-choice">
     <award>
       <when>
-        $(multiple-choice-one)=1-sin^2(x) and 
-        $(multiple-choice-two)=sin(x) and
-        $(multiple-choice-three)=sin(x)
+        $(cosine-multiple-choice-zero)=n and 
+        $(cosine-multiple-choice-one)=1-sin^2(x) and 
+        $(cosine-multiple-choice-two)=sin(x) and
+        $(cosine-multiple-choice-three)=sin(x)
       </when>
     </award>
   </answer>
@@ -50,42 +66,62 @@
   
   <tabular>
     <row>
-    <cell halign="right"><m>\displaystyle\int\sin^m(x)\cos^{2k+1}~dx</m> </cell>
-    <cell halign="left"> <m> =\int \sin^m(x)(</m><mathInput name="inside-one" /><m>)^k</m><mathInput name="outside-one" /><m>\displaystyle~dx</m></cell>
+      <cell halign="right"><m>\displaystyle\int\sin^m(x)\cos^{2k+1}(x)~dx</m> </cell>
+      <cell halign="left"><mathInput name="cosine-line-one-one" forAnswer="$(check-blanks)"><label><m>\displaystyle =\int \biggl(</m></label></mathInput> <m>\biggr)^m\biggl(</m><mathInput name="cosine-line-one-two" forAnswer="$(check-blanks)"/><m>\biggr)^k</m><mathInput name="cosine-line-one-three" forAnswer="$(check-blanks)"/><m>\displaystyle~dx</m></cell>
     </row>
     <row>
       <cell />
-      <cell><m>=\int \sin^m(x)(</m><mathInput name="inside-two" /><m>)^k</m><mathInput name="outside-two" /><m>~dx</m></cell>
+          <cell halign="left"> <m>\displaystyle =\int \biggl(</m><mathInput name="cosine-line-two-one" forAnswer="$(check-blanks)"/><m>\biggr)^m\biggl(</m><mathInput name="cosine-line-two-two" forAnswer="$(check-blanks)"/><m>\biggr)^k</m><mathInput name="cosine-line-two-three" forAnswer="$(check-blanks)"/><m>\displaystyle~dx</m></cell>
     </row>
     <row>
       <cell />
-      <cell><m>=\int (</m><mathInput name="inside-three" />)<m>~du</m></cell>
+      <cell><m>\displaystyle=\int \biggl(</m><mathInput name="cosine-line-three-one" forAnswer="$(check-blanks)" /><m>\biggr)~du</m></cell>
     </row>
   </tabular>
-  <answer name="check-blanks" matchPartial>
-    <award>
-      <when>
-        $(inside-one) = <m>\cos^{2}\left(x\right)</m> and
-        $(outside-one) = <m>\cos\left(x\right)</m> and
-        $(inside-two) = <m>1-\sin^{2}\left(x\right)</m> and
-        $(outside-two) = <m>\cos\left(x\right)</m> and
-        $(inside-three) = <m>u^{m}\left(1-u^{2}\right)^{k}</m>
-      </when>
+  <answer name="check-blanks" colorCorrectness colorInputsSeparately numAwardsCredited="7">
+    <award credit="1/7">
+      <when>$(cosine-line-one-one) = <m>\sin\left(x\right)</m></when>
+    </award>
+    <award credit="1/7">
+      <when>$(cosine-line-one-two) = <m>\cos^{2}\left(x\right)</m></when>
+    </award>
+    <award credit="1/7">
+      <when>$(cosine-line-one-three) = <m>\cos\left(x\right)</m></when>
+    </award>
+    <award credit="1/7">
+      <when>$(cosine-line-two-one) = <m>\sin\left(x\right)</m></when>
+    </award>
+    <award credit="1/7">
+      <when>$(cosine-line-two-two) = <m>1-\sin^{2}\left(x\right)</m></when>
+    </award>
+    <award credit="1/7">
+      <when>$(cosine-line-two-three) = <m>\cos\left(x\right)</m></when>
+    </award>
+    <award credit="1/7">
+      <when>$(cosine-line-three-one) = <m>u^{m}\left(1-u^{2}\right)^{k}</m></when>
     </award>
   </answer>
 </section>
-
+<hr/>
 <section>
   <title>When the power of sine is odd.</title>
-  <!-- <p>
-    <choiceInput name="multiple-choice-one" inline="true" shuffleOrder forAnswer="$(check-multiple-choice)" >
-      <label>If the power of cosine is odd (<m>n=2k+1</m>), save one factor and use <m>\cos^2(x) = </m></label>
+  <p>
+    <choiceInput name="sin-multiple-choice-zero" inline="true" shuffleOrder forAnswer="$(check-sin-multiple-choice)" >
+      <label>If the power of sine is odd <m>(</m></label>
+      <choice><m>m</m></choice>
+      <choice><m>n</m></choice>
+      <choice><m>x</m></choice>
+      <choice><m>C</m></choice>
+    </choiceInput>
+    <choiceInput name="sin-multiple-choice-one" inline="true" shuffleOrder forAnswer="$(check-sin-multiple-choice)" >
+      <label><m>=2k+1</m>), save one factor and use <m>\sin^2(x) = </m></label>
       <choice><m>1-\sin^2(x)</m></choice>
       <choice><m>\cos^2(x)</m></choice>
       <choice><m>\cos^2(x)+C</m></choice>
       <choice><m>1-\sec^2(x)</m></choice>
+      <choice><m>1-\cos^2(x)</m></choice>
     </choiceInput>
-    <choiceInput name="multiple-choice-two" inline="true" shuffleOrder forAnswer="$(check-multiple-choice)">
+    <choiceInput name="sin-multiple-choice-two" inline="true" shuffleOrder forAnswer="$(check-sin-multiple-choice)">
       <label>to express the remaining factors in terms of</label>
       <choice><m>\sin(x)</m></choice>
       <choice><m>\cos(x)</m></choice>
@@ -94,7 +130,7 @@
       <choice><m>\tan(x)</m></choice>
       <choice><m>\cot(x)</m></choice>
     </choiceInput>
-    <choiceInput name="multiple-choice-three" inline="true" shuffleOrder forAnswer="$(check-multiple-choice)">
+    <choiceInput name="sin-multiple-choice-three" inline="true" shuffleOrder forAnswer="$(check-sin-multiple-choice)">
       <label>then choose the substitution <m>u = </m></label>
       <choice><m>\sin(x)</m></choice>
       <choice><m>\cos(x)</m></choice>
@@ -105,12 +141,13 @@
     </choiceInput>.
   </p>
   <p>
-    <answer name="check-multiple-choice">
+    <answer name="check-sin-multiple-choice">
     <award>
       <when>
-        $(multiple-choice-one)=1-sin^2(x) and 
-        $(multiple-choice-two)=sin(x) and
-        $(multiple-choice-three)=sin(x)
+        $(sin-multiple-choice-zero)=m and 
+        $(sin-multiple-choice-one)=1-cos^2(x) and 
+        $(sin-multiple-choice-two)=cos(x) and
+        $(sin-multiple-choice-three)=cos(x)
       </when>
     </award>
   </answer>
@@ -118,95 +155,39 @@
   
   <tabular>
     <row>
-    <cell halign="right"><m>\displaystyle\int\sin^m(x)\cos^{2k+1}~dx</m> </cell>
-    <cell halign="left"> <m> =\int \sin^m(x)(</m><mathInput name="inside-one" /><m>)^k</m><mathInput name="outside-one" /><m>\displaystyle~dx</m></cell>
+    <cell halign="right"><m>\displaystyle\int\sin^{2k+1}(x)\cos^{n}(x)~dx</m> </cell>
+    <cell halign="left"> <m>\displaystyle=\int \biggl(</m><mathInput name="sin-line-one-one" forAnswer="$(check-blanks)"/><m>\biggr)^{k}\biggl(</m><mathInput name="sin-line-one-two" forAnswer="$(check-blanks)"/><m>\biggr)^{n}</m><mathInput name="sin-line-one-three" forAnswer="$(check-blanks)"/><m>\displaystyle~dx</m></cell>
     </row>
     <row>
       <cell />
-      <cell><m>=\int \sin^m(x)(</m><mathInput name="inside-two" /><m>)^k</m><mathInput name="outside-two" /><m>~dx</m></cell>
+          <cell halign="left"> <m>\displaystyle=\int \biggl(</m><mathInput name="sin-line-two-one" forAnswer="$(check-blanks)"/><m>\biggr)^{k}\biggl(</m><mathInput name="sin-line-two-two" forAnswer="$(check-blanks)"/><m>\biggr)^{n}</m><mathInput name="sin-line-two-three" forAnswer="$(check-blanks)"/><m>\displaystyle~dx</m></cell>
     </row>
     <row>
       <cell />
-      <cell><m>=\int (</m><mathInput name="inside-three" />)<m>~du</m></cell>
+      <cell><m>\displaystyle=\int \biggl(</m><mathInput name="sin-line-three-one" forAnswer="$(check-blanks)" /><m>\biggr)~du</m></cell>
     </row>
   </tabular>
-  <answer name="check-blanks" matchPartial>
-    <award>
-      <when>
-        $(inside-one) = <m>\cos^{2}\left(x\right)</m> and
-        $(outside-one) = <m>\cos\left(x\right)</m> and
-        $(inside-two) = <m>1-\sin^{2}\left(x\right)</m> and
-        $(outside-two) = <m>\cos\left(x\right)</m> and
-        $(inside-three) = <m>u^{m}\left(1-u^{2}\right)^{k}</m>
-      </when>
+  <answer name="check-blanks" colorCorrectness colorInputsSeparately numAwardsCredited="7">
+    <award credit="1/7">
+      <when>$(sin-line-one-one) = <m>\sin^{2}\left(x\right)</m></when>
     </award>
-  </answer> -->
-</section>
-
-<section>
-  <title>When the powers of both sine and cosine are even.</title>
-  <!-- <p>
-    <choiceInput name="multiple-choice-one" inline="true" shuffleOrder forAnswer="$(check-multiple-choice)" >
-      <label>If the power of cosine is odd (<m>n=2k+1</m>), save one factor and use <m>\cos^2(x) = </m></label>
-      <choice><m>1-\sin^2(x)</m></choice>
-      <choice><m>\cos^2(x)</m></choice>
-      <choice><m>\cos^2(x)+C</m></choice>
-      <choice><m>1-\sec^2(x)</m></choice>
-    </choiceInput>
-    <choiceInput name="multiple-choice-two" inline="true" shuffleOrder forAnswer="$(check-multiple-choice)">
-      <label>to express the remaining factors in terms of</label>
-      <choice><m>\sin(x)</m></choice>
-      <choice><m>\cos(x)</m></choice>
-      <choice><m>\sec(x)</m></choice>
-      <choice><m>\csc(x)</m></choice>
-      <choice><m>\tan(x)</m></choice>
-      <choice><m>\cot(x)</m></choice>
-    </choiceInput>
-    <choiceInput name="multiple-choice-three" inline="true" shuffleOrder forAnswer="$(check-multiple-choice)">
-      <label>then choose the substitution <m>u = </m></label>
-      <choice><m>\sin(x)</m></choice>
-      <choice><m>\cos(x)</m></choice>
-      <choice><m>\sec(x)</m></choice>
-      <choice><m>\csc(x)</m></choice>
-      <choice><m>\tan(x)</m></choice>
-      <choice><m>\cot(x)</m></choice>
-    </choiceInput>.
-  </p>
-  <p>
-    <answer name="check-multiple-choice">
-    <award>
-      <when>
-        $(multiple-choice-one)=1-sin^2(x) and 
-        $(multiple-choice-two)=sin(x) and
-        $(multiple-choice-three)=sin(x)
-      </when>
+    <award credit="1/7">
+      <when>$(sin-line-one-two) = <m>\cos\left(x\right)</m></when>
+    </award>
+    <award credit="1/7">
+      <when>$(sin-line-one-three) = <m>\sin\left(x\right)</m></when>
+    </award>
+    <award credit="1/7">
+      <when>$(sin-line-two-one) = <m>1-\cos^{2}\left(x\right)</m></when>
+    </award>
+    <award credit="1/7">
+      <when>$(sin-line-two-two) = <m>sin\left(x\right)</m></when>
+    </award>
+    <award credit="1/7">
+      <when>$(sin-line-two-three) = <m>\sin\left(x\right)</m></when>
+    </award>
+    <award credit="1/7">
+      <when>$(sin-line-three-one) = <m>u^{n}\left(1-u^{2}\right)^{k}</m></when>
     </award>
   </answer>
-  </p>
-  
-  <tabular>
-    <row>
-    <cell halign="right"><m>\displaystyle\int\sin^m(x)\cos^{2k+1}~dx</m> </cell>
-    <cell halign="left"> <m> =\int \sin^m(x)(</m><mathInput name="inside-one" /><m>)^k</m><mathInput name="outside-one" /><m>\displaystyle~dx</m></cell>
-    </row>
-    <row>
-      <cell />
-      <cell><m>=\int \sin^m(x)(</m><mathInput name="inside-two" /><m>)^k</m><mathInput name="outside-two" /><m>~dx</m></cell>
-    </row>
-    <row>
-      <cell />
-      <cell><m>=\int (</m><mathInput name="inside-three" />)<m>~du</m></cell>
-    </row>
-  </tabular>
-  <answer name="check-blanks" matchPartial>
-    <award>
-      <when>
-        $(inside-one) = <m>\cos^{2}\left(x\right)</m> and
-        $(outside-one) = <m>\cos\left(x\right)</m> and
-        $(inside-two) = <m>1-\sin^{2}\left(x\right)</m> and
-        $(outside-two) = <m>\cos\left(x\right)</m> and
-        $(inside-three) = <m>u^{m}\left(1-u^{2}\right)^{k}</m>
-      </when>
-    </award>
-  </answer> -->
 </section>
