@@ -1,0 +1,158 @@
+<!--
+  Author: Kris Hollingsworth
+  Class: Math122-Calculus 2
+  Date: 7/23/26
+  File: E02-C24-04-methods-for-trig-three.oml
+  Description:
+    Finding useful identities from sum of angle identities.
+  Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E02-C24-04-methods-for-trig-three.oml
+-->
+<setup>
+  <m name="sine_sum_diff">\sin A \cos B \pm \cos A \sin B</m>
+  <m name="cosine_sum_diff">\cos A \cos B \mp \sin A \sin B</m>
+</setup>
+<section boxed>
+  <title>Warning!</title>
+  This activity is currently broken until minus-plus, <m>\mp</m>, is parsed correctly
+  by the back-end MathParser library.
+</section>
+<cascade revealAll>
+  <div>
+    <p>
+      Recall the sum and different identities:
+      <ul>
+        <li>
+          <mathInput
+            name="sine_sum_diff_input"
+          >
+            <!-- prefillLatex="\sin A \cos B \pm \cos A \sin B" -->
+            <label><m>\sin(A\pm B)=</m></label>
+          </mathInput>
+          <text hide="not($answer_one.creditAchieved=1)">✅</text>
+        </li>
+        <li>
+          <mathInput
+            name="cosine_sum_diff_input"
+          >
+            <!-- prefillLatex="\cos A \cos B \mp \sin A \sin B" -->
+            <label><m>\cos(A\pm B)=</m></label>
+          </mathInput>
+          <text hide="not($answer_one.creditAchieved=1)">✅</text>
+        </li>
+      </ul>
+    </p>
+    <answer
+      name="answer_one"
+      numAwardsCredited="2"
+      hide="$answer_one.creditAchieved=1"
+    >
+      <!-- %%%%%%%%%%%%%%%%%%%%
+      %%%%%%%%%%%%%%%%%%%%%%%%%
+            FIX ONCE \mp WORKS!
+      %%%%%%%%%%%%%%%%%%%%%%%%%
+      %%%%%%%%%%%%%%%%%%%%% -->
+      <award credit="1"> 
+        <when>$sine_sum_diff = $sine_sum_diff_input</when>
+      </award>
+      <award credit=".5">
+        <when>$cosine_sum_diff = $cosine_sum_diff_input</when>
+      </award>
+    </answer>
+  </div>
+  
+  <div>
+    <p>
+      Then
+      <me>
+        \begin{align*}
+          \sin(A+B) & = \sin A\cos B + \cos A \sin B \\
+          \sin(A-B) & = \sin A\cos B - \cos A \sin B \\ 
+        \end{align*}
+      </me>
+      Adding these equations together, we obtain
+
+      <text hide="not($answer_two.creditAchieved=1)">✅</text>
+      <choiceInput name="choice_one" shuffleOrder inline>
+        <choice name="correct_one"><m>\sin(A+B)+\sin(A-B)</m></choice>
+        <choice><m>\sin(A+B)-\sin(A-B)</m></choice>
+        <choice><m>\sin(A-B)-\sin(A+B)</m></choice>
+        <choice><m>\cos(A+B)-\cos(A-B)</m></choice>
+        <choice><m>\cos(A-B)-\cos(A+B)</m></choice>
+        <choice><m>\cos(A+B)+\cos(A-B)</m></choice>
+      </choiceInput> = <choiceInput name="choice_two" shuffleOrder inline>
+        <choice name="correct_two"><m>2\sin A \cos B</m></choice>
+        <choice><m>2\cos A \sin B</m></choice>
+        <choice><m>2\cos A \cos B</m></choice>
+        <choice><m>-2\sin A \sin B</m></choice>
+      </choiceInput><text hide="not($answer_two.creditAchieved=1)">✅</text>.
+    </p>
+    <p>
+      <answer name="answer_two" numAwardsCredited="2">
+        <award credit="1/2"><when>$correct_one.selected</when></award>
+        <award credit="1/2"><when>$correct_two.selected</when></award>
+      </answer>
+    </p>
+  </div>
+  
+  <div>
+    <p>
+      Also
+      <me>
+        \begin{align*} \cos(A+B) & = \cos A \cos B - \sin A \sin B \\ \cos(A-B)
+        & = \cos A \cos B + \sin A \sin B \\ \end{align*}
+      </me>
+      Adding these equations together, we obtain
+      
+      <text hide="not($answer_three.creditAchieved=1)">✅</text>
+      <choiceInput name="choice_three" shuffleOrder inline>
+        <choice><m>\sin(A+B)+\sin(A-B)</m></choice>
+        <choice><m>\sin(A+B)-\sin(A-B)</m></choice>
+        <choice><m>\sin(A-B)-\sin(A+B)</m></choice>
+        <choice><m>\cos(A+B)-\cos(A-B)</m></choice>
+        <choice><m>\cos(A-B)-\cos(A+B)</m></choice>
+        <choice name="correct_three"><m>\cos(A+B)+\cos(A-B)</m></choice>
+      </choiceInput> = <choiceInput name="choice_four" shuffleOrder inline>
+        <choice><m>2\sin A \cos B</m></choice>
+        <choice><m>2\cos A \sin B</m></choice>
+        <choice name="correct_four"><m>2\cos A \cos B</m></choice>
+        <choice><m>-2\sin A \sin B</m></choice>
+      </choiceInput><text hide="not($answer_three.creditAchieved=1)">✅</text>.
+      Additionally, in this case we subtract these equations as well to obtain
+
+      <text hide="not($answer_three.creditAchieved=1)">✅</text>
+      <choiceInput name="choice_five" shuffleOrder inline>
+        <choice><m>\sin(A+B)+\sin(A-B)</m></choice>
+        <choice><m>\sin(A+B)-\sin(A-B)</m></choice>
+        <choice><m>\sin(A-B)-\sin(A+B)</m></choice>
+        <choice  name="correct_five"><m>\cos(A+B)-\cos(A-B)</m></choice>
+        <choice><m>\cos(A-B)-\cos(A+B)</m></choice>
+        <choice><m>\cos(A+B)+\cos(A-B)</m></choice>
+      </choiceInput> = <choiceInput name="choice_six" shuffleOrder inline>
+        <choice><m>2\sin A \cos B</m></choice>
+        <choice><m>2\cos A \sin B</m></choice>
+        <choice><m>2\cos A \cos B</m></choice>
+        <choice name="correct_six"><m>-2\sin A \sin B</m></choice>
+      </choiceInput><text hide="not($answer_three.creditAchieved=1)">✅</text>.
+    </p>
+    <p>
+      <answer name="answer_three" numAwardsCredited="4">
+        <award credit="1/4"><when>$correct_three.selected</when></award>
+        <award credit="1/4"><when>$correct_four.selected</when></award>
+        <award credit="1/4"><when>$correct_five.selected</when></award>
+        <award credit="1/4"><when>$correct_six.selected</when></award>
+      </answer>
+    </p>
+  </div>
+  <div>
+    <p>
+      By re-arranging the three equalities you found above, we obtain the following useful identities for simplifying integration
+      <me>
+        \begin{align*}
+          \sin(A)\cos(B) & = \textstyle\frac{1}{2}\left[\sin(A-B)+\sin(A+B)\right] \tag{1} \\[.5em]
+          \sin(A)\sin(B) & = \textstyle\frac{1}{2}\left[\cos(A-B)-\cos(A+B)\right] \tag{2} \\[.5em]
+        \cos(A)\cos(B) & = \textstyle\frac{1}{2}\left[\cos(A-B)+\cos(A+B)\right] \tag{3} \\[.5em]
+        \end{align*}
+      </me>
+    </p>
+  </div>
+</cascade>
