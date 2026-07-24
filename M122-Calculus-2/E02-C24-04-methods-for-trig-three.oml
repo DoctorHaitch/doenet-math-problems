@@ -16,7 +16,7 @@
   This activity is currently broken until minus-plus, <m>\mp</m>, is parsed correctly
   by the back-end MathParser library.
 </section>
-<cascade revealAll>
+<cascade>
   <div>
     <p>
       Recall the sum and different identities:
