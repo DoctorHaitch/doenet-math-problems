@@ -16,7 +16,7 @@
   This activity is currently broken until minus-plus, <m>\mp</m>, is parsed correctly
   by the back-end MathParser library.
 </section>
-<cascade>
+<cascade revealAll>
   <div>
     <p>
       Recall the sum and different identities:
@@ -148,9 +148,9 @@
       By re-arranging the three equalities you found above, we obtain the following useful identities for simplifying integration
       <me>
         \begin{align*}
-          \sin(A)\cos(B) & = \textstyle\frac{1}{2}\left[\sin(A-B)+\sin(A+B)\right] \tag{1} \\[.5em]
-          \sin(A)\sin(B) & = \textstyle\frac{1}{2}\left[\cos(A-B)-\cos(A+B)\right] \tag{2} \\[.5em]
-        \cos(A)\cos(B) & = \textstyle\frac{1}{2}\left[\cos(A-B)+\cos(A+B)\right] \tag{3} \\[.5em]
+          \sin(A)\cos(B) & = \tfrac{1}{2}\left[\sin(A-B)+\sin(A+B)\right] \tag{1} \\[.5em]
+          \sin(A)\sin(B) & = \tfrac{1}{2}\left[\cos(A-B)-\cos(A+B)\right] \tag{2} \\[.5em]
+        \cos(A)\cos(B) & = \tfrac{1}{2}\left[\cos(A-B)+\cos(A+B)\right] \tag{3} \\[.5em]
         \end{align*}
       </me>
     </p>

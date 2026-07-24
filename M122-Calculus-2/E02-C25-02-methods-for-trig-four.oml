@@ -1,0 +1,117 @@
+<!--
+  Author: Kris Hollingsworth
+  Class: Math122-Calculus 2
+  Date: 7/23/26
+  File: E02-C24-05-methods-for-trig-four.oml
+  Description:
+    Finding useful identities for other pairs.
+  Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E02-C24-05-methods-for-trig-four.oml
+-->
+<cascade>
+  <div>
+    <p>Recall that <me>\sin^2(x)+\cos^2(x)=1.</me></p>
+    <p>
+      Similarly,
+      <mathInput name="pyth_1" hide="$pyth_1_ans.creditAchieved=1">
+        <label><m>1+</m></label>
+      </mathInput>
+      <mathInput name="pyth_2" hide="$pyth_1_ans.creditAchieved=1">
+        <label><m>=</m></label>
+      </mathInput>
+      <me hide="$pyth_1_ans.creditAchieved=0">1+\cot^2 x = \csc^2 x~ ✅</me>
+      <answer name="pyth_1_ans" hide="$pyth_1_ans.creditAchieved=1">
+        <award>
+          <when>$pyth_1=<m>\cot^2 x</m> and $pyth_2=<m>\csc^2 x</m></when>
+        </award>
+      </answer>
+    </p>
+    <p>
+      and
+      <mathInput name="pyth_3" hide="$pyth_2_ans.creditAchieved=1">
+        <label />
+      </mathInput>
+      <mathInput name="pyth_4" hide="$pyth_2_ans.creditAchieved=1">
+        <label><m>+1 =</m></label>
+      </mathInput>
+      <me hide="$pyth_2_ans.creditAchieved=0">\tan^2 x+1 = \sec^2 x.~ ✅</me>
+      <answer name="pyth_2_ans" hide="$pyth_2_ans.creditAchieved=1">
+        <award>
+          <when>$pyth_3=<m>\tan^2 x</m> and $pyth_4=<m>\sec^2 x</m></when>
+        </award>
+      </answer>
+    </p>
+  </div>
+  <div>
+    <p>Additionally, we have the relationships that</p>
+    <problems>
+      <title />
+      <problem>
+        <answer>
+          <mathInput><label><m>\frac{d}{dx}\sec(x)=</m></label></mathInput>
+          <award><m>\sec(x)\tan(x)</m></award>
+        </answer>
+      </problem>
+      <problem>
+        <answer>
+          <mathInput><label><m>\frac{d}{dx}\tan(x)=</m></label></mathInput>
+          <award><m>\sec^2(x)</m></award>
+        </answer>
+      </problem>
+      <problem>
+        <answer>
+          <mathInput><label><m>\frac{d}{dx}\cot(x)=</m></label></mathInput>
+          <award><m>-\csc^2(x)</m></award>
+        </answer>
+      </problem>
+      <problem>
+        <answer>
+          <mathInput><label><m>\frac{d}{dx}\csc(x)=</m></label></mathInput>
+          <award><m>-\csc(x)\cot(x)</m></award>
+        </answer>
+      </problem>
+    </problems>
+  </div>
+
+  <div>
+    <p>
+      Observe then that the pairs
+      <choiceInput inline shuffleOrder name="pair_1">
+        <choice name="correct_one_a"><m>\cot(x)</m> and <m>\csc(x)</m></choice>
+        <choice><m>\cot(x)</m> and <m>\sec(x)</m></choice>
+        <choice><m>\cot(x)</m> and <m>\tan(x)</m></choice>
+        <choice><m>\csc(x)</m> and <m>\sec(x)</m></choice>
+        <choice><m>\csc(x)</m> and <m>\tan(x)</m></choice>
+        <choice name="correct_one_b"><m>\sec(x)</m> and <m>\tan(x)</m></choice>
+      </choiceInput> and <choiceInput inline shuffleOrder name="pair_2">
+        <choice name="correct_two_a"><m>\cot(x)</m> and <m>\csc(x)</m></choice>
+        <choice><m>\cot(x)</m> and <m>\sec(x)</m></choice>
+        <choice><m>\cot(x)</m> and <m>\tan(x)</m></choice>
+        <choice><m>\csc(x)</m> and <m>\sec(x)</m></choice>
+        <choice><m>\csc(x)</m> and <m>\tan(x)</m></choice>
+        <choice name="correct_two_b"><m>\sec(x)</m> and <m>\tan(x)</m></choice>
+      </choiceInput> are related in similar ways to how <m>\sin(x)</m> and
+      <m>\cos(x)</m> are related.
+    </p>
+    <p>
+      <answer>
+        <award>
+          <when>
+            $correct_one_a.selected and $correct_two_b.selected
+          </when>
+        </award>
+        <award>
+          <when>
+            $correct_one_b.selected and $correct_two_a.selected
+          </when>
+        </award>
+      </answer>
+    </p>
+  </div>
+  <div>
+    <p>
+      Given this, we can derive similar identities
+      for simplifying the process of integration. In this class, we will only
+      focus on one remaining set, the other follows almost identically.
+    </p>
+  </div>
+</cascade>
