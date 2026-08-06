@@ -7,6 +7,9 @@
     Fully worked example of Trig Substitution
   Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E02-C23-02-exampleFour.oml
 -->
+<setup>
+  <stylePalette palette="okabeIto" />
+</setup>
 <cascade>
   <div>
     <answer>

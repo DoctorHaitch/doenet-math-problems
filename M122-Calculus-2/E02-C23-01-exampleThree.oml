@@ -10,6 +10,9 @@
     This example is designed to reward students for spotting the easier path and not getting fixated on the current technique.
   Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E02-C23-01-exampleThree.oml
 -->
+<setup>
+  <stylePalette palette="okabeIto" />
+</setup>
 <cascade>
   <div>
     <mathInput forAnswer="$subSetup" name="var">

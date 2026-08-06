@@ -66,12 +66,12 @@
   
   <tabular>
     <row>
-      <cell halign="right"><m>\displaystyle\int\sin^m(x)\cos^{2k+1}(x)~dx</m> </cell>
-      <cell halign="left"><mathInput name="cosine-line-one-one" forAnswer="$(check-blanks)"><label><m>\displaystyle =\int \biggl(</m></label></mathInput> <m>\biggr)^m\biggl(</m><mathInput name="cosine-line-one-two" forAnswer="$(check-blanks)"/><m>\biggr)^k</m><mathInput name="cosine-line-one-three" forAnswer="$(check-blanks)"/><m>\displaystyle~dx</m></cell>
+      <cell halign="end"><m>\displaystyle\int\sin^m(x)\cos^{2k+1}(x)~dx</m> </cell>
+      <cell halign="start"><mathInput name="cosine-line-one-one" forAnswer="$(check-blanks)"><label><m>\displaystyle =\int \biggl(</m></label></mathInput> <m>\biggr)^m\biggl(</m><mathInput name="cosine-line-one-two" forAnswer="$(check-blanks)"/><m>\biggr)^k</m><mathInput name="cosine-line-one-three" forAnswer="$(check-blanks)"/><m>\displaystyle~dx</m></cell>
     </row>
     <row>
       <cell />
-          <cell halign="left"> <m>\displaystyle =\int \biggl(</m><mathInput name="cosine-line-two-one" forAnswer="$(check-blanks)"/><m>\biggr)^m\biggl(</m><mathInput name="cosine-line-two-two" forAnswer="$(check-blanks)"/><m>\biggr)^k</m><mathInput name="cosine-line-two-three" forAnswer="$(check-blanks)"/><m>\displaystyle~dx</m></cell>
+          <cell halign="start"> <m>\displaystyle =\int \biggl(</m><mathInput name="cosine-line-two-one" forAnswer="$(check-blanks)"/><m>\biggr)^m\biggl(</m><mathInput name="cosine-line-two-two" forAnswer="$(check-blanks)"/><m>\biggr)^k</m><mathInput name="cosine-line-two-three" forAnswer="$(check-blanks)"/><m>\displaystyle~dx</m></cell>
     </row>
     <row>
       <cell />
@@ -155,12 +155,12 @@
   
   <tabular>
     <row>
-    <cell halign="right"><m>\displaystyle\int\sin^{2k+1}(x)\cos^{n}(x)~dx</m> </cell>
-    <cell halign="left"> <m>\displaystyle=\int \biggl(</m><mathInput name="sin-line-one-one" forAnswer="$(check-blanks)"/><m>\biggr)^{k}\biggl(</m><mathInput name="sin-line-one-two" forAnswer="$(check-blanks)"/><m>\biggr)^{n}</m><mathInput name="sin-line-one-three" forAnswer="$(check-blanks)"/><m>\displaystyle~dx</m></cell>
+    <cell halign="end"><m>\displaystyle\int\sin^{2k+1}(x)\cos^{n}(x)~dx</m> </cell>
+    <cell halign="start"> <m>\displaystyle=\int \biggl(</m><mathInput name="sin-line-one-one" forAnswer="$(check-blanks)"/><m>\biggr)^{k}\biggl(</m><mathInput name="sin-line-one-two" forAnswer="$(check-blanks)"/><m>\biggr)^{n}</m><mathInput name="sin-line-one-three" forAnswer="$(check-blanks)"/><m>\displaystyle~dx</m></cell>
     </row>
     <row>
       <cell />
-          <cell halign="left"> <m>\displaystyle=\int \biggl(</m><mathInput name="sin-line-two-one" forAnswer="$(check-blanks)"/><m>\biggr)^{k}\biggl(</m><mathInput name="sin-line-two-two" forAnswer="$(check-blanks)"/><m>\biggr)^{n}</m><mathInput name="sin-line-two-three" forAnswer="$(check-blanks)"/><m>\displaystyle~dx</m></cell>
+          <cell halign="start"> <m>\displaystyle=\int \biggl(</m><mathInput name="sin-line-two-one" forAnswer="$(check-blanks)"/><m>\biggr)^{k}\biggl(</m><mathInput name="sin-line-two-two" forAnswer="$(check-blanks)"/><m>\biggr)^{n}</m><mathInput name="sin-line-two-three" forAnswer="$(check-blanks)"/><m>\displaystyle~dx</m></cell>
     </row>
     <row>
       <cell />

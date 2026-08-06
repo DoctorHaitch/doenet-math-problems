@@ -9,33 +9,7 @@
 -->
 
 <setup>
-  <styleDefinition
-    name="MGreenStyle"
-    styleNumber="10"
-    lineWidth="4.0"
-    lineStyle="solid"
-    lineColor="#007C5A"
-    lineColorWord="Green"
-    fillOpacity=".28"
-    fillColor="#009E73"
-  />
-  <styleDefinition
-    styleNumber="9"
-    lineColor="#8A6F08"
-    lineOpacity=".74"
-    fillOpacity=".25"
-    lineWidth="3"
-    fillColor="#B7950B"
-    fillColorWord="Mustard"
-  />
-  <styleDefinition
-    styleNumber="3"
-    lineColor="#3C7FA6"
-    lineOpacity=".8"
-    fillColor="#5499C7"
-    fillOpacity=".15"
-    fillColorWord="Sky Blue"
-  />
+  <stylePalette palette="okabeIto" />
 </setup>
 <graph
   xMin="-0.5"
@@ -58,8 +32,8 @@
   <regionBetweenCurves styleNumber="3" boundaryValues="0 pi/2">
     $g $f
   </regionBetweenCurves>
-  <function name="f" styleNumber="9" domain="[-1,4]">sin(x)</function>
+  <function name="f" styleNumber="1" domain="[-1,4]">sin(x)</function>
   <label fixed anchor="(pi/2,1.1)"><m>\large\sin(x)</m></label>
-  <function name="g" styleNumber="10" domain="[-1,4]">cos(x)</function>
+  <function name="g" styleNumber="2" domain="[-1,4]">cos(x)</function>
   <label fixed anchor="(0,1.1)"><m>\large\cos(x)</m></label>
 </graph>

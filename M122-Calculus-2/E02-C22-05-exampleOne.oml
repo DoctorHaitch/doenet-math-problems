@@ -7,7 +7,10 @@
     Fully worked example of Trig Substitution
   Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M122-Calculus-2/E02-C22-05-exampleOne.oml
 -->
-<cascade>
+<setup>
+  <stylePalette palette="okabeIto" />
+</setup>
+<cascade revealAll>
   <div>
     <mathInput name="var"><label>Using the dummy variable</label></mathInput>,
     <!--  prefillLatex="t" -->

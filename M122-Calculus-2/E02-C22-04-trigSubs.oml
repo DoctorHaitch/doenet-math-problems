@@ -9,7 +9,7 @@
 -->
 <table name="table1">
   <title>Trigonometric Substitution Identities</title>
-  <tabular left="minor" right="minor" top="minor" bottom="minor">
+  <tabular startBorder="minor" endBorder="minor" topBorder="minor" bottomBorder="minor">
     <row header>
       <cell>Expression</cell>
       <cell colSpan="3">Substitution</cell>
@@ -17,7 +17,7 @@
     </row>
     <row>
       <cell><m>a^2-x^2</m></cell>
-      <cell colSpan="3" halign="right">
+      <cell colSpan="3" halign="end">
         <answer>
           <mathInput><label>x=</label></mathInput>
           <award><m>a\sin t</m></award>
@@ -27,7 +27,7 @@
     </row>
     <row>
       <cell><m>a^2+x^2</m></cell>
-      <cell colSpan="3" halign="right">
+      <cell colSpan="3" halign="end">
         <answer>
           <mathInput><label>x=</label></mathInput>
           <award><m>a\tan t</m></award>
@@ -37,7 +37,7 @@
     </row>
     <row>
       <cell><m>x^2-a^2</m></cell>
-      <cell colSpan="3" halign="right">
+      <cell colSpan="3" halign="end">
         <answer>
           <mathInput><label>x=</label></mathInput>
           <award><m>a\sec t</m></award>
