@@ -9,9 +9,114 @@
     Order of a Differential Equation.
   Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M417_517-real-analysis/02-cantors_first_diagonal.oml
 -->
+<setup>
+  <!-- Move out of setup for debugging, state tracking variables. -->
+  <p>vector_index: <number name="vector_index">1</number></p>
+  <p>old_index: <number name="old_index" /></p>
+  <number name="system_state">
+    $state_list[1]+$state_list[2]+$state_list[3]+$state_list[4]+$state_list[5]+ 
+    $state_list[6]+$state_list[7]+$state_list[8]+$state_list[9]+$state_list[10]+
+    $state_list[11]+$state_list[12]+$state_list[13]+$state_list[14]+$state_list[15]+
+    $state_list[16]+$state_list[17]+$state_list[18]+$state_list[19]+$state_list[20]
+  </number>
+  <numberList name="state_list">
+    0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+  </numberList>
+  <numberList name="x_val">0 1 2 3 4 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4</numberList>
+
+  <!-- Generic Trigger Set logic for Interactive Nodes. -->
+  <module name="trigger_set_logic">
+    <moduleAttributes>
+      <number name="current_index" />
+      <number name="row" />
+    </moduleAttributes>
+    <triggerSet triggerWhenObjectsClicked="$p[$current_index]">
+      <conditionalContent>
+        <case condition="$state_list[$current_index]=0 and $system_state=0">
+          <updateValue
+            target="$v[$vector_index].tail.x"
+            type="math"
+            newValue="$x_val[$current_index]"
+          />
+          <updateValue
+            target="$v[$vector_index].tail.y"
+            type="math"
+            newValue="$row"
+          />
+          <updateValue
+            target="$old_index"
+            type="number"
+            newValue="$current_index"
+          />
+          <updateValue
+            target="$state_list[$current_index]"
+            type="number"
+            newValue="1"
+          />
+        </case>
+        <case condition="$current_index=$old_index">
+          <updateValue
+            target="$state_list[$current_index]"
+            type="number"
+            newValue="0"
+          />
+        </case>
+        <case condition="$state_list[$current_index]=0 and $system_state=1">
+          <updateValue
+            target="$v[$vector_index].head.x"
+            type="math"
+            newValue="$x_val[$current_index]"
+          />
+          <updateValue
+            target="$v[$vector_index].head.y"
+            type="math"
+            newValue="$row"
+          />
+          <updateValue
+            target="$v[$vector_index].hide"
+            type="boolean"
+            newValue="false"
+          />
+          <updateValue
+            target="$vector_index"
+            type="number"
+            newValue="$vector_index+1"
+          />
+          <updateValue target="$state_list[$old_index]" newValue="0" />
+        </case>
+      </conditionalContent>
+    </triggerSet>
+
+    <p>Row: $row</p>
+    -->
+  </module>
+
+  <!-- Invoke generic logic for each point -->
+  <module copy="$trigger_set_logic" current_index="1" row="5" />
+  <module copy="$trigger_set_logic" current_index="2" row="5" />
+  <module copy="$trigger_set_logic" current_index="3" row="5" />
+  <module copy="$trigger_set_logic" current_index="4" row="5" />
+  <module copy="$trigger_set_logic" current_index="5" row="5" />
+  <module copy="$trigger_set_logic" current_index="6" row="4" />
+  <module copy="$trigger_set_logic" current_index="7" row="4" />
+  <module copy="$trigger_set_logic" current_index="8" row="4" />
+  <module copy="$trigger_set_logic" current_index="9" row="4" />
+  <module copy="$trigger_set_logic" current_index="10" row="4" />
+  <module copy="$trigger_set_logic" current_index="11" row="3" />
+  <module copy="$trigger_set_logic" current_index="12" row="3" />
+  <module copy="$trigger_set_logic" current_index="13" row="3" />
+  <module copy="$trigger_set_logic" current_index="14" row="3" />
+  <module copy="$trigger_set_logic" current_index="15" row="3" />
+  <module copy="$trigger_set_logic" current_index="16" row="2" />
+  <module copy="$trigger_set_logic" current_index="17" row="2" />
+  <module copy="$trigger_set_logic" current_index="18" row="2" />
+  <module copy="$trigger_set_logic" current_index="19" row="2" />
+  <module copy="$trigger_set_logic" current_index="20" row="2" />
+</setup>
+
 <graph
-  xMin="0"
-  xMax="7"
+  xMin="-1"
+  xMax="6"
   yMin="0"
   yMax="6"
   showNavigation="false"
@@ -20,41 +125,72 @@
   name="cantorGraph"
   fixAxes
 >
-  <point fixLocation><label><m>(1,1)</m></label>(1,5)</point>
-  <point fixLocation><label><m>(2,1)</m></label>(2,5)</point>
-  <point fixLocation><label><m>(3,1)</m></label>(3,5)</point>
-  <point fixLocation><label><m>(4,1)</m></label>(4,5)</point>
-  <point fixLocation><label><m>(5,1)</m></label>(5,5)</point>
-  <point fixLocation><label><m>(1,2)</m></label>(1,4)</point>
-  <point fixLocation><label><m>(2,2)</m></label>(2,4)</point>
-  <point fixLocation><label><m>(3,2)</m></label>(3,4)</point>
-  <point fixLocation><label><m>(4,2)</m></label>(4,4)</point>
-  <point fixLocation><label><m>(5,2)</m></label>(5,4)</point>
-  <point fixLocation><label><m>(1,3)</m></label>(1,3)</point>
-  <point fixLocation><label><m>(2,3)</m></label>(2,3)</point>
-  <point fixLocation><label><m>(3,3)</m></label>(3,3)</point>
-  <point fixLocation><label><m>(4,3)</m></label>(4,3)</point>
-  <point fixLocation><label><m>(5,3)</m></label>(5,3)</point>
-  <point fixLocation><label><m>(1,4)</m></label>(1,2)</point>
-  <point fixLocation><label><m>(2,4)</m></label>(2,2)</point>
-  <point fixLocation><label><m>(3,4)</m></label>(3,2)</point>
-  <point fixLocation><label><m>(4,4)</m></label>(4,2)</point>
-  <point fixLocation><label><m>(5,4)</m></label>(5,2)</point>
+  <shortDescription>
+    A 4x5 array of points labeled (1,1), (2,1), ..., (5,4) with ellipses showing
+    each row and column continuing to infinity.
+  </shortDescription>
+  <group name="p" fixLocation>
+    <point styleNumber="$state_list[1]+1">(0,5)<label>(1,1)</label></point>
+    <point styleNumber="$state_list[2]+1">(1,5)<label>(2,1)</label></point>
+    <point styleNumber="$state_list[3]+1">(2,5)<label>(3,1)</label></point>
+    <point styleNumber="$state_list[4]+1">(3,5)<label>(4,1)</label></point>
+    <point styleNumber="$state_list[5]+1">(4,5)<label>(5,1)</label></point>
+    <point styleNumber="$state_list[6]+1">(0,4)<label>(1,2)</label></point>
+    <point styleNumber="$state_list[7]+1">(1,4)<label>(2,2)</label></point>
+    <point styleNumber="$state_list[8]+1">(2,4)<label>(3,2)</label></point>
+    <point styleNumber="$state_list[9]+1">(3,4)<label>(4,2)</label></point>
+    <point styleNumber="$state_list[10]+1">(4,4)<label>(5,2)</label></point>
+    <point styleNumber="$state_list[11]+1">(0,3)<label>(1,3)</label></point>
+    <point styleNumber="$state_list[12]+1">(1,3)<label>(2,3)</label></point>
+    <point styleNumber="$state_list[13]+1">(2,3)<label>(3,3)</label></point>
+    <point styleNumber="$state_list[14]+1">(3,3)<label>(4,3)</label></point>
+    <point styleNumber="$state_list[15]+1">(4,3)<label>(5,3)</label></point>
+    <point styleNumber="$state_list[16]+1">(0,2)<label>(1,4)</label></point>
+    <point styleNumber="$state_list[17]+1">(1,2)<label>(2,4)</label></point>
+    <point styleNumber="$state_list[18]+1">(2,2)<label>(3,4)</label></point>
+    <point styleNumber="$state_list[19]+1">(3,2)<label>(4,4)</label></point>
+    <point styleNumber="$state_list[20]+1">(4,2)<label>(5,4)</label></point>
+  </group> <group name="v">
+    <vector name="v1" styleNumber="3" hide />
+    <vector name="v2" styleNumber="3" hide />
+    <vector name="v3" styleNumber="3" hide />
+    <vector name="v4" styleNumber="3" hide />
+    <vector name="v5" styleNumber="3" hide />
+    <vector name="v6" styleNumber="3" hide />
+    <vector name="v7" styleNumber="3" hide />
+  </group> <label fixLocation anchor="(0,1)"><m>\huge\vdots</m></label>
   <label fixLocation anchor="(1,1)"><m>\huge\vdots</m></label>
   <label fixLocation anchor="(2,1)"><m>\huge\vdots</m></label>
   <label fixLocation anchor="(3,1)"><m>\huge\vdots</m></label>
   <label fixLocation anchor="(4,1)"><m>\huge\vdots</m></label>
-  <label fixLocation anchor="(5,1)"><m>\huge\vdots</m></label>
-  <label fixLocation anchor="(6,5)"><m>\huge\cdots</m></label>
-  <label fixLocation anchor="(6,4)"><m>\huge\cdots</m></label>
-  <label fixLocation anchor="(6,3)"><m>\huge\cdots</m></label>
-  <label fixLocation anchor="(6,2)"><m>\huge\cdots</m></label>
-  <label fixLocation anchor="(6,1)"><m>\huge\ddots</m></label>
+  <label fixLocation anchor="(5,5)"><m>\huge\cdots</m></label>
+  <label fixLocation anchor="(5,4)"><m>\huge\cdots</m></label>
+  <label fixLocation anchor="(5,3)"><m>\huge\cdots</m></label>
+  <label fixLocation anchor="(5,2)"><m>\huge\cdots</m></label>
+  <label fixLocation anchor="(5,1)"><m>\huge\ddots</m></label>
 </graph>
 
-<p> Using this <triggerSet>
-  <label>Add Lines</label> <callAction actionName="addChildren" target="$cantorGraph">
-    <vector styleNumber="3" tail="(1,5)">(4.5,0)</vector>
-    <vector styleNumber="3" tail="(1,5)">(0,-4.5)</vector>
-  </callAction>
-</triggerSet> button creates arrows along each edge. What is the initial problem with counting along either of these lines? How might we resolve that problem? You can drag the arrows and move their endpoints to determine a method for counting the set.</p>
+<!-- Note when maximum number of vectors is reached -->
+<feedback condition="$vector_index>7">
+  <title>Maximum Vector Count Reached.</title>
+  A maximum of 7 vectors can be added to the graph at this time.
+</feedback>
+
+<p>Click on nodes to connect them with a vector.</p>
+
+<!-- Reset Button enables after First Vector is Placed. -->
+<p>
+  <triggerSet disabled="$vector_index&lt;2">
+    <label>Reset Vectors</label>
+    <updateValue target="$v[1].hide" type="boolean" newValue="true" />
+    <updateValue target="$v[2].hide" type="boolean" newValue="true" />
+    <updateValue target="$v[3].hide" type="boolean" newValue="true" />
+    <updateValue target="$v[4].hide" type="boolean" newValue="true" />
+    <updateValue target="$v[5].hide" type="boolean" newValue="true" />
+    <updateValue target="$v[6].hide" type="boolean" newValue="true" />
+    <updateValue target="$v[7].hide" type="boolean" newValue="true" />
+    <updateValue target="$state_list[$old_index]" type="number" newValue="0" />
+    <updateValue target="$old_index" type="number" newValue="0" />
+    <updateValue target="$vector_index" type="number" newValue="1" />
+  </triggerSet>
+</p>
