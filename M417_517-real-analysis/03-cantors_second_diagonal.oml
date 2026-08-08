@@ -1,0 +1,293 @@
+<!--
+  Author: Kris Hollingsworth
+  Class: Math417/517-Real Analysis
+  Date: 2026-08-07
+  Updated:
+  File: 03-cantors_second_diagonal.oml
+  Description:
+    See below from DoenetML Desc.
+  Raw Link: https://raw.githubusercontent.com/DoctorHaitch/doenet-math-problems/main/M417_517-real-analysis/03-cantors_second_diagonal.oml
+
+  ## DoenetML Description
+  Author: Kris Hollingsworth
+  Date: 2026-08-07
+  Purpose: |
+    Small finite example to demonstrate the proof for |S|<|P(S)|
+    proceeds. Students can build and rebuild sets from
+    S={1,2,3,4} -> P(S) and see the set
+    V = {x | x \notin f(x)} to see how regardless of their
+    selections, V will never be in the image of f.
+
+  Follow-up: |
+    Have students explain why V can never be in Im(f). The logic
+    is not dependent on finiteness, so this completes the proof
+    for both finite and transfinite sets. Often trying to break
+    things is an excellent way to understand them.
+
+  Other explorations:
+    - Create random functions and have students find the set V.
+    - Enumerate the number of functions f for each possible set V.
+      - Construct two different functions with the same diagonal set V.
+        Determine how many functions correspond to a given V.
+    - Classify functions by the size of V. Which cardinalities
+      of V occur most frequently?
+    - Find all functions for which V = ∅ and all functions for
+      which V = S.
+    - Compare injective, surjective, and arbitrary functions
+      from S to P(S). How does the structure of V change?
+    - Explain why this proof is equivalent to the example of
+      Cantor's second diagonal argument for directly proving the existence
+      of uncountable sets.
+    - Examine how the proof changes when S has
+      0, 1, 2, 3, or 4 elements.
+      Look for patterns in the number of possible functions.
+    - Compare the diagonal set V with the image Im(f).
+      Experiment with ways to measure how "far" V is from appearing in the image.
+    - Connect the example to Russell's paradox by comparing
+      the condition x ∉ f(x) with the condition x ∉ x.
+    - Investigate why the proof depends only on membership
+      and logical negation, not on the size of S.
+    - Explore transfinite cardinalities:
+        ℵ₀ < 2^ℵ₀ < 2^(2^ℵ₀) < ...
+    - Research the continuum hypothesis and identify where
+      Cantor's theorem guarantees strict inequality but does
+      not determine whether intermediate cardinalities exist.
+    - Consider the inverse question:
+      Can every set be realized as a power set of some other set?
+      Is it true for some subsets of finite/transfinite sets?
+      Compare cardinality constraints with structural constraints.
+-->
+
+<p>
+  Use the interactive below to map elements of <m>S=\{1,2,3,4\}</m>
+  to elements of <m>\mathcal P(S)</m> to create a function
+  <m>f:S\to\mathcal P(S)</m>.
+  
+  The set <m>V=\left\{x~|~x\notin f(x) \right\}</m> is shown
+  once you have defined a function. Try to make a function
+  <m>f</m> so that <m>V\in \operatorname{Im}(f)</m>,
+  the image of <m>f</m>.
+</p>
+
+<me>
+  V=
+  <conditionalContent
+    condition="not($v[1].hide or $v[2].hide or $v[3].hide or $v[4].hide)"
+  >
+    \{<asList>
+      <conditionalContent condition="$include_one">1</conditionalContent>
+      <conditionalContent condition="$include_two">2</conditionalContent>
+      <conditionalContent condition="$include_three">3</conditionalContent>
+      <conditionalContent condition="$include_four">4</conditionalContent>
+    </asList>\}
+  </conditionalContent>
+</me>
+
+<setup>
+  <!-- Move out of setup for debugging, state tracking variables. -->
+  <group name="tail_setup">
+    <numberList name="tail_state_list">0 0 0 0</numberList>
+    <p>tail_index: <number name="tail_index" /></p>
+    <number name="tail_state">
+      $tail_state_list[1]+$tail_state_list[2]+$tail_state_list[3]+$tail_state_list[4]
+    </number>
+    <module name="trigger_tail_logic">
+      <moduleAttributes>
+        <number name="current_index" />
+      </moduleAttributes>
+      <p>Current_index: $current_index</p>
+      <triggerSet triggerWhenObjectsClicked="$tails[$current_index]">
+        <conditionalContent>
+          <case
+            condition="$tail_state_list[$current_index]=0 and $tail_state=0"
+          >
+            <updateValue
+              target="$tail_index"
+              type="number"
+              newValue="$current_index"
+            />
+            <updateValue
+              target="$tail_state_list[$current_index]"
+              type="number"
+              newValue="1"
+            />
+          </case>
+          <case condition="$tail_state>0">
+            <updateValue
+              target="$tail_state_list[$current_index]"
+              type="number"
+              newValue="1"
+            />
+            <updateValue
+              target="$tail_state_list[$tail_index]"
+              type="number"
+              newValue="0"
+            />
+            <updateValue
+              target="$tail_index"
+              type="number"
+              newValue="$current_index"
+            />
+          </case>
+        </conditionalContent>
+      </triggerSet>
+    </module>
+    <module copy="$trigger_tail_logic" current_index="1" />
+    <module copy="$trigger_tail_logic" current_index="2" />
+    <module copy="$trigger_tail_logic" current_index="3" />
+    <module copy="$trigger_tail_logic" current_index="4" />
+  </group>
+  <group name="head_setup">
+    <module name="trigger_head_logic">
+      <moduleAttributes>
+        <number name="target_index" />
+      </moduleAttributes>
+      <p>target_index: $target_index</p>
+      <triggerSet triggerWhenObjectsClicked="$heads[$target_index]">
+        <conditionalContent condition="$tail_state=1">
+          <updateValue
+            target="$v[$tail_index].fixLocation"
+            type="boolean"
+            newValue="false"
+          />
+          <updateValue
+            target="$v[$tail_index].head"
+            type="math"
+            newValue="$heads[$target_index]"
+          />
+          <updateValue
+            target="$v[$tail_index].hide"
+            type="boolean"
+            newValue="false"
+          />
+          <updateValue
+            target="$v[$tail_index].fixLocation"
+            type="boolean"
+            newValue="true"
+          />
+          <updateValue
+            target="$tail_state_list[$tail_index]"
+            type="number"
+            newValue="0"
+          />
+        </conditionalContent>
+      </triggerSet>
+    </module>
+    <module copy="$trigger_head_logic" target_index="1" />
+    <module copy="$trigger_head_logic" target_index="2" />
+    <module copy="$trigger_head_logic" target_index="3" />
+    <module copy="$trigger_head_logic" target_index="4" />
+    <module copy="$trigger_head_logic" target_index="5" />
+    <module copy="$trigger_head_logic" target_index="6" />
+    <module copy="$trigger_head_logic" target_index="7" />
+    <module copy="$trigger_head_logic" target_index="8" />
+    <module copy="$trigger_head_logic" target_index="9" />
+    <module copy="$trigger_head_logic" target_index="10" />
+    <module copy="$trigger_head_logic" target_index="11" />
+    <module copy="$trigger_head_logic" target_index="12" />
+    <module copy="$trigger_head_logic" target_index="13" />
+    <module copy="$trigger_head_logic" target_index="14" />
+    <module copy="$trigger_head_logic" target_index="15" />
+    <module copy="$trigger_head_logic" target_index="16" />
+  </group>
+  <group>
+    <boolean name="include_one">
+      $v[1].head=$heads[1] or $v[1].head=$heads[3] or $v[1].head=$heads[4] or
+      $v[1].head=$heads[5] or $v[1].head=$heads[9] or $v[1].head=$heads[10] or
+      $v[1].head=$heads[11] or $v[1].head=$heads[15]
+    </boolean>
+    <boolean name="include_two">
+      $v[2].head=$heads[1] or $v[2].head=$heads[2] or $v[2].head=$heads[4] or
+      $v[2].head=$heads[5] or $v[2].head=$heads[7] or $v[2].head=$heads[8] or
+      $v[2].head=$heads[11] or $v[2].head=$heads[14]
+    </boolean>
+    <boolean name="include_three">
+      $v[3].head=$heads[1] or $v[3].head=$heads[2] or $v[3].head=$heads[3] or
+      $v[3].head=$heads[5] or $v[3].head=$heads[6] or $v[3].head=$heads[8] or
+      $v[3].head=$heads[10] or $v[3].head=$heads[13]
+    </boolean>
+    <boolean name="include_four">
+      $v[4].head=$heads[1] or $v[4].head=$heads[2] or $v[4].head=$heads[3] or
+      $v[4].head=$heads[4] or $v[4].head=$heads[5] or $v[4].head=$heads[6] or
+      $v[4].head=$heads[8] or $v[4].head=$heads[11]
+    </boolean>
+  </group>
+</setup>
+
+<graph
+  xMin="-1"
+  xMax="6"
+  yMin="0"
+  yMax="6"
+  showNavigation="false"
+  displayXAxis="false"
+  displayYAxis="false"
+  name="cantorGraph"
+  fixAxes
+>
+  <shortDescription>
+    Diagram showing the relationship between the elements 1, 2, 3, and 4 and the
+    subsets of {1,2,3,4}. The left side contains the four individual elements.
+    The right side contains all sixteen subsets, including the empty set and the
+    full set. Connections indicate which subsets contain a selected element.
+  </shortDescription>
+  <group name="tails" fixLocation>
+    <point labelPosition="left" styleNumber="$tail_state_list[1]+1">
+      (0,5)<label>1</label>
+    </point>
+    <point labelPosition="left" styleNumber="$tail_state_list[2]+1">
+      (0,3.66)<label>2</label>
+    </point>
+    <point labelPosition="left" styleNumber="$tail_state_list[3]+1">
+      (0,2.33)<label>3</label>
+    </point>
+    <point labelPosition="left" styleNumber="$tail_state_list[4]+1">
+      (0,1)<label>4</label>
+    </point>
+  </group> <number name="delta" hide>1/3</number>
+  <number name="anchor" hide>5.5</number> <group name="heads" fixLocation>
+    <point labelPosition="right">(4,$anchor)<label>{}</label></point>
+    <point labelPosition="right">(4,$anchor-$delta)<label>{1}</label></point>
+    <point labelPosition="right">(4,$anchor-2*$delta)<label>{2}</label></point>
+    <point labelPosition="right">(4,$anchor-3*$delta)<label>{3}</label></point>
+    <point labelPosition="right">(4,$anchor-4*$delta)<label>{4}</label></point>
+    <point labelPosition="right">
+      (4,$anchor-5*$delta)<label>{1,2}</label>
+    </point>
+    <point labelPosition="right">
+      (4,$anchor-6*$delta)<label>{1,3}</label>
+    </point>
+    <point labelPosition="right">
+      (4,$anchor-7*$delta)<label>{1,4}</label>
+    </point>
+    <point labelPosition="right">
+      (4,$anchor-8*$delta)<label>{2,3}</label>
+    </point>
+    <point labelPosition="right">
+      (4,$anchor-9*$delta)<label>{2,4}</label>
+    </point>
+    <point labelPosition="right">
+      (4,$anchor-10*$delta)<label>{3,4}</label>
+    </point>
+    <point labelPosition="right">
+      (4,$anchor-11*$delta)<label>{1,2,3}</label>
+    </point>
+    <point labelPosition="right">
+      (4,$anchor-12*$delta)<label>{1,2,4}</label>
+    </point>
+    <point labelPosition="right">
+      (4,$anchor-13*$delta)<label>{1,3,4}</label>
+    </point>
+    <point labelPosition="right">
+      (4,$anchor-14*$delta)<label>{2,3,4}</label>
+    </point>
+    <point labelPosition="right">
+      (4,$anchor-15*$delta)<label>{1,2,3,4}</label>
+    </point>
+  </group> <group name="v">
+    <vector name="v1" styleNumber="3" tail="$tails[1]" hide />
+    <vector name="v1" styleNumber="3" tail="$tails[2]" hide />
+    <vector name="v1" styleNumber="3" tail="$tails[3]" hide />
+    <vector name="v1" styleNumber="3" tail="$tails[4]" hide />
+  </group>
+</graph>
