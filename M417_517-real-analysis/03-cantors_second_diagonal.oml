@@ -209,7 +209,7 @@
     <boolean name="include_four">
       $v[4].head=$heads[1] or $v[4].head=$heads[2] or $v[4].head=$heads[3] or
       $v[4].head=$heads[4] or $v[4].head=$heads[5] or $v[4].head=$heads[6] or
-      $v[4].head=$heads[8] or $v[4].head=$heads[11]
+      $v[4].head=$heads[8] or $v[4].head=$heads[12]
     </boolean>
   </group>
 </setup>
