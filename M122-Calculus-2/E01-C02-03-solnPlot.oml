@@ -99,7 +99,7 @@
     hide="not($showIC)"
   >
     Particular Solution: <m>
-      y= x
+      y= x^2
       <conditionalContent condition="$C>0">+</conditionalContent>
       <conditionalContent condition="$C!=0">
         <math format="text" simplify>$C</math>
