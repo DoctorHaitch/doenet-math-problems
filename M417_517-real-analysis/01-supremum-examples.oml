@@ -14,7 +14,7 @@
   <problem>
     <answer>
       <mathInput>
-        <label>For <m>E = (2,3)</m>, then <m>\sup E =</m></label>
+        <label>For <m>E_1 = (2,3)</m>, then <m>\sup E =</m></label>
       </mathInput>
       <award>3</award>
     </answer>
@@ -22,7 +22,7 @@
   <problem>
     <answer>
       <mathInput>
-        <label>For <m>E = [2,3]</m>, then <m>\sup E =</m></label>
+        <label>For <m>E_2 = [2,3]</m>, then <m>\sup E =</m></label>
       </mathInput>
       <award>3</award>
     </answer>
@@ -30,7 +30,7 @@
   <problem>
     <answer>
       <mathInput>
-        <label>For <m>E = [2,3) \cup \{\sqrt{11}\}</m>, then <m>\sup E =</m></label>
+        <label>For <m>E_3 = [2,3) \cup \{\sqrt{11}\}</m>, then <m>\sup E =</m></label>
       </mathInput>
       <award><m>\sqrt{11}</m></award>
     </answer>
@@ -38,7 +38,15 @@
   <problem>
     <answer>
       <mathInput>
-        <label>For <m>\displaystyle E = \left\{-\frac{1}{n}~\bigg|~ n\in \mathbb N \right\}</m>, then <m>\sup E =</m></label>
+        <label>For <m>\displaystyle E_4 = \left\{\frac{1}{n}~\bigg|~ n\in \mathbb N \right\}</m>, then <m>\sup E =</m></label>
+      </mathInput>
+      <award>1</award>
+    </answer>
+  </problem>
+  <problem>
+    <answer>
+      <mathInput>
+        <label>For <m>\displaystyle E_5 = \left\{-\frac{1}{n}~\bigg|~ n\in \mathbb N \right\}</m>, then <m>\sup E =</m></label>
       </mathInput>
       <award>0</award>
     </answer>
