@@ -58,6 +58,56 @@
       Compare cardinality constraints with structural constraints.
 -->
 
+<!--
+  Author: Kris Hollingsworth
+  Date: 2026-08-07
+  Purpose: |
+    Small finite example to demonstrate the proof for |S|<|P(S)|
+    proceeds. Students can build and rebuild sets from
+    S={1,2,3,4} -> P(S) and see the set
+    V = {x | x \notin f(x)} to see how regardless of their
+    selections, V will never be in the image of f.
+
+  Follow-up: |
+    Have students explain why V can never be in Im(f). The logic
+    is not dependent on finiteness, so this completes the proof
+    for both finite and transfinite sets. Often trying to break
+    things is an excellent way to understand them.
+
+  Other explorations:
+    - Create random functions and have students find the set V.
+    - Enumerate the number of functions f for each possible set V.
+      - Construct two different functions with the same diagonal set V.
+        Determine how many functions correspond to a given V.
+    - Classify functions by the size of V. Which cardinalities
+      of V occur most frequently?
+    - Find all functions for which V = ∅ and all functions for
+      which V = S.
+    - Compare injective, surjective, and arbitrary functions
+      from S to P(S). How does the structure of V change?
+    - Explain why this proof is equivalent to the example of
+      Cantor's second diagonal argument for directly proving the existence
+      of uncountable sets.
+    - Examine how the proof changes when S has
+      0, 1, 2, 3, or 4 elements.
+      Look for patterns in the number of possible functions.
+    - Compare the diagonal set V with the image Im(f).
+      Experiment with ways to measure how "far" V is from appearing in the image.
+    - Connect the example to Russell's paradox by comparing
+      the condition x ∉ f(x) with the condition x ∉ x.
+    - Investigate why the proof depends only on membership
+      and logical negation, not on the size of S.
+    - Explore transfinite cardinalities:
+        ℵ₀ < 2^ℵ₀ < 2^(2^ℵ₀) < ...
+    - Research the continuum hypothesis and identify where
+      Cantor's theorem guarantees strict inequality but does
+      not determine whether intermediate cardinalities exist.
+    - Consider the inverse question:
+      Can every set be realized as a power set of some other set?
+      Is it true for some subsets of finite/transfinite sets?
+      Compare cardinality constraints with structural constraints.
+-->
+
 <p>
   Use the interactive below to map elements of <m>S=\{1,2,3,4\}</m>
   to elements of <m>\mathcal P(S)</m> to create a function
@@ -208,8 +258,8 @@
     </boolean>
     <boolean name="include_four">
       $v[4].head=$heads[1] or $v[4].head=$heads[2] or $v[4].head=$heads[3] or
-      $v[4].head=$heads[4] or $v[4].head=$heads[5] or $v[4].head=$heads[6] or
-      $v[4].head=$heads[8] or $v[4].head=$heads[12]
+      $v[4].head=$heads[4] or $v[4].head=$heads[6] or $v[4].head=$heads[7] or
+      $v[4].head=$heads[9] or $v[4].head=$heads[12]
     </boolean>
   </group>
 </setup>
